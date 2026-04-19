@@ -741,10 +741,13 @@ function LiveTime() {
 
 function Frame39() {
   return (
-    // flex-row saha justify-between eken content eka depaththenma thiyai
-    <div className="content-stretch flex flex-row items-end justify-between relative shrink-0 w-full md:flex-col md:items-start md:gap-[40px] sm:gap-[30px]">
+    /* 
+      flex-col md:flex-row damma. 
+      Eken wenne phone eke yata yatath, Desktop ekedi Left (Email) and Right (Time) widiyatath wen wena eka.
+    */
+    <div className="flex flex-col md:flex-row items-start md:items-end justify-between w-full gap-[30px] md:gap-0">
       <Frame36 />
-      <div className="flex items-end justify-end md:justify-start">
+      <div className="flex items-end md:justify-end">
         <LiveTime />
       </div>
     </div>
@@ -753,9 +756,12 @@ function Frame39() {
 
 function Frame40() {
   return (
-    <div className="relative shrink-0 w-full max-w-[1280px] mx-auto">
-      {/* items-start wenuwata items-stretch damma. Ethakota w-full eka hariyata wada karala time eka right ekatama yanawa */}
-      <div className="content-stretch flex flex-col gap-[86px] items-stretch px-[80px] w-full md:gap-[60px] md:px-[40px] sm:gap-[40px] sm:px-[20px]">
+    /* 
+      Unnecessary classes ayin karala w-full saha max-w-[1280px] damma, 
+      ethakota center wela lassanata width eka gannawa.
+    */
+    <div className="w-full max-w-[1280px] mx-auto px-[20px] md:px-[40px] lg:px-[80px]">
+      <div className="flex flex-col gap-[40px] md:gap-[86px] w-full">
         <Frame37 />
         <Frame39 />
       </div>
