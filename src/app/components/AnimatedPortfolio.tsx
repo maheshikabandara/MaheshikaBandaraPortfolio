@@ -189,6 +189,7 @@ function Frame() {
   );
 }
 
+// Frame 22 - Fluid Typography (clamp) use karala font sizes screen ekata adjust wenna haduwa
 function Frame22() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-center justify-center relative shrink-0 w-full md:gap-[16px]">
@@ -196,30 +197,37 @@ function Frame22() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
-        className="font-['Albert_Sans:SemiBold',sans-serif] font-semibold leading-[1.5] relative text-[#1e1e1e] text-[24px] text-center tracking-[-0.12px] md:text-[20px] sm:text-[18px]"
+        className="font-['Albert_Sans:SemiBold',sans-serif] font-semibold leading-[1.5] relative text-[#1e1e1e] text-center tracking-[-0.12px]"
+        style={{ fontSize: 'clamp(16px, 1.5vw, 24px)' }} // Screen eka loku weddi font ekath loku wenawa
       >
         Hi, I'm Maheshika Bandara!
       </motion.p>
+      
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
-        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.1] not-italic relative text-[#1e1e1e] text-[90px] text-center tracking-[-1.8px] max-w-full md:text-[56px] sm:text-[40px] px-4"
+        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.1] not-italic relative text-[#1e1e1e] text-center tracking-[-1.8px] w-full px-4"
+        style={{ fontSize: 'clamp(40px, 6.5vw, 90px)' }} // 40px indan 90px wenakan smooth eke scale wenawa
       >
         Design clean, professional websites for businesses
       </motion.p>
+
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="font-['Albert_Sans:Regular',sans-serif] font-normal leading-[1.5] relative text-[#404040] text-[20px] text-center tracking-[-0.1px] max-w-full md:text-[18px] sm:text-[16px] px-4"
+        className="font-['Albert_Sans:Regular',sans-serif] font-normal leading-[1.5] relative text-[#404040] text-center tracking-[-0.1px] max-w-[800px] px-4"
+        style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}
       >
         Whether you don't have a website yet or your current one needs a modern refresh, I help you get online fast, look trustworthy, and attract more customers.
       </motion.p>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
+        className="mt-4"
       >
         <Frame />
       </motion.div>
@@ -227,11 +235,38 @@ function Frame22() {
   );
 }
 
+// Frame 1 - Max width eka poddak loku kara Text ekata space eka denna
 function Frame1() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full max-w-[846px] px-4">
+    <div className="content-stretch flex flex-col gap-[24px] items-center justify-center relative shrink-0 w-full max-w-[1000px] px-4">
       <Frame23 />
       <Frame22 />
+    </div>
+  );
+}
+
+// Hero - min-h-screen dila, Nav eka udin thiyala content eka perfectly center kara
+function Hero() {
+  return (
+    <div className="min-h-screen relative shrink-0 w-full flex flex-col overflow-hidden" data-name="Hero">
+      
+      {/* Background Image & Gradient */}
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute bg-white inset-0" />
+        <img alt="" className="absolute max-w-none object-cover size-full" src={imgHero} />
+        <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-white via-[49.04%] via-[rgba(255,255,255,0.75)]" />
+      </div>
+
+      {/* Nav Section - Top ekata align kara */}
+      <div className="w-full flex justify-center pt-[32px] px-[20px] relative z-10 md:pt-[24px] sm:pt-[16px]">
+        <Nav />
+      </div>
+
+      {/* Main Content Section - flex-1 dammahama ithuru height eka aran justify-center nisa exactly center wenawa */}
+      <div className="flex-1 flex flex-col items-center justify-center relative z-10 w-full px-[20px] pb-[80px]">
+        <Frame1 />
+      </div>
+
     </div>
   );
 }
@@ -255,23 +290,30 @@ function Hero() {
 }
 
 // About Me Section
+// Frame 24 - Text eka fluid kara
 function Frame24() {
   return (
-    <div className="content-stretch flex items-center justify-center relative shrink-0 w-full">
-      <p className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-[56px] text-center tracking-[-1.12px] max-w-[1171px] md:text-[40px] sm:text-[32px] px-4">
+    <div className="content-stretch flex items-center justify-center relative shrink-0 w-full px-4">
+      <p 
+        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] max-w-[1171px]"
+        // Font size eka screen width eka (vw) ekka auto adjust wenawa (Min: 32px, Max: 56px)
+        style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
+      >
         UI/UX Designer, and Developer with a BSc in Information Technology who helps small businesses worldwide get a clean, professional online presence that attracts more customers. I create fast, mobile-friendly websites, whether it's building your first site from scratch or giving an existing one a modern polish, and design until every page feels simple, trustworthy, and meaningful.
       </p>
     </div>
   );
 }
 
+// Frame 25 - Link ekath fluid kara poddak
 function Frame25() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full max-w-[1280px] md:gap-[24px]">
       <Frame24 />
       <p
         onClick={() => scrollToSection("works")}
-        className="font-['Albert_Sans:Medium',sans-serif] font-medium leading-[1.5] relative text-[#1296cc] text-[24px] text-center tracking-[-0.12px] w-full cursor-pointer hover:underline md:text-[20px] sm:text-[18px]"
+        className="font-['Albert_Sans:Medium',sans-serif] font-medium leading-[1.5] relative text-[#1296cc] text-center tracking-[-0.12px] w-full cursor-pointer hover:underline transition-all hover:scale-105"
+        style={{ fontSize: 'clamp(18px, 1.5vw, 24px)' }}
       >
         Explore My Work
       </p>
@@ -279,15 +321,16 @@ function Frame25() {
   );
 }
 
+// AboutMe - min-h-screen saha flex center damma
 function AboutMe() {
   return (
     <AnimatedSection id="about">
-      <div className="bg-white min-h-[1024px] relative shrink-0 w-full md:min-h-[800px] sm:min-h-auto sm:py-[100px]" data-name="About me">
-        <div className="overflow-clip rounded-[inherit] size-full">
-          <div className="content-stretch flex flex-col items-center pb-[222px] pt-[223px] px-[80px] relative w-full md:py-[120px] md:px-[40px] sm:py-[80px] sm:px-[20px]">
-            <Frame25 />
-          </div>
-        </div>
+      {/* 
+        min-h-screen damma nisa me section ekath screen height eka full gannawa. 
+        flex flex-col items-center justify-center nisa perfectly center wenawa.
+      */}
+      <div className="bg-white min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[40px] lg:px-[80px]" data-name="About me">
+        <Frame25 />
       </div>
     </AnimatedSection>
   );
@@ -295,12 +338,24 @@ function AboutMe() {
 
 // My Works Section
 function Frame28() {
-  return <div className="bg-[#cbf0ff] h-[743px] rounded-br-[20px] rounded-tr-[20px] shrink-0 w-[628px] md:h-[400px] md:w-[400px] sm:h-[300px] sm:w-[300px]" />;
+  return (
+    /* 
+      Removed fixed pixel heights/widths (e.g., h-[743px] w-[628px]).
+      Using percentages ensures this decorative block scales perfectly with the parent container.
+    */
+    <div className="bg-[#cbf0ff] h-full w-[45%] md:w-[60%] sm:w-[70%] shrink-0" />
+  );
 }
 
 function Frame26() {
   return (
-    <div className="bg-[#fdfdfd] content-stretch flex items-center justify-end overflow-clip relative rounded-[20px] shadow-[0px_0px_12px_-6px_rgba(0,0,0,0.15)] shrink-0 w-full min-h-[729px] cursor-pointer hover:shadow-[0px_0px_24px_-6px_rgba(0,0,0,0.25)] transition-shadow md:min-h-[400px] sm:min-h-[300px]">
+    /* 
+      Removed fixed min-h-[729px]. 
+      Added 'aspect-[4/3] lg:aspect-[16/9]' so the card maintains a beautiful rectangular shape 
+      and scales smoothly on any screen size.
+      Added 'hover:scale-[1.02]' for a smooth, premium hover effect.
+    */
+    <div className="bg-[#fdfdfd] flex items-center justify-end overflow-hidden relative rounded-[20px] shadow-[0px_0px_12px_-6px_rgba(0,0,0,0.15)] w-full aspect-[4/3] lg:aspect-[16/9] cursor-pointer hover:shadow-[0px_0px_24px_-6px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-all duration-300">
       <Frame28 />
     </div>
   );
@@ -308,8 +363,12 @@ function Frame26() {
 
 function Frame27() {
   return (
-    <div className="content-stretch flex flex-col gap-[48px] items-start relative shrink-0 w-full max-w-[1280px] md:gap-[32px]">
-      <p className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-[56px] text-center tracking-[-0.28px] w-full md:text-[40px] sm:text-[32px]">
+    <div className="flex flex-col gap-[48px] items-center relative w-full max-w-[1280px] md:gap-[32px] px-4">
+      <p 
+        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full"
+        /* Fluid typography: Automatically scales between 32px and 56px based on screen width */
+        style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
+      >
         Curated Works That Reflect Design Precision and Excellence
       </p>
       <Frame26 />
@@ -320,12 +379,12 @@ function Frame27() {
 function MyWorks() {
   return (
     <AnimatedSection delay={0.1} id="works">
-      <div className="bg-[#f8fdff] min-h-[1024px] relative shrink-0 w-full md:min-h-auto md:py-[100px] sm:py-[80px]" data-name="My Works">
-        <div className="overflow-clip rounded-[inherit] size-full">
-          <div className="content-stretch flex flex-col items-center px-[80px] py-[90px] relative w-full md:px-[40px] md:py-[60px] sm:px-[20px] sm:py-[40px]">
-            <Frame27 />
-          </div>
-        </div>
+      {/* 
+        'min-h-screen' makes the section take up 100% of the viewport height.
+        'flex items-center justify-center' perfectly centers the content in the middle of the screen.
+      */}
+      <div className="bg-[#f8fdff] min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[40px] lg:px-[80px]" data-name="My Works">
+        <Frame27 />
       </div>
     </AnimatedSection>
   );
@@ -413,9 +472,9 @@ function Frame16() {
 
 function Frame7() {
   return (
-    <div className="bg-white h-full relative rounded-[8px] shrink-0 w-full hover:scale-105 transition-transform">
-      <div className="overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex items-start justify-between px-[24px] py-[32px] relative size-full">
+    <div className="bg-white flex-1 flex flex-col h-full relative rounded-[8px] w-full hover:scale-[1.02] transition-transform duration-300">
+      <div className="overflow-clip rounded-[inherit] flex-1 flex flex-col w-full h-full">
+        <div className="content-stretch flex-1 flex items-start justify-between px-[24px] py-[32px] md:px-[32px] md:py-[40px] relative w-full h-full">
           <Frame16 />
         </div>
       </div>
@@ -508,9 +567,9 @@ function Frame17() {
 
 function Frame10() {
   return (
-    <div className="bg-white h-full relative rounded-[8px] shrink-0 w-full hover:scale-105 transition-transform">
-      <div className="overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex items-start justify-between px-[24px] py-[32px] relative size-full">
+    <div className="bg-white flex-1 flex flex-col h-full relative rounded-[8px] w-full hover:scale-[1.02] transition-transform duration-300">
+      <div className="overflow-clip rounded-[inherit] flex-1 flex flex-col w-full h-full">
+        <div className="content-stretch flex-1 flex items-start justify-between px-[24px] py-[32px] md:px-[32px] md:py-[40px] relative w-full h-full">
           <Frame17 />
         </div>
       </div>
@@ -603,9 +662,9 @@ function Frame19() {
 
 function Frame13() {
   return (
-    <div className="bg-white h-full relative rounded-[8px] shrink-0 w-full hover:scale-105 transition-transform">
-      <div className="overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex items-start justify-between px-[24px] py-[32px] relative size-full">
+    <div className="bg-white flex-1 flex flex-col h-full relative rounded-[8px] w-full hover:scale-[1.02] transition-transform duration-300">
+      <div className="overflow-clip rounded-[inherit] flex-1 flex flex-col w-full h-full">
+        <div className="content-stretch flex-1 flex items-start justify-between px-[24px] py-[32px] md:px-[32px] md:py-[40px] relative w-full h-full">
           <Frame19 />
         </div>
       </div>
@@ -616,8 +675,12 @@ function Frame13() {
 
 function Frame29() {
   return (
-    /* Grid system ekak use kala side-by-side thiyenna */
-    <div className="content-stretch grid grid-cols-1 lg:grid-cols-3 gap-[24px] items-stretch relative shrink-0 w-full max-w-[1280px]">
+    /* 
+      Grid layout handles the horizontal spacing perfectly.
+      'lg:grid-cols-3' makes it a row of 3 on desktop.
+      'items-stretch' ensures all cards are the exact same height.
+    */
+    <div className="content-stretch grid grid-cols-1 lg:grid-cols-3 gap-[24px] items-stretch relative w-full max-w-[1280px]">
       <Frame7 />
       <Frame10 />
       <Frame13 />
@@ -627,8 +690,12 @@ function Frame29() {
 
 function Frame33() {
   return (
-    <div className="content-stretch flex flex-col gap-[48px] items-center relative shrink-0 w-full md:gap-[32px] px-4 lg:px-0">
-      <p className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[56px] text-center tracking-[-0.28px] max-w-[792px] w-full md:text-[40px] sm:text-[32px]">
+    <div className="content-stretch flex flex-col gap-[48px] items-center relative w-full md:gap-[40px] px-4 lg:px-0 z-10">
+      <p 
+        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative text-[#fdfdfd] text-center tracking-[-0.28px] max-w-[800px] w-full"
+        /* Fluid typography: Automatically scales between 32px and 56px */
+        style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
+      >
         Services Designed to Deliver Clean Modern Digital Experiences
       </p>
       <Frame29 />
@@ -639,15 +706,22 @@ function Frame33() {
 function MyServices() {
   return (
     <AnimatedSection delay={0.1} id="services">
-      <div className="min-h-[1024px] relative shrink-0 w-full lg:min-h-auto lg:py-[100px]" data-name="My Services">
-        <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
+      {/* 
+        'min-h-screen' and 'flex items-center justify-center' perfectly centers 
+        the services block vertically in the viewport, regardless of screen size.
+      */}
+      <div className="min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[40px] lg:px-[80px]" data-name="My Services">
+        
+        {/* Background Image Setup */}
+        <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute bg-[#fdfdfd] inset-0" />
-          <img alt="" className="absolute max-w-none object-cover size-full" src={imgHero} />
+          <img alt="" className="absolute max-w-none object-cover w-full h-full" src={imgHero} />
+          {/* Fades the image slightly at the top so text is readable */}
           <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-[46.487%] to-white" />
         </div>
-        <div className="content-stretch flex flex-col items-center px-[80px] py-[233px] relative w-full lg:py-[120px] lg:px-[40px]">
-          <Frame33 />
-        </div>
+        
+        <Frame33 />
+
       </div>
     </AnimatedSection>
   );
@@ -656,26 +730,33 @@ function MyServices() {
 // Contact Footer Section
 function Frame37() {
   return (
-    <div className="content-stretch flex items-center relative shrink-0">
-      <div className="font-['Instrument_Serif:Regular',sans-serif] not-italic relative text-[#fdfdfd] text-[64px] tracking-[-0.32px] md:text-[48px] sm:text-[36px]">
-        <p className="leading-[1.2] mb-0">Ready to Build Something</p>
-        <p className="leading-[1.2]">Modern and Impactful?</p>
+    <div className="content-stretch flex items-center relative shrink-0 w-full">
+      <div 
+        className="font-['Instrument_Serif:Regular',sans-serif] not-italic relative text-[#fdfdfd] tracking-[-0.32px] w-full"
+        style={{ fontSize: 'clamp(40px, 6vw, 80px)' }} // Loku screen waladi auto loku wenawa
+      >
+        <p className="leading-[1.1] mb-0">Ready to Build Something</p>
+        <p className="leading-[1.1]">Modern and Impactful?</p>
       </div>
     </div>
   );
 }
 
+// Links - Font size auto adjust wenna hadala thiyenawa
 function Frame34() {
   return (
     <a
       href="mailto:mbmaheshika@gmail.com"
-      className="content-stretch flex gap-[16px] items-center relative shrink-0 cursor-pointer hover:text-[#1296cc] transition-colors group"
+      className="content-stretch flex gap-[12px] md:gap-[16px] items-center relative shrink-0 cursor-pointer hover:text-[#1296cc] transition-colors group"
     >
-      <p className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] text-[32px] text-center tracking-[-0.16px] whitespace-nowrap md:text-[24px] sm:text-[20px] transition-colors">
+      <p 
+        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
+        style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
+      >
         Email
       </p>
-      <div className="relative shrink-0 size-[32px] md:size-[24px]" data-name="ArrowUpRight">
-        <div className="absolute inset-[21.88%_21.87%_21.87%_21.87%]" data-name="Vector">
+      <div className="relative shrink-0 w-[0.8em] h-[0.8em]" data-name="ArrowUpRight">
+        <div className="absolute inset-0" data-name="Vector">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18.0006 18.0006">
             <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" id="Vector" />
           </svg>
@@ -691,13 +772,16 @@ function Frame35() {
       href="https://wa.me/94707170906"
       target="_blank"
       rel="noopener noreferrer"
-      className="content-stretch flex gap-[16px] items-center relative shrink-0 w-full cursor-pointer hover:text-[#1296cc] transition-colors group"
+      className="content-stretch flex gap-[12px] md:gap-[16px] items-center relative shrink-0 w-full cursor-pointer hover:text-[#1296cc] transition-colors group"
     >
-      <p className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] text-[32px] text-center tracking-[-0.16px] whitespace-nowrap md:text-[24px] sm:text-[20px] transition-colors">
+      <p 
+        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
+        style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
+      >
         WhatsApp
       </p>
-      <div className="relative shrink-0 size-[32px] md:size-[24px]" data-name="ArrowUpRight">
-        <div className="absolute inset-[21.88%_21.87%_21.87%_21.87%]" data-name="Vector">
+      <div className="relative shrink-0 w-[0.8em] h-[0.8em]" data-name="ArrowUpRight">
+        <div className="absolute inset-0" data-name="Vector">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18.0006 18.0006">
             <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" id="Vector" />
           </svg>
@@ -709,11 +793,12 @@ function Frame35() {
 
 function Frame36() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 md:gap-[12px]">
+    <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0">
       <Frame34 />
       <Frame35 />
     </div>
   );
+}
 }
 
 function LiveTime() {
@@ -741,13 +826,9 @@ function LiveTime() {
 
 function Frame39() {
   return (
-    /* 
-      flex-col md:flex-row damma. 
-      Eken wenne phone eke yata yatath, Desktop ekedi Left (Email) and Right (Time) widiyatath wen wena eka.
-    */
-    <div className="flex flex-col md:flex-row items-start md:items-end justify-between w-full gap-[30px] md:gap-0">
+    <div className="flex flex-col md:flex-row items-start md:items-end justify-between w-full gap-[40px] md:gap-0 mt-[40px] md:mt-[60px]">
       <Frame36 />
-      <div className="flex items-end md:justify-end">
+      <div className="flex items-end justify-start md:justify-end">
         <LiveTime />
       </div>
     </div>
@@ -769,23 +850,30 @@ function Frame40() {
   );
 }
 
-// ContactFooter - min-h-screen damma full height wenna, saha text eka screen width eka ganna haduwa
+// Main Footer Section
 function ContactFooter() {
   return (
     <AnimatedSection delay={0.1} id="contact">
-      {/* min-h-screen ekath ekka flex-col damma text eka pahlata thallu wenna */}
-      <div className="bg-[#1e1e1e] min-h-screen flex flex-col justify-between pt-[100px] relative w-full overflow-hidden md:pt-[60px] sm:pt-[40px]" data-name="Contact + Footer">
+      {/* 
+        min-h-screen damma nisa footer eka full viewport height eka gannawa.
+        pt-[100px] thiyenne top spacing ekata.
+      */}
+      <div className="bg-[#1e1e1e] min-h-screen flex flex-col pt-[80px] md:pt-[120px] relative w-full overflow-hidden" data-name="Contact + Footer">
         
-        <Frame40 />
+        {/* flex-1 saha justify-center dammahama content eka "mahe." text ekatai uda edge ekatai madin center wenawa */}
+        <div className="flex-1 flex flex-col justify-center w-full max-w-[1280px] mx-auto px-[20px] md:px-[40px] lg:px-[80px] z-10">
+          <Frame37 />
+          <Frame39 />
+        </div>
         
-        {/* Giant "mahe." text eka width eka full ganna 28vw damma */}
+        {/* Giant "mahe." text eka - mb-[-1%] saha leading-[0.75] nisa bottom edge ekatama thada wela, crop wela lassanata penawa */}
         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden pointer-events-none select-none">
           <p
             className="font-['Albert_Sans:Bold',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter"
             style={{ 
-              fontSize: '28vw',     /* Screen width ekath ekka automatically loku/podi wenawa */
-              lineHeight: '0.75',   /* Text eke yata kalla lassanata crop wenna */
-              marginBottom: '-1%'   /* Text eka bottom edge ekatama thiyanna */
+              fontSize: '28vw',     /* Screen width ekath ekka auto scale wenawa */
+              lineHeight: '0.75',   /* Text crop wenna */
+              marginBottom: '-1%'   /* Bottom ekata stick wenna */
             }}
           >
             mahe.
