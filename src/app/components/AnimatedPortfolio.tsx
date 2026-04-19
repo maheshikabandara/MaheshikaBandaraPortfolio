@@ -739,20 +739,22 @@ function LiveTime() {
   );
 }
 
+// Frame 39 - Fixed width issue, now uses w-full so it flexes correctly
 function Frame39() {
   return (
-    <div className="content-stretch flex items-end justify-between relative shrink-0 w-[1280px] lg:w-full md:flex-col md:items-start md:gap-[40px] sm:gap-[30px]">
+    <div className="content-stretch flex flex-row items-end justify-between relative shrink-0 w-full md:flex-col md:items-start md:gap-[40px] sm:gap-[30px]">
       <Frame36 />
-      <div className="flex items-end justify-end">
+      <div className="flex items-end justify-end w-full md:justify-start">
         <LiveTime />
       </div>
     </div>
   );
 }
 
+// Frame 40 - Added max-w-[1280px] and mx-auto to align with the rest of the site
 function Frame40() {
   return (
-    <div className="relative shrink-0 w-full">
+    <div className="relative shrink-0 w-full max-w-[1280px] mx-auto">
       <div className="content-stretch flex flex-col gap-[86px] items-start px-[80px] relative size-full md:gap-[60px] md:px-[40px] sm:gap-[40px] sm:px-[20px]">
         <Frame37 />
         <Frame39 />
@@ -761,14 +763,17 @@ function Frame40() {
   );
 }
 
+// ContactFooter - Fixed the giant text so it crops correctly at the bottom
 function ContactFooter() {
   return (
     <AnimatedSection delay={0.1} id="contact">
-      <div className="bg-[#1e1e1e] content-stretch flex flex-col items-start justify-between pt-[90px] relative w-full md:pt-[60px] sm:pt-[40px]" data-name="Contact + Footer">
+      <div className="bg-[#1e1e1e] flex flex-col items-center justify-between pt-[90px] relative w-full overflow-hidden md:pt-[60px] sm:pt-[40px]" data-name="Contact + Footer">
         <Frame40 />
-        <div className="relative w-full overflow-hidden flex items-center justify-center">
+        
+        {/* Adjusted spacing, leading, and translate-y to perfectly crop the text at the bottom */}
+        <div className="relative w-full flex items-end justify-center mt-[80px] md:mt-[60px]">
           <p
-            className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[1.3] relative text-[#fdfdfd] text-center whitespace-nowrap"
+            className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[0.75] relative text-[#fdfdfd] text-center whitespace-nowrap translate-y-[12%]"
             style={{ fontSize: 'clamp(150px, 35.87vw, 516.614px)' }}
           >
             mahe.
