@@ -408,7 +408,7 @@ function ContactFooter() {
         
         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden pointer-events-none select-none">
           <p
-            className="font-['Albert_Sans',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter"
+            className="font-['Albert_Sans',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter opacity-50"
             style={{ 
               fontSize: '28vw',
               lineHeight: '0.75',
