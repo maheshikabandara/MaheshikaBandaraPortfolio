@@ -150,7 +150,8 @@ function Frame22() {
         className="font-['Instrument_Serif',serif] leading-[1.1] not-italic relative text-[#1e1e1e] text-center tracking-[-1.8px] w-full"
         style={{ fontSize: 'clamp(40px, 7vw, 130px)' }}
       >
-        Design clean, professional websites for businesses
+        Design clean, professional websites 
+        for businesses
       </motion.p>
 
       <motion.p
