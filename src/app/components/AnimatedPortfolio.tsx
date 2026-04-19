@@ -614,9 +614,11 @@ function Frame13() {
   );
 }
 
+// Services Section Layout Fix
 function Frame29() {
   return (
-    <div className="content-stretch flex gap-[24px] h-[376px] items-center relative shrink-0 w-full lg:flex-col lg:h-auto lg:items-stretch">
+    /* flex-row eka dammama cards tika harahata (horizontally) yanawa */
+    <div className="content-stretch flex flex-row gap-[24px] h-[376px] items-stretch justify-center relative shrink-0 w-full lg:flex-col lg:h-auto">
       <Frame7 />
       <Frame10 />
       <Frame13 />
@@ -624,10 +626,11 @@ function Frame29() {
   );
 }
 
+// Frame33 eka center wenna mehema thiyenna oni
 function Frame33() {
   return (
-    <div className="content-stretch flex flex-col gap-[48px] items-center relative shrink-0 w-[1281px] lg:w-full md:gap-[32px] px-4 lg:px-0">
-      <p className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[56px] text-center tracking-[-0.28px] w-[792px] lg:w-full md:text-[40px] sm:text-[32px]">
+    <div className="content-stretch flex flex-col gap-[48px] items-center relative shrink-0 w-full max-w-[1281px] lg:w-full md:gap-[32px] px-4 lg:px-0 mx-auto">
+      <p className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[56px] text-center tracking-[-0.28px] w-full max-w-[792px] md:text-[40px] sm:text-[32px]">
         Services Designed to Deliver Clean Modern Digital Experiences
       </p>
       <Frame29 />
