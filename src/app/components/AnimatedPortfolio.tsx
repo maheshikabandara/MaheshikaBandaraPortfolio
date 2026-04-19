@@ -271,24 +271,6 @@ function Hero() {
   );
 }
 
-function Hero() {
-  return (
-    <div className="min-h-[1024px] relative shrink-0 w-full md:min-h-[800px] sm:min-h-[700px]" data-name="Hero">
-      <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-        <div className="absolute bg-white inset-0" />
-        <img alt="" className="absolute max-w-none object-cover size-full" src={imgHero} />
-        <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-white via-[49.04%] via-[rgba(255,255,255,0.75)]" />
-      </div>
-      <div className="flex flex-col items-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col gap-[125px] items-center pb-[100px] pt-[48px] px-[189px] relative w-full md:gap-[80px] md:px-[40px] md:pb-[60px] sm:gap-[60px] sm:px-[20px] sm:pb-[40px]">
-          <Nav />
-          <Frame1 />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 // About Me Section
 // Frame 24 - Text eka fluid kara
 function Frame24() {
