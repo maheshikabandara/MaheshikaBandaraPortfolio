@@ -616,7 +616,7 @@ function Frame13() {
 
 function Frame29() {
   return (
-    <div className="content-stretch flex gap-[24px] h-[376px] items-center relative shrink-0 w-full lg:flex-col lg:h-auto lg:items-stretch">
+    <div className="content-stretch flex flex-row gap-[24px] h-[376px] items-stretch relative shrink-0 w-full lg:flex-col lg:h-auto">
       <Frame7 />
       <Frame10 />
       <Frame13 />
@@ -651,7 +651,6 @@ function MyServices() {
     </AnimatedSection>
   );
 }
-
 // Contact Footer Section
 function Frame37() {
   return (
