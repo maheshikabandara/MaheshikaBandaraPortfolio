@@ -39,7 +39,7 @@ const scrollToSection = (id: string) => {
 // Nav Components
 function Frame4() {
   return (
-    <div className="content-stretch flex font-['Albert_Sans:Medium',sans-serif] font-medium gap-[19px] items-center leading-[27px] relative shrink-0 text-[#fdfdfd] text-[18px] text-center whitespace-nowrap md:gap-[12px] md:text-[16px]">
+    <div className="content-stretch flex font-albert font-medium gap-[19px] items-center leading-[27px] relative shrink-0 text-[#fdfdfd] text-[18px] text-center whitespace-nowrap md:gap-[12px] md:text-[16px]">
       <p onClick={() => scrollToSection("about")} className="relative shrink-0 cursor-pointer hover:text-[#1296cc] transition-colors">
         About me
       </p>
@@ -59,7 +59,7 @@ function Frame4() {
 function Frame2() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
-      <p className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[31.2px] relative shrink-0 text-[#fdfdfd] text-[24px] text-center whitespace-nowrap">
+      <p className="font-albert font-bold leading-[31.2px] relative shrink-0 text-[#fdfdfd] text-[24px] text-center whitespace-nowrap">
         mahe.
       </p>
       <Frame4 />
@@ -68,7 +68,7 @@ function Frame2() {
         className="bg-[#1296cc] content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[12px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#0d7aa8] transition-colors md:px-[24px] md:py-[10px]"
         data-name="Button"
       >
-        <p className="font-['Inter:Medium',sans-serif] font-medium leading-[24px] not-italic relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap md:text-[14px]">
+        <p className="font-albert font-medium leading-[24px] not-italic relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap md:text-[14px]">
           Contact me
         </p>
         <div className="relative shrink-0 size-[20px]" data-name="ArrowUpRight">
@@ -133,7 +133,7 @@ function Frame() {
         className="bg-[#1296cc] content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[16px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#0d7aa8] transition-colors md:px-[24px] md:py-[12px]"
         data-name="Button"
       >
-        <p className="font-['Albert_Sans:Medium',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#f5f5f5] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">
+        <p className="font-albert font-medium leading-[30px] relative shrink-0 text-[#f5f5f5] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">
           Contact me
         </p>
         <div className="relative shrink-0 size-[24px]" data-name="ArrowUpRight">
@@ -162,7 +162,7 @@ function Frame() {
         data-name="Button"
       >
         <div aria-hidden="true" className="absolute border border-[#1e1e1e] border-solid inset-0 pointer-events-none rounded-[50px]" />
-        <p className="font-['Albert_Sans:Medium',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#1e1e1e] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">
+        <p className="font-albert font-medium leading-[30px] relative shrink-0 text-[#1e1e1e] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">
           See My Work
         </p>
         <div className="relative shrink-0 size-[24px]" data-name="ArrowUpRight">
@@ -189,7 +189,7 @@ function Frame() {
   );
 }
 
-// Frame 22 - Fluid Typography (clamp) use karala font sizes screen ekata adjust wenna haduwa
+// Frame 22
 function Frame22() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-center justify-center relative shrink-0 w-full md:gap-[16px]">
@@ -197,8 +197,8 @@ function Frame22() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
-        className="font-['Albert_Sans:SemiBold',sans-serif] font-semibold leading-[1.5] relative text-[#1e1e1e] text-center tracking-[-0.12px]"
-        style={{ fontSize: 'clamp(16px, 1.5vw, 24px)' }} // Screen eka loku weddi font ekath loku wenawa
+        className="font-albert font-semibold leading-[1.5] relative text-[#1e1e1e] text-center tracking-[-0.12px]"
+        style={{ fontSize: 'clamp(16px, 1.5vw, 24px)' }}
       >
         Hi, I'm Maheshika Bandara!
       </motion.p>
@@ -207,8 +207,8 @@ function Frame22() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
-        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.1] not-italic relative text-[#1e1e1e] text-center tracking-[-1.8px] w-full px-4"
-        style={{ fontSize: 'clamp(40px, 6.5vw, 90px)' }} // 40px indan 90px wenakan smooth eke scale wenawa
+        className="font-instrument leading-[1.1] not-italic relative text-[#1e1e1e] text-center tracking-[-1.8px] w-full px-4"
+        style={{ fontSize: 'clamp(40px, 6.5vw, 90px)' }}
       >
         Design clean, professional websites for businesses
       </motion.p>
@@ -217,7 +217,7 @@ function Frame22() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="font-['Albert_Sans:Regular',sans-serif] font-normal leading-[1.5] relative text-[#404040] text-center tracking-[-0.1px] max-w-[800px] px-4"
+        className="font-albert font-normal leading-[1.5] relative text-[#404040] text-center tracking-[-0.1px] max-w-[800px] px-4"
         style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}
       >
         Whether you don't have a website yet or your current one needs a modern refresh, I help you get online fast, look trustworthy, and attract more customers.
@@ -235,7 +235,7 @@ function Frame22() {
   );
 }
 
-// Frame 1 - Max width eka poddak loku kara Text ekata space eka denna
+// Frame 1
 function Frame1() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-center justify-center relative shrink-0 w-full max-w-[1000px] px-4">
@@ -245,40 +245,33 @@ function Frame1() {
   );
 }
 
-// Hero - min-h-screen dila, Nav eka udin thiyala content eka perfectly center kara
+// Hero
 function Hero() {
   return (
     <div className="min-h-screen relative shrink-0 w-full flex flex-col overflow-hidden" data-name="Hero">
-      
-      {/* Background Image & Gradient */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute bg-white inset-0" />
         <img alt="" className="absolute max-w-none object-cover size-full" src={imgHero} />
         <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-white via-[49.04%] via-[rgba(255,255,255,0.75)]" />
       </div>
 
-      {/* Nav Section - Top ekata align kara */}
       <div className="w-full flex justify-center pt-[32px] px-[20px] relative z-10 md:pt-[24px] sm:pt-[16px]">
         <Nav />
       </div>
 
-      {/* Main Content Section - flex-1 dammahama ithuru height eka aran justify-center nisa exactly center wenawa */}
       <div className="flex-1 flex flex-col items-center justify-center relative z-10 w-full px-[20px] pb-[80px]">
         <Frame1 />
       </div>
-
     </div>
   );
 }
 
 // About Me Section
-// Frame 24 - Text eka fluid kara
 function Frame24() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0 w-full px-4">
       <p 
-        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] max-w-[1171px]"
-        // Font size eka screen width eka (vw) ekka auto adjust wenawa (Min: 32px, Max: 56px)
+        className="font-instrument leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] max-w-[1171px]"
         style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
       >
         UI/UX Designer, and Developer with a BSc in Information Technology who helps small businesses worldwide get a clean, professional online presence that attracts more customers. I create fast, mobile-friendly websites, whether it's building your first site from scratch or giving an existing one a modern polish, and design until every page feels simple, trustworthy, and meaningful.
@@ -287,14 +280,13 @@ function Frame24() {
   );
 }
 
-// Frame 25 - Link ekath fluid kara poddak
 function Frame25() {
   return (
     <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full max-w-[1280px] md:gap-[24px]">
       <Frame24 />
       <p
         onClick={() => scrollToSection("works")}
-        className="font-['Albert_Sans:Medium',sans-serif] font-medium leading-[1.5] relative text-[#1296cc] text-center tracking-[-0.12px] w-full cursor-pointer hover:underline transition-all hover:scale-105"
+        className="font-albert font-medium leading-[1.5] relative text-[#1296cc] text-center tracking-[-0.12px] w-full cursor-pointer hover:underline transition-all hover:scale-105"
         style={{ fontSize: 'clamp(18px, 1.5vw, 24px)' }}
       >
         Explore My Work
@@ -303,14 +295,9 @@ function Frame25() {
   );
 }
 
-// AboutMe - min-h-screen saha flex center damma
 function AboutMe() {
   return (
     <AnimatedSection id="about">
-      {/* 
-        min-h-screen damma nisa me section ekath screen height eka full gannawa. 
-        flex flex-col items-center justify-center nisa perfectly center wenawa.
-      */}
       <div className="bg-white min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[40px] lg:px-[80px]" data-name="About me">
         <Frame25 />
       </div>
@@ -321,22 +308,12 @@ function AboutMe() {
 // My Works Section
 function Frame28() {
   return (
-    /* 
-      Removed fixed pixel heights/widths (e.g., h-[743px] w-[628px]).
-      Using percentages ensures this decorative block scales perfectly with the parent container.
-    */
     <div className="bg-[#cbf0ff] h-full w-[45%] md:w-[60%] sm:w-[70%] shrink-0" />
   );
 }
 
 function Frame26() {
   return (
-    /* 
-      Removed fixed min-h-[729px]. 
-      Added 'aspect-[4/3] lg:aspect-[16/9]' so the card maintains a beautiful rectangular shape 
-      and scales smoothly on any screen size.
-      Added 'hover:scale-[1.02]' for a smooth, premium hover effect.
-    */
     <div className="bg-[#fdfdfd] flex items-center justify-end overflow-hidden relative rounded-[20px] shadow-[0px_0px_12px_-6px_rgba(0,0,0,0.15)] w-full aspect-[4/3] lg:aspect-[16/9] cursor-pointer hover:shadow-[0px_0px_24px_-6px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-all duration-300">
       <Frame28 />
     </div>
@@ -347,8 +324,7 @@ function Frame27() {
   return (
     <div className="flex flex-col gap-[48px] items-center relative w-full max-w-[1280px] md:gap-[32px] px-4">
       <p 
-        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full"
-        /* Fluid typography: Automatically scales between 32px and 56px based on screen width */
+        className="font-instrument leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full"
         style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
       >
         Curated Works That Reflect Design Precision and Excellence
@@ -361,10 +337,6 @@ function Frame27() {
 function MyWorks() {
   return (
     <AnimatedSection delay={0.1} id="works">
-      {/* 
-        'min-h-screen' makes the section take up 100% of the viewport height.
-        'flex items-center justify-center' perfectly centers the content in the middle of the screen.
-      */}
       <div className="bg-[#f8fdff] min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[40px] lg:px-[80px]" data-name="My Works">
         <Frame27 />
       </div>
@@ -376,8 +348,8 @@ function MyWorks() {
 function Frame8() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start leading-[27px] relative shrink-0 w-full">
-      <p className="font-['Instrument_Serif:Regular',sans-serif] not-italic relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">New Website Creation</p>
-      <p className="font-['Albert_Sans:Regular',sans-serif] font-normal min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content]">
+      <p className="font-instrument not-italic relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">New Website Creation</p>
+      <p className="font-albert font-normal min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content]">
         I will design and build a clean, modern, mobile-friendly website from scratch on Wix Studio.
       </p>
     </div>
@@ -415,7 +387,7 @@ function Frame9() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
       <Frame3 />
-      <p className="flex-[1_0_0] font-['Albert_Sans:Regular',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
+      <p className="flex-[1_0_0] font-albert font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
         For businesses that don't have a website yet
       </p>
     </div>
@@ -442,7 +414,7 @@ function Frame16() {
       >
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[10px] relative size-full">
-            <p className="font-['Albert_Sans:Medium',sans-serif] font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
+            <p className="font-albert font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
               Contact me
             </p>
           </div>
@@ -468,10 +440,10 @@ function Frame7() {
 function Frame11() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-      <p className="font-['Instrument_Serif:Regular',sans-serif] leading-[27px] relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">
+      <p className="font-instrument leading-[27px] relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">
         Website Refresh / Rebuild
       </p>
-      <div className="font-['Albert_Sans:Regular',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content] whitespace-pre-wrap">
+      <div className="font-albert font-normal leading-[0] min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content] whitespace-pre-wrap">
         <p className="leading-[27px] mb-[10px]">For businesses with an existing website (on any platform) that looks dated or doesn't convert well. </p>
         <p className="leading-[27px]">I will give it a complete modern update by rebuilding it cleanly on Wix Studio. </p>
       </div>
@@ -510,7 +482,7 @@ function Frame12() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
       <Frame5 />
-      <p className="flex-[1_0_0] font-['Albert_Sans:Regular',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
+      <p className="flex-[1_0_0] font-albert font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
         For businesses with an existing website
       </p>
     </div>
@@ -537,7 +509,7 @@ function Frame17() {
       >
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[10px] relative size-full">
-            <p className="font-['Albert_Sans:Medium',sans-serif] font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
+            <p className="font-albert font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
               Contact me
             </p>
           </div>
@@ -563,10 +535,10 @@ function Frame10() {
 function Frame14() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-      <p className="font-['Instrument_Serif:Regular',sans-serif] leading-[27px] not-italic relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">
+      <p className="font-instrument leading-[27px] not-italic relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">
         Website Maintenance
       </p>
-      <div className="font-['Albert_Sans:Regular',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content] whitespace-pre-wrap">
+      <div className="font-albert font-normal leading-[0] min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content] whitespace-pre-wrap">
         <p className="leading-[27px] mb-[10px]">For businesses that already have a website and want it to stay fast, secure, and up-to-date. </p>
         <p className="leading-[27px]">I will handle regular updates, backups, minor edits, and monthly checks. </p>
       </div>
@@ -605,7 +577,7 @@ function Frame21() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
       <Frame6 />
-      <p className="flex-[1_0_0] font-['Albert_Sans:Regular',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
+      <p className="flex-[1_0_0] font-albert font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
         For businesses that already have a website
       </p>
     </div>
@@ -632,7 +604,7 @@ function Frame19() {
       >
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[10px] relative size-full">
-            <p className="font-['Albert_Sans:Medium',sans-serif] font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
+            <p className="font-albert font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
               Contact me
             </p>
           </div>
@@ -657,11 +629,6 @@ function Frame13() {
 
 function Frame29() {
   return (
-    /* 
-      Grid layout handles the horizontal spacing perfectly.
-      'lg:grid-cols-3' makes it a row of 3 on desktop.
-      'items-stretch' ensures all cards are the exact same height.
-    */
     <div className="content-stretch grid grid-cols-1 lg:grid-cols-3 gap-[24px] items-stretch relative w-full max-w-[1280px]">
       <Frame7 />
       <Frame10 />
@@ -674,8 +641,7 @@ function Frame33() {
   return (
     <div className="content-stretch flex flex-col gap-[48px] items-center relative w-full md:gap-[40px] px-4 lg:px-0 z-10">
       <p 
-        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative text-[#fdfdfd] text-center tracking-[-0.28px] max-w-[800px] w-full"
-        /* Fluid typography: Automatically scales between 32px and 56px */
+        className="font-instrument leading-[1.2] not-italic relative text-[#fdfdfd] text-center tracking-[-0.28px] max-w-[800px] w-full"
         style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
       >
         Services Designed to Deliver Clean Modern Digital Experiences
@@ -688,22 +654,13 @@ function Frame33() {
 function MyServices() {
   return (
     <AnimatedSection delay={0.1} id="services">
-      {/* 
-        'min-h-screen' and 'flex items-center justify-center' perfectly centers 
-        the services block vertically in the viewport, regardless of screen size.
-      */}
       <div className="min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[40px] lg:px-[80px]" data-name="My Services">
-        
-        {/* Background Image Setup */}
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute bg-[#fdfdfd] inset-0" />
           <img alt="" className="absolute max-w-none object-cover w-full h-full" src={imgHero} />
-          {/* Fades the image slightly at the top so text is readable */}
           <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-[46.487%] to-white" />
         </div>
-        
         <Frame33 />
-
       </div>
     </AnimatedSection>
   );
@@ -714,8 +671,8 @@ function Frame37() {
   return (
     <div className="content-stretch flex items-center relative shrink-0 w-full">
       <div 
-        className="font-['Instrument_Serif:Regular',sans-serif] not-italic relative text-[#fdfdfd] tracking-[-0.32px] w-full"
-        style={{ fontSize: 'clamp(40px, 6vw, 80px)' }} // Loku screen waladi auto loku wenawa
+        className="font-instrument not-italic relative text-[#fdfdfd] tracking-[-0.32px] w-full"
+        style={{ fontSize: 'clamp(40px, 6vw, 80px)' }} 
       >
         <p className="leading-[1.1] mb-0">Ready to Build Something</p>
         <p className="leading-[1.1]">Modern and Impactful?</p>
@@ -724,7 +681,6 @@ function Frame37() {
   );
 }
 
-// Links - Font size auto adjust wenna hadala thiyenawa
 function Frame34() {
   return (
     <a
@@ -732,7 +688,7 @@ function Frame34() {
       className="content-stretch flex gap-[12px] md:gap-[16px] items-center relative shrink-0 cursor-pointer hover:text-[#1296cc] transition-colors group"
     >
       <p 
-        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
+        className="font-instrument leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
         style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
       >
         Email
@@ -757,7 +713,7 @@ function Frame35() {
       className="content-stretch flex gap-[12px] md:gap-[16px] items-center relative shrink-0 w-full cursor-pointer hover:text-[#1296cc] transition-colors group"
     >
       <p 
-        className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
+        className="font-instrument leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
         style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
       >
         WhatsApp
@@ -798,7 +754,7 @@ function LiveTime() {
   }, []);
 
   return (
-    <div className="content-stretch flex font-['Instrument_Serif:Regular',sans-serif] gap-[38px] items-center leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[24px] text-center tracking-[-0.12px] md:gap-[20px] md:text-[18px] sm:text-[16px]">
+    <div className="content-stretch flex font-instrument gap-[38px] items-center leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[24px] text-center tracking-[-0.12px] md:gap-[20px] md:text-[18px] sm:text-[16px]">
       <p className="relative shrink-0 whitespace-nowrap">Based on Sri Lanka</p>
       <p className="relative shrink-0 whitespace-nowrap">Local Time {time}</p>
     </div>
@@ -818,10 +774,6 @@ function Frame39() {
 
 function Frame40() {
   return (
-    /* 
-      Unnecessary classes ayin karala w-full saha max-w-[1280px] damma, 
-      ethakota center wela lassanata width eka gannawa.
-    */
     <div className="w-full max-w-[1280px] mx-auto px-[20px] md:px-[40px] lg:px-[80px]">
       <div className="flex flex-col gap-[40px] md:gap-[86px] w-full">
         <Frame37 />
@@ -835,26 +787,20 @@ function Frame40() {
 function ContactFooter() {
   return (
     <AnimatedSection delay={0.1} id="contact">
-      {/* 
-        min-h-screen damma nisa footer eka full viewport height eka gannawa.
-        pt-[100px] thiyenne top spacing ekata.
-      */}
       <div className="bg-[#1e1e1e] min-h-screen flex flex-col pt-[80px] md:pt-[120px] relative w-full overflow-hidden" data-name="Contact + Footer">
         
-        {/* flex-1 saha justify-center dammahama content eka "mahe." text ekatai uda edge ekatai madin center wenawa */}
         <div className="flex-1 flex flex-col justify-center w-full max-w-[1280px] mx-auto px-[20px] md:px-[40px] lg:px-[80px] z-10">
           <Frame37 />
           <Frame39 />
         </div>
         
-        {/* Giant "mahe." text eka - mb-[-1%] saha leading-[0.75] nisa bottom edge ekatama thada wela, crop wela lassanata penawa */}
         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden pointer-events-none select-none">
           <p
-            className="font-['Albert_Sans:Bold',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter"
+            className="font-albert font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter"
             style={{ 
-              fontSize: '28vw',     /* Screen width ekath ekka auto scale wenawa */
-              lineHeight: '0.75',   /* Text crop wenna */
-              marginBottom: '-1%'   /* Bottom ekata stick wenna */
+              fontSize: '28vw',
+              lineHeight: '0.75',
+              marginBottom: '-1%'
             }}
           >
             mahe.
