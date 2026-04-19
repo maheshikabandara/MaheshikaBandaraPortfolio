@@ -261,32 +261,36 @@ function AboutMe() {
   );
 }
 
-// --- New My Works Section (Bento Grid Style) ---
+// --- Updated Project Card ---
 function ProjectCard({ title, imageSrc, isFullWidth = false, link = "#" }: { title: string, imageSrc: string, isFullWidth?: boolean, link?: string }) {
   return (
     <a 
       href={link} 
-      className={`group bg-white rounded-[24px] p-[16px] md:p-[24px] flex flex-col gap-[20px] cursor-pointer hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 ${isFullWidth ? 'lg:col-span-2' : 'col-span-1'}`}
+      className={`group bg-white rounded-[24px] p-[16px] md:p-[24px] lg:p-[32px] flex flex-col gap-[20px] md:gap-[32px] cursor-pointer hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 ${isFullWidth ? 'lg:col-span-2' : 'col-span-1'}`}
     >
       <div className="w-full rounded-[16px] overflow-hidden bg-[#f5f5f5] flex items-center justify-center">
         <img 
           src={imageSrc} 
           alt={title} 
-          className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" 
+          className="w-full h-auto object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out" 
         />
       </div>
-      <div className="flex items-center gap-[12px] md:gap-[16px]">
+      
+      <div className="flex items-center justify-between w-full">
         <p 
           className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-none"
-          style={{ fontSize: 'clamp(28px, 3vw, 44px)' }}
+          // Screen eka loku weddi font eka 56px wenakan scale wenawa
+          style={{ fontSize: 'clamp(28px, 3.5vw, 56px)' }}
         >
           {title}
         </p>
         <svg 
-          className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] text-[#1e1e1e] group-hover:text-[#1296cc] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" 
+          className="text-[#1e1e1e] group-hover:text-[#1296cc] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" 
           fill="none" 
           viewBox="0 0 24 24" 
           stroke="currentColor"
+          // Screen eka loku weddi arrow icon ekath auto scale wenawa
+          style={{ width: 'clamp(24px, 3vw, 48px)', height: 'clamp(24px, 3vw, 48px)' }}
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
         </svg>
@@ -295,25 +299,33 @@ function ProjectCard({ title, imageSrc, isFullWidth = false, link = "#" }: { tit
   );
 }
 
+// --- Updated My Works Section ---
 function MyWorks() {
   return (
     <AnimatedSection delay={0.1} id="works">
-      <div className="bg-[#f8fdff] min-h-screen relative shrink-0 w-full py-[80px] md:py-[120px]" data-name="My Works">
-        <div className="w-full max-w-[1280px] mx-auto px-[20px] md:px-[60px] lg:px-[120px] flex flex-col items-center gap-[60px] md:gap-[80px]">
+      {/* max-w ayin karala kelinma wrapper ekata px-[120px] padding eka damma */}
+      <div className="bg-[#f8fdff] min-h-screen flex flex-col justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="My Works">
+        
+        <div className="w-full flex flex-col items-center gap-[60px] md:gap-[80px]">
+          
           <p 
             className="font-['Instrument_Serif',serif] leading-[1.1] text-center tracking-[-0.28px] w-full"
-            style={{ fontSize: 'clamp(40px, 5vw, 64px)' }}
+            // Title ekath screen ekata anuwa 80px wenakan loku wenawa
+            style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}
           >
             <span className="text-[#1e1e1e]">Curated Works That Reflect</span><br/>
             <span className="text-[#6d6d6d]">Design Precision and Excellence</span>
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] md:gap-[32px] w-full">
+
+          {/* Grid ekath dan w-full nisa mulu screen width ekama (padding arila) gannawa */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] md:gap-[40px] w-full">
             <ProjectCard title="Zapnote" imageSrc={imgZapnote} />
             <ProjectCard title="Fitnity" imageSrc={imgFitnity} />
             <ProjectCard title="Eleanor Vance Weddings" imageSrc={imgEleanor} isFullWidth={true} />
             <ProjectCard title="Elevate Support Group" imageSrc={imgElevate} />
             <ProjectCard title="Sunday Companions" imageSrc={imgSunday} />
           </div>
+          
         </div>
       </div>
     </AnimatedSection>
