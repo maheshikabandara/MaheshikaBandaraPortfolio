@@ -220,8 +220,9 @@ function Frame22() {
 //Hero
 function Hero() {
   return (
-    <div className="min-h-[100dvh] relative shrink-0 w-full flex flex-col" data-name="Hero">
-      <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+    // min-h-[100dvh] damma mobile scroll eka hira wenne nathi wenna
+    <div className="min-h-[100dvh] relative shrink-0 w-full flex flex-col overflow-hidden" data-name="Hero">
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute bg-white inset-0" />
         <img alt="" className="absolute max-w-none object-cover size-full" src={imgHero} />
         <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-white via-[49.04%] via-[rgba(255,255,255,0.75)]" />
@@ -475,7 +476,7 @@ function ContactFooter() {
 
 export default function AnimatedPortfolio() {
   return (
-    <div className="relative flex flex-col w-full bg-white">
+    <div className="w-full bg-white relative flex flex-col overflow-x-hidden">
       <Hero />
       <AboutMe />
       <MyWorks />
