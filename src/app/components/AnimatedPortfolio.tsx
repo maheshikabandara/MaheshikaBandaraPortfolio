@@ -402,11 +402,17 @@ function ContactFooter() {
           
           <div className="flex flex-col gap-[60px] md:gap-[100px] w-full">
             <div 
-              className="font-['Instrument_Serif',serif] text-[#fdfdfd] w-full"
+              className="font-['Instrument_Serif',serif] w-full"
               style={{ fontSize: 'clamp(40px, 6vw, 100px)' }} 
             >
-              <p className="leading-[1.1]">Ready to Build Something</p>
-              <p className="leading-[1.1]">Modern and Impactful?</p>
+              {/* Palaweni line eka 50% opacity */}
+              <p className="leading-[1.1] text-[#fdfdfd]/50">Ready to Build Something</p>
+              
+              {/* Deweni line eka - kalli dekakata keduwa */}
+              <p className="leading-[1.1]">
+                <span className="text-[#fdfdfd]/50">Modern and Impactful?</span>
+                <span className="text-[#fdfdfd]"> Let's talk!</span>
+              </p>
             </div>
 
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between w-full gap-[40px] md:gap-0">
