@@ -4,7 +4,7 @@ import { formatInTimeZone } from "date-fns-tz";
 import svgPaths from "../../imports/ContactFooter/svg-f4p2vld91i";
 import imgHero from "../../imports/Portfolio-1/9b06e550a03f9722c147c637abe54e4634f08454.png";
 import imgFrame192 from "../../imports/Portfolio-1/a1889c3ea7bf7237fd5d6a613633cd9a624d7694.png";
-
+ 
 function AnimatedSection({ children, delay = 0, id }: { children: React.ReactNode; delay?: number; id?: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
