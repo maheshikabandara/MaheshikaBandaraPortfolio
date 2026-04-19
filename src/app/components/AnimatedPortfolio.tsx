@@ -122,30 +122,6 @@ function Nav() {
   );
 }
 
-// Hero Component eka update kara (Gap eka wadi karanna)
-function Hero() {
-  return (
-    <div className="min-h-screen relative shrink-0 w-full flex flex-col overflow-hidden" data-name="Hero">
-      <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute bg-white inset-0" />
-        <img alt="" className="absolute max-w-none object-cover size-full" src={imgHero} />
-        <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-white via-[49.04%] via-[rgba(255,255,255,0.75)]" />
-      </div>
-
-      <div className="w-full flex justify-center pt-[32px] px-[20px] md:px-[60px] lg:px-[120px] relative z-20">
-        <Nav />
-      </div>
-
-      {/* Image ekai Nav ekai athara mt-[40px] damala space eka wadi kara */}
-      <div className="flex-1 flex flex-col items-center justify-center relative z-10 w-full px-[20px] md:px-[60px] lg:px-[120px] pb-[80px] mt-[40px]">
-        <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full">
-          <Frame23 />
-          <Frame22 />
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // Hero Section Components
 function Frame23() {
@@ -232,6 +208,7 @@ function Frame22() {
   );
 }
 
+//Hero
 function Hero() {
   return (
     <div className="min-h-screen relative shrink-0 w-full flex flex-col overflow-hidden" data-name="Hero">
@@ -241,11 +218,12 @@ function Hero() {
         <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-white via-[49.04%] via-[rgba(255,255,255,0.75)]" />
       </div>
 
-      <div className="w-full flex justify-center pt-[32px] px-[20px] md:px-[60px] lg:px-[120px] relative z-10">
+      <div className="w-full flex justify-center pt-[32px] px-[20px] md:px-[60px] lg:px-[120px] relative z-20">
         <Nav />
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center relative z-10 w-full px-[20px] md:px-[60px] lg:px-[120px] pb-[80px]">
+      {/* Image ekai Nav ekai athara mt-[40px] damala space eka wadi kara */}
+      <div className="flex-1 flex flex-col items-center justify-center relative z-10 w-full px-[20px] md:px-[60px] lg:px-[120px] pb-[80px] mt-[40px]">
         <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full">
           <Frame23 />
           <Frame22 />
@@ -254,6 +232,7 @@ function Hero() {
     </div>
   );
 }
+
 
 // About Me Section
 function AboutMe() {
