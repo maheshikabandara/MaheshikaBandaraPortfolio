@@ -4,6 +4,11 @@ import { formatInTimeZone } from "date-fns-tz";
 import svgPaths from "../../imports/ContactFooter/svg-f4p2vld91i";
 import imgHero from "../../imports/Portfolio-1/9b06e550a03f9722c147c637abe54e4634f08454.png";
 import imgFrame192 from "../../imports/Portfolio-1/a1889c3ea7bf7237fd5d6a613633cd9a624d7694.png";
+import imgZapnote from "../../imports/Zapnote Hero 1.png";
+import imgFitnity from "../../imports/Fitnity Hero.png";
+import imgEleanor from "../../imports/Eleanor Vance Weddings Hero.png";
+import imgElevate from "../../imports/Elevate Support Group Hero.png";
+import imgSunday from "../../imports/Sunday Companions Hero.png";
  
 function AnimatedSection({ children, delay = 0, id }: { children: React.ReactNode; delay?: number; id?: string }) {
   const ref = useRef(null);
@@ -290,83 +295,74 @@ function MyWorks() {
 }
 
 // Services Section
-function ServiceCard({ title, description, target }) {
+function ProjectCard({ title, imageSrc, isFullWidth = false, link = "#" }) {
   return (
-    <div className="bg-white flex-1 flex flex-col h-full relative rounded-[8px] w-full hover:scale-[1.02] transition-transform duration-300">
-      <div className="overflow-clip rounded-[inherit] flex-1 flex flex-col w-full h-full border border-[#f2f2f2]">
-        <div className="flex-1 flex flex-col items-start justify-between px-[24px] py-[32px] md:px-[40px] md:py-[48px] w-full h-full gap-[40px]">
-          
-          <div className="flex flex-col gap-[32px] w-full">
-            <div className="flex flex-col gap-[16px] w-full">
-              <p className="font-['Instrument_Serif',serif] text-[#1296cc] whitespace-nowrap" style={{ fontSize: 'clamp(24px, 2.5vw, 40px)' }}>
-                {title}
-              </p>
-              <p className="font-['Albert_Sans',sans-serif] text-[#1e1e1e] leading-[1.6]" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>
-                {description}
-              </p>
-            </div>
-            
-            <div className="flex gap-[12px] items-center w-full">
-              <div className="bg-[#f5f5f5] rounded-[4px] shrink-0 flex items-center justify-center p-1">
-                <svg className="size-[16px] lg:size-[20px]" fill="none" viewBox="0 0 13.5 10">
-                  <path d="M1 5.5L4.5 9L12.5 1" stroke="#1296CC" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                </svg>
-              </div>
-              <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d]" style={{ fontSize: 'clamp(14px, 1vw, 20px)' }}>
-                {target}
-              </p>
-            </div>
-          </div>
-
-          <div
-            onClick={() => scrollToSection("contact")}
-            className="bg-[#1296cc] rounded-[100px] w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-auto py-[16px] flex justify-center items-center"
-          >
-            <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] whitespace-nowrap" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>
-              Contact me
-            </p>
-          </div>
-
-        </div>
+    <a 
+      href={link} 
+      className={`group bg-white rounded-[24px] p-[16px] md:p-[24px] flex flex-col gap-[20px] cursor-pointer hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 ${isFullWidth ? 'lg:col-span-2' : 'col-span-1'}`}
+    >
+      {/* Image Container - Hero image eka methana render wenawa */}
+      <div className="w-full rounded-[16px] overflow-hidden bg-[#f5f5f5] flex items-center justify-center">
+        <img 
+          src={imageSrc} 
+          alt={title} 
+          className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" 
+        />
       </div>
-    </div>
+      
+      {/* Title & Arrow */}
+      <div className="flex items-center gap-[12px] md:gap-[16px]">
+        <p 
+          className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-none"
+          style={{ fontSize: 'clamp(28px, 3vw, 44px)' }}
+        >
+          {title}
+        </p>
+        <svg 
+          className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] text-[#1e1e1e] group-hover:text-[#1296cc] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+        </svg>
+      </div>
+    </a>
   );
 }
 
-function MyServices() {
+function MyWorks() {
   return (
-    <AnimatedSection delay={0.1} id="services">
-      <div className="min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="My Services">
-        <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
-          <div className="absolute bg-[#fdfdfd] inset-0" />
-          <img alt="" className="absolute max-w-none object-cover w-full h-full" src={imgHero} />
-          <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-[46.487%] to-white" />
-        </div>
+    <AnimatedSection delay={0.1} id="works">
+      <div className="bg-[#f8fdff] min-h-screen relative shrink-0 w-full py-[80px] md:py-[120px]" data-name="My Works">
         
-        <div className="flex flex-col gap-[60px] items-center relative w-full z-10">
-          <p 
-            className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full lg:w-[70%]"
-            style={{ fontSize: 'clamp(32px, 5vw, 80px)' }}
-          >
-            Services Designed to Deliver Clean Modern Digital Experiences
-          </p>
+        <div className="w-full max-w-[1280px] mx-auto px-[20px] md:px-[60px] lg:px-[120px] flex flex-col items-center gap-[60px] md:gap-[80px]">
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-[24px] xl:gap-[40px] items-stretch relative w-full">
-            <ServiceCard 
-              title="New Website Creation" 
-              description="I will design and build a clean, modern, mobile-friendly website from scratch on Wix Studio." 
-              target="For businesses that don't have a website yet" 
+          <p 
+            className="font-['Instrument_Serif',serif] leading-[1.1] text-center tracking-[-0.28px] w-full"
+            style={{ fontSize: 'clamp(40px, 5vw, 64px)' }}
+          >
+            <span className="text-[#1e1e1e]">Curated Works That Reflect</span><br/>
+            <span className="text-[#6d6d6d]">Design Precision and Excellence</span>
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] md:gap-[32px] w-full">
+            
+            {/* Palaweni Peliya - Zapnote & Fitnity */}
+            <ProjectCard title="Zapnote" imageSrc={imgZapnote} />
+            <ProjectCard title="Fitnity" imageSrc={imgFitnity} />
+
+            {/* Deweni Peliya - Eleanor Vance Weddings (Full Width isFullWidth={true} nisa) */}
+            <ProjectCard 
+              title="Eleanor Vance Weddings" 
+              imageSrc={imgEleanor} 
+              isFullWidth={true} 
             />
-            <ServiceCard 
-              title="Website Refresh / Rebuild" 
-              description="For businesses with an existing website (on any platform) that looks dated or doesn't convert well. I will give it a complete modern update by rebuilding it cleanly on Wix Studio." 
-              target="For businesses with an existing website" 
-            />
-            <ServiceCard 
-              title="Website Maintenance" 
-              description="For businesses that already have a website and want it to stay fast, secure, and up-to-date. I will handle regular updates, backups, minor edits, and monthly checks." 
-              target="For businesses that already have a website" 
-            />
+
+            {/* Thunweni Peliya - Elevate & Sunday Companions */}
+            <ProjectCard title="Elevate Support Group" imageSrc={imgElevate} />
+            <ProjectCard title="Sunday Companions" imageSrc={imgSunday} />
+            
           </div>
         </div>
       </div>
