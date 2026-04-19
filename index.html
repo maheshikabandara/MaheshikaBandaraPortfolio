@@ -5,10 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio website with animations</title>
     <style>
+  /* Default CSS walin height lock wena eka nawaththanna !important damma */
   html, body { 
-    margin: 0; 
-    padding: 0; 
-    scroll-behavior: smooth; 
+    margin: 0 !important; 
+    padding: 0 !important; 
+    height: auto !important; 
+    min-height: 100% !important;
+    overflow-x: hidden !important; 
+    overflow-y: auto !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important; /* Mobile scroll eka butter wage smooth wenna */
+  }
+  
+  /* React eke main container eke height lock eka kadanna */
+  #root { 
+    height: auto !important;
+    min-height: 100% !important;
+    display: block !important;
   }
 </style>
     
