@@ -415,7 +415,7 @@ function ContactFooter() {
               marginBottom: '-1%'
             }}
           >
-            mahe.
+            maheux.
           </p>
         </div>
 
