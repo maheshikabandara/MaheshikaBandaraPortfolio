@@ -616,7 +616,7 @@ function Frame13() {
 
 function Frame29() {
   return (
-    <div className="content-stretch flex gap-[24px] h-[376px] items-center relative shrink-0 w-full lg:flex-col lg:h-auto">
+    <div className="content-stretch flex gap-[24px] h-[376px] items-center relative shrink-0 w-full lg:flex-col lg:h-auto lg:items-stretch">
       <Frame7 />
       <Frame10 />
       <Frame13 />
@@ -731,7 +731,7 @@ function LiveTime() {
   }, []);
 
   return (
-    <div className="content-stretch flex font-['Instrument_Serif:Regular',sans-serif] gap-[38px] items-end leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[24px] tracking-[-0.12px] md:gap-[20px] md:text-[18px] sm:text-[16px] sm:flex-col sm:items-start sm:gap-[8px]">
+    <div className="content-stretch flex font-['Instrument_Serif:Regular',sans-serif] gap-[38px] items-center leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[24px] text-center tracking-[-0.12px] md:gap-[20px] md:text-[18px] sm:text-[16px]">
       <p className="relative shrink-0 whitespace-nowrap">Based on Sri Lanka</p>
       <p className="relative shrink-0 whitespace-nowrap">Local Time {time}</p>
     </div>
@@ -740,9 +740,11 @@ function LiveTime() {
 
 function Frame39() {
   return (
-    <div className="content-stretch flex items-end justify-between relative shrink-0 w-full max-w-[1280px] md:flex-col md:items-start md:gap-[40px] sm:gap-[30px]">
+    <div className="content-stretch flex items-end justify-between relative shrink-0 w-[1280px] lg:w-full md:flex-col md:items-start md:gap-[40px] sm:gap-[30px]">
       <Frame36 />
-      <LiveTime />
+      <div className="flex items-end justify-end">
+        <LiveTime />
+      </div>
     </div>
   );
 }
@@ -763,9 +765,14 @@ function ContactFooter() {
     <AnimatedSection delay={0.1} id="contact">
       <div className="bg-[#1e1e1e] content-stretch flex flex-col items-start justify-between pt-[90px] relative w-full md:pt-[60px] sm:pt-[40px]" data-name="Contact + Footer">
         <Frame40 />
-        <p className="font-['Albert_Sans:Bold',sans-serif] font-bold h-[516px] leading-[671.598px] relative shrink-0 text-[#fdfdfd] text-[516.614px] text-center w-full md:text-[300px] md:h-[300px] md:leading-[390px] sm:text-[200px] sm:h-[200px] sm:leading-[260px]">
-          mahe.
-        </p>
+        <div className="relative w-full overflow-hidden flex items-center justify-center">
+          <p
+            className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[1.3] relative text-[#fdfdfd] text-center whitespace-nowrap"
+            style={{ fontSize: 'clamp(150px, 35.87vw, 516.614px)' }}
+          >
+            mahe.
+          </p>
+        </div>
       </div>
     </AnimatedSection>
   );
