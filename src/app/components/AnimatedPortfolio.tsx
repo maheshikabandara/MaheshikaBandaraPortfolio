@@ -273,28 +273,6 @@ function AboutMe() {
   );
 }
 
-// My Works Section
-function MyWorks() {
-  return (
-    <AnimatedSection delay={0.1} id="works">
-      <div className="bg-[#f8fdff] min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="My Works">
-        <div className="flex flex-col gap-[48px] items-center relative w-full">
-          <p 
-            className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full"
-            style={{ fontSize: 'clamp(32px, 5vw, 80px)' }}
-          >
-            Curated Works That Reflect Design Precision and Excellence
-          </p>
-          <div className="bg-[#fdfdfd] flex items-center justify-end overflow-hidden relative rounded-[20px] shadow-[0px_0px_12px_-6px_rgba(0,0,0,0.15)] w-full aspect-[4/3] lg:aspect-[21/9] cursor-pointer hover:shadow-[0px_0px_24px_-6px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-all duration-300">
-            <div className="bg-[#cbf0ff] h-full w-[45%] md:w-[60%] shrink-0" />
-          </div>
-        </div>
-      </div>
-    </AnimatedSection>
-  );
-}
-
-// Services Section
 function ProjectCard({ title, imageSrc, isFullWidth = false, link = "#" }) {
   return (
     <a 
@@ -331,6 +309,7 @@ function ProjectCard({ title, imageSrc, isFullWidth = false, link = "#" }) {
   );
 }
 
+// My Works Section
 function MyWorks() {
   return (
     <AnimatedSection delay={0.1} id="works">
@@ -363,6 +342,91 @@ function MyWorks() {
             <ProjectCard title="Elevate Support Group" imageSrc={imgElevate} />
             <ProjectCard title="Sunday Companions" imageSrc={imgSunday} />
             
+          </div>
+        </div>
+      </div>
+    </AnimatedSection>
+  );
+}
+
+// Services Section
+function ServiceCard({ title, description, target }) {
+  return (
+    <div className="bg-white flex-1 flex flex-col h-full relative rounded-[8px] w-full hover:scale-[1.02] transition-transform duration-300">
+      <div className="overflow-clip rounded-[inherit] flex-1 flex flex-col w-full h-full border border-[#f2f2f2]">
+        <div className="flex-1 flex flex-col items-start justify-between px-[24px] py-[32px] md:px-[40px] md:py-[48px] w-full h-full gap-[40px]">
+          
+          <div className="flex flex-col gap-[32px] w-full">
+            <div className="flex flex-col gap-[16px] w-full">
+              <p className="font-['Instrument_Serif',serif] text-[#1296cc] whitespace-nowrap" style={{ fontSize: 'clamp(24px, 2.5vw, 40px)' }}>
+                {title}
+              </p>
+              <p className="font-['Albert_Sans',sans-serif] text-[#1e1e1e] leading-[1.6]" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>
+                {description}
+              </p>
+            </div>
+            
+            <div className="flex gap-[12px] items-center w-full">
+              <div className="bg-[#f5f5f5] rounded-[4px] shrink-0 flex items-center justify-center p-1">
+                <svg className="size-[16px] lg:size-[20px]" fill="none" viewBox="0 0 13.5 10">
+                  <path d="M1 5.5L4.5 9L12.5 1" stroke="#1296CC" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                </svg>
+              </div>
+              <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d]" style={{ fontSize: 'clamp(14px, 1vw, 20px)' }}>
+                {target}
+              </p>
+            </div>
+          </div>
+
+          <div
+            onClick={() => scrollToSection("contact")}
+            className="bg-[#1296cc] rounded-[100px] w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-auto py-[16px] flex justify-center items-center"
+          >
+            <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] whitespace-nowrap" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>
+              Contact me
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MyServices() {
+  return (
+    <AnimatedSection delay={0.1} id="services">
+      <div className="min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="My Services">
+        <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
+          <div className="absolute bg-[#fdfdfd] inset-0" />
+          <img alt="" className="absolute max-w-none object-cover w-full h-full" src={imgHero} />
+          <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-[46.487%] to-white" />
+        </div>
+        
+        <div className="flex flex-col gap-[60px] items-center relative w-full z-10">
+          <p 
+            className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full lg:w-[70%]"
+            style={{ fontSize: 'clamp(32px, 5vw, 80px)' }}
+          >
+            Services Designed to Deliver Clean Modern Digital Experiences
+          </p>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-[24px] xl:gap-[40px] items-stretch relative w-full">
+            <ServiceCard 
+              title="New Website Creation" 
+              description="I will design and build a clean, modern, mobile-friendly website from scratch on Wix Studio." 
+              target="For businesses that don't have a website yet" 
+            />
+            <ServiceCard 
+              title="Website Refresh / Rebuild" 
+              description="For businesses with an existing website (on any platform) that looks dated or doesn't convert well. I will give it a complete modern update by rebuilding it cleanly on Wix Studio." 
+              target="For businesses with an existing website" 
+            />
+            <ServiceCard 
+              title="Website Maintenance" 
+              description="For businesses that already have a website and want it to stay fast, secure, and up-to-date. I will handle regular updates, backups, minor edits, and monthly checks." 
+              target="For businesses that already have a website" 
+            />
           </div>
         </div>
       </div>
