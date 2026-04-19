@@ -37,56 +37,113 @@ const scrollToSection = (id: string) => {
 };
 
 // Nav Components
-function Frame4() {
-  return (
-    <div className="content-stretch flex font-['Albert_Sans',sans-serif] font-medium gap-[19px] items-center leading-[27px] relative shrink-0 text-[#fdfdfd] text-[18px] text-center whitespace-nowrap md:gap-[12px] md:text-[16px]">
-      <p onClick={() => scrollToSection("about")} className="relative shrink-0 cursor-pointer hover:text-[#1296cc] transition-colors">
-        About me
-      </p>
-      <p onClick={() => scrollToSection("services")} className="relative shrink-0 cursor-pointer hover:text-[#1296cc] transition-colors">
-        Services
-      </p>
-      <p onClick={() => scrollToSection("works")} className="relative shrink-0 cursor-pointer hover:text-[#1296cc] transition-colors">
-        My Works
-      </p>
-      <p onClick={() => scrollToSection("contact")} className="relative shrink-0 cursor-pointer hover:text-[#1296cc] transition-colors">
-        Testimonials
-      </p>
-    </div>
-  );
-}
-
-function Frame2() {
-  return (
-    <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
-      <p className="font-['Albert_Sans',sans-serif] font-bold leading-[31.2px] relative shrink-0 text-[#fdfdfd] text-[24px] text-center whitespace-nowrap">
-        maheux.
-      </p>
-      <Frame4 />
-      <div
-        onClick={() => scrollToSection("contact")}
-        className="bg-[#1296cc] content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[12px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#0d7aa8] transition-colors md:px-[24px] md:py-[10px]"
-        data-name="Button"
-      >
-        <p className="font-['Albert_Sans',sans-serif] font-medium leading-[24px] not-italic relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap md:text-[14px]">
-          Contact me
-        </p>
-      </div>
-    </div>
-  );
-}
-
+// Nav Components
 function Nav() {
+  // Menu eka open da close da kiyala track karanna state ekak
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Hamburger eka click kalama menu eka toggle wenawa
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  // Link ekak click kalama scroll wela menu eka auto close wenawa
+  const handleScroll = (id) => {
+    scrollToSection(id);
+    setIsOpen(false);
+  };
+
   return (
     <motion.div
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="bg-[rgba(253,253,253,0.1)] backdrop-blur-md content-stretch flex flex-col items-center justify-center overflow-clip px-[24px] py-[12px] relative rounded-[20px] shrink-0 w-full md:px-[16px] md:py-[10px]"
+      className="bg-[rgba(253,253,253,0.1)] backdrop-blur-md flex flex-col justify-center px-[24px] py-[12px] md:px-[24px] md:py-[10px] relative rounded-[20px] w-full max-w-[1062px] z-50 overflow-hidden"
       data-name="Nav"
     >
-      <Frame2 />
+      <div className="flex items-center justify-between w-full">
+        
+        {/* Left Side: Logo */}
+        <p className="font-['Albert_Sans',sans-serif] font-bold text-[#fdfdfd] text-[24px] whitespace-nowrap">
+          maheux.
+        </p>
+
+        {/* Desktop Links (Mobile eke penne naha) */}
+        <div className="hidden md:flex font-['Albert_Sans',sans-serif] font-medium gap-[19px] items-center text-[#fdfdfd] text-[16px]">
+          <p onClick={() => handleScroll("about")} className="cursor-pointer hover:text-[#1296cc] transition-colors">About me</p>
+          <p onClick={() => handleScroll("services")} className="cursor-pointer hover:text-[#1296cc] transition-colors">Services</p>
+          <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Works</p>
+          <p onClick={() => handleScroll("contact")} className="cursor-pointer hover:text-[#1296cc] transition-colors">Testimonials</p>
+        </div>
+
+        {/* Desktop Button (Mobile eke penne naha) */}
+        <div
+          onClick={() => handleScroll("contact")}
+          className="hidden md:flex bg-[#1296cc] px-[24px] py-[10px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] transition-colors items-center justify-center"
+        >
+          <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] text-[14px] whitespace-nowrap">Contact me</p>
+        </div>
+
+        {/* Right Side: Hamburger Icon (Desktop eke penne naha) */}
+        <div className="md:hidden flex items-center justify-center cursor-pointer text-white" onClick={toggleMenu}>
+          {isOpen ? (
+            // Close (X) Icon
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            // Hamburger Menu Icon
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </div>
+
+      </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <motion.div 
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          className="md:hidden flex flex-col items-center gap-[16px] w-full pt-[24px] pb-[10px] font-['Albert_Sans',sans-serif] text-white"
+        >
+          <p onClick={() => handleScroll("about")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">About me</p>
+          <p onClick={() => handleScroll("services")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">Services</p>
+          <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Works</p>
+          <p onClick={() => handleScroll("contact")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">Testimonials</p>
+          <div
+            onClick={() => handleScroll("contact")}
+            className="bg-[#1296cc] px-[32px] py-[12px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] mt-[10px] w-full text-center"
+          >
+            <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] text-[18px]">Contact me</p>
+          </div>
+        </motion.div>
+      )}
     </motion.div>
+  );
+}
+
+// Hero Component eka update kara (Gap eka wadi karanna)
+function Hero() {
+  return (
+    <div className="min-h-screen relative shrink-0 w-full flex flex-col overflow-hidden" data-name="Hero">
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute bg-white inset-0" />
+        <img alt="" className="absolute max-w-none object-cover size-full" src={imgHero} />
+        <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-white via-[49.04%] via-[rgba(255,255,255,0.75)]" />
+      </div>
+
+      <div className="w-full flex justify-center pt-[32px] px-[20px] md:px-[60px] lg:px-[120px] relative z-20">
+        <Nav />
+      </div>
+
+      {/* Image ekai Nav ekai athara mt-[40px] damala space eka wadi kara */}
+      <div className="flex-1 flex flex-col items-center justify-center relative z-10 w-full px-[20px] md:px-[60px] lg:px-[120px] pb-[80px] mt-[40px]">
+        <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full">
+          <Frame23 />
+          <Frame22 />
+        </div>
+      </div>
+    </div>
   );
 }
 
