@@ -1,9 +1,13 @@
 import { motion, useInView } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import { formatInTimeZone } from "date-fns-tz";
+
+// Original Imports (Make sure paths are correct based on your setup)
 import svgPaths from "../../imports/ContactFooter/svg-f4p2vld91i";
 import imgHero from "../../imports/Portfolio-1/9b06e550a03f9722c147c637abe54e4634f08454.png";
 import imgFrame192 from "../../imports/Portfolio-1/a1889c3ea7bf7237fd5d6a613633cd9a624d7694.png";
+
+// New Work Images Imports (Updated with Hyphens)
 import imgZapnote from "../../imports/Zapnote-Hero.png";
 import imgFitnity from "../../imports/Fitnity-Hero.png";
 import imgEleanor from "../../imports/Eleanor-Vance-Weddings-Hero.png";
@@ -14,7 +18,7 @@ function AnimatedSection({ children, delay = 0, id }: { children: React.ReactNod
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: false,
-    amount: 0.15,
+    amount: 0.05, // Scroll hira wena eka adu karanna 0.05 damma
   });
 
   return (
@@ -28,6 +32,7 @@ function AnimatedSection({ children, delay = 0, id }: { children: React.ReactNod
         ease: [0.16, 1, 0.3, 1],
         delay,
       }}
+      className="w-full relative"
     >
       {children}
     </motion.div>
@@ -41,17 +46,12 @@ const scrollToSection = (id: string) => {
   }
 };
 
-// Nav Components
-// Nav Components
+// Nav Component (With Hamburger Menu)
 function Nav() {
-  // Menu eka open da close da kiyala track karanna state ekak
   const [isOpen, setIsOpen] = useState(false);
-
-  // Hamburger eka click kalama menu eka toggle wenawa
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Link ekak click kalama scroll wela menu eka auto close wenawa
-  const handleScroll = (id) => {
+  const handleScroll = (id: string) => {
     scrollToSection(id);
     setIsOpen(false);
   };
@@ -65,13 +65,10 @@ function Nav() {
       data-name="Nav"
     >
       <div className="flex items-center justify-between w-full">
-        
-        {/* Left Side: Logo */}
         <p className="font-['Albert_Sans',sans-serif] font-bold text-[#fdfdfd] text-[24px] whitespace-nowrap">
           maheux.
         </p>
 
-        {/* Desktop Links (Mobile eke penne naha) */}
         <div className="hidden md:flex font-['Albert_Sans',sans-serif] font-medium gap-[19px] items-center text-[#fdfdfd] text-[16px]">
           <p onClick={() => handleScroll("about")} className="cursor-pointer hover:text-[#1296cc] transition-colors">About me</p>
           <p onClick={() => handleScroll("services")} className="cursor-pointer hover:text-[#1296cc] transition-colors">Services</p>
@@ -79,7 +76,6 @@ function Nav() {
           <p onClick={() => handleScroll("contact")} className="cursor-pointer hover:text-[#1296cc] transition-colors">Testimonials</p>
         </div>
 
-        {/* Desktop Button (Mobile eke penne naha) */}
         <div
           onClick={() => handleScroll("contact")}
           className="hidden md:flex bg-[#1296cc] px-[24px] py-[10px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] transition-colors items-center justify-center"
@@ -87,24 +83,19 @@ function Nav() {
           <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] text-[14px] whitespace-nowrap">Contact me</p>
         </div>
 
-        {/* Right Side: Hamburger Icon (Desktop eke penne naha) */}
         <div className="md:hidden flex items-center justify-center cursor-pointer text-white" onClick={toggleMenu}>
           {isOpen ? (
-            // Close (X) Icon
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            // Hamburger Menu Icon
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
         </div>
-
       </div>
 
-      {/* Mobile Dropdown Menu */}
       {isOpen && (
         <motion.div 
           initial={{ opacity: 0, height: 0 }}
@@ -126,7 +117,6 @@ function Nav() {
     </motion.div>
   );
 }
-
 
 // Hero Section Components
 function Frame23() {
@@ -222,10 +212,9 @@ function Frame22() {
   );
 }
 
-//Hero
+// Hero Component
 function Hero() {
   return (
-    // min-h-[100dvh] damma mobile scroll eka hira wenne nathi wenna
     <div className="min-h-[100dvh] relative shrink-0 w-full flex flex-col overflow-hidden" data-name="Hero">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute bg-white inset-0" />
@@ -246,7 +235,6 @@ function Hero() {
     </div>
   );
 }
-
 
 // About Me Section
 function AboutMe() {
@@ -273,13 +261,13 @@ function AboutMe() {
   );
 }
 
-function ProjectCard({ title, imageSrc, isFullWidth = false, link = "#" }) {
+// --- New My Works Section (Bento Grid Style) ---
+function ProjectCard({ title, imageSrc, isFullWidth = false, link = "#" }: { title: string, imageSrc: string, isFullWidth?: boolean, link?: string }) {
   return (
     <a 
       href={link} 
       className={`group bg-white rounded-[24px] p-[16px] md:p-[24px] flex flex-col gap-[20px] cursor-pointer hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 ${isFullWidth ? 'lg:col-span-2' : 'col-span-1'}`}
     >
-      {/* Image Container - Hero image eka methana render wenawa */}
       <div className="w-full rounded-[16px] overflow-hidden bg-[#f5f5f5] flex items-center justify-center">
         <img 
           src={imageSrc} 
@@ -287,8 +275,6 @@ function ProjectCard({ title, imageSrc, isFullWidth = false, link = "#" }) {
           className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" 
         />
       </div>
-      
-      {/* Title & Arrow */}
       <div className="flex items-center gap-[12px] md:gap-[16px]">
         <p 
           className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-none"
@@ -309,14 +295,11 @@ function ProjectCard({ title, imageSrc, isFullWidth = false, link = "#" }) {
   );
 }
 
-// My Works Section
 function MyWorks() {
   return (
     <AnimatedSection delay={0.1} id="works">
       <div className="bg-[#f8fdff] min-h-screen relative shrink-0 w-full py-[80px] md:py-[120px]" data-name="My Works">
-        
         <div className="w-full max-w-[1280px] mx-auto px-[20px] md:px-[60px] lg:px-[120px] flex flex-col items-center gap-[60px] md:gap-[80px]">
-          
           <p 
             className="font-['Instrument_Serif',serif] leading-[1.1] text-center tracking-[-0.28px] w-full"
             style={{ fontSize: 'clamp(40px, 5vw, 64px)' }}
@@ -324,24 +307,12 @@ function MyWorks() {
             <span className="text-[#1e1e1e]">Curated Works That Reflect</span><br/>
             <span className="text-[#6d6d6d]">Design Precision and Excellence</span>
           </p>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] md:gap-[32px] w-full">
-            
-            {/* Palaweni Peliya - Zapnote & Fitnity */}
             <ProjectCard title="Zapnote" imageSrc={imgZapnote} />
             <ProjectCard title="Fitnity" imageSrc={imgFitnity} />
-
-            {/* Deweni Peliya - Eleanor Vance Weddings (Full Width isFullWidth={true} nisa) */}
-            <ProjectCard 
-              title="Eleanor Vance Weddings" 
-              imageSrc={imgEleanor} 
-              isFullWidth={true} 
-            />
-
-            {/* Thunweni Peliya - Elevate & Sunday Companions */}
+            <ProjectCard title="Eleanor Vance Weddings" imageSrc={imgEleanor} isFullWidth={true} />
             <ProjectCard title="Elevate Support Group" imageSrc={imgElevate} />
             <ProjectCard title="Sunday Companions" imageSrc={imgSunday} />
-            
           </div>
         </div>
       </div>
@@ -350,12 +321,11 @@ function MyWorks() {
 }
 
 // Services Section
-function ServiceCard({ title, description, target }) {
+function ServiceCard({ title, description, target }: { title: string, description: string, target: string }) {
   return (
     <div className="bg-white flex-1 flex flex-col h-full relative rounded-[8px] w-full hover:scale-[1.02] transition-transform duration-300">
       <div className="overflow-clip rounded-[inherit] flex-1 flex flex-col w-full h-full border border-[#f2f2f2]">
         <div className="flex-1 flex flex-col items-start justify-between px-[24px] py-[32px] md:px-[40px] md:py-[48px] w-full h-full gap-[40px]">
-          
           <div className="flex flex-col gap-[32px] w-full">
             <div className="flex flex-col gap-[16px] w-full">
               <p className="font-['Instrument_Serif',serif] text-[#1296cc] whitespace-nowrap" style={{ fontSize: 'clamp(24px, 2.5vw, 40px)' }}>
@@ -365,7 +335,6 @@ function ServiceCard({ title, description, target }) {
                 {description}
               </p>
             </div>
-            
             <div className="flex gap-[12px] items-center w-full">
               <div className="bg-[#f5f5f5] rounded-[4px] shrink-0 flex items-center justify-center p-1">
                 <svg className="size-[16px] lg:size-[20px]" fill="none" viewBox="0 0 13.5 10">
@@ -377,7 +346,6 @@ function ServiceCard({ title, description, target }) {
               </p>
             </div>
           </div>
-
           <div
             onClick={() => scrollToSection("contact")}
             className="bg-[#1296cc] rounded-[100px] w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-auto py-[16px] flex justify-center items-center"
@@ -386,7 +354,6 @@ function ServiceCard({ title, description, target }) {
               Contact me
             </p>
           </div>
-
         </div>
       </div>
     </div>
@@ -402,7 +369,6 @@ function MyServices() {
           <img alt="" className="absolute max-w-none object-cover w-full h-full" src={imgHero} />
           <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-[46.487%] to-white" />
         </div>
-        
         <div className="flex flex-col gap-[60px] items-center relative w-full z-10">
           <p 
             className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full lg:w-[70%]"
@@ -410,7 +376,6 @@ function MyServices() {
           >
             Services Designed to Deliver Clean Modern Digital Experiences
           </p>
-          
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-[24px] xl:gap-[40px] items-stretch relative w-full">
             <ServiceCard 
               title="New Website Creation" 
@@ -465,19 +430,13 @@ function ContactFooter() {
   return (
     <AnimatedSection delay={0.1} id="contact">
       <div className="bg-[#1e1e1e] min-h-screen flex flex-col pt-[80px] md:pt-[120px] relative w-full overflow-hidden" data-name="Contact + Footer">
-        
-        {/* Full width padding apply kara: px-[20px] md:px-[60px] lg:px-[120px] */}
         <div className="flex-1 flex flex-col justify-center w-full px-[20px] md:px-[60px] lg:px-[120px] z-10">
-          
           <div className="flex flex-col gap-[60px] md:gap-[100px] w-full">
             <div 
               className="font-['Instrument_Serif',serif] w-full"
               style={{ fontSize: 'clamp(40px, 6vw, 100px)' }} 
             >
-              {/* Palaweni line eka 50% opacity */}
               <p className="leading-[1.1] text-[#fdfdfd]/50">Ready to Build Something</p>
-              
-              {/* Deweni line eka - kalli dekakata keduwa */}
               <p className="leading-[1.1]">
                 <span className="text-[#fdfdfd]/50">Modern and Impactful?</span>
                 <span className="text-[#fdfdfd]"> Let's talk!</span>
@@ -528,7 +487,6 @@ function ContactFooter() {
             maheux.
           </p>
         </div>
-
       </div>
     </AnimatedSection>
   );
@@ -536,6 +494,7 @@ function ContactFooter() {
 
 export default function AnimatedPortfolio() {
   return (
+    // overflow-clip damma mobile eke scroll hira wena eka fix karanna
     <div className="w-full bg-white relative flex flex-col overflow-clip">
       <Hero />
       <AboutMe />
