@@ -739,10 +739,10 @@ function LiveTime() {
   );
 }
 
-// Frame 39 - Email/WhatsApp left eketh, Time eka right eketh thiyenna fix kara
 function Frame39() {
   return (
-    <div className="content-stretch flex flex-row items-end justify-between w-full md:flex-col md:items-start md:gap-[40px] sm:gap-[30px]">
+    // flex-row saha justify-between eken content eka depaththenma thiyai
+    <div className="content-stretch flex flex-row items-end justify-between relative shrink-0 w-full md:flex-col md:items-start md:gap-[40px] sm:gap-[30px]">
       <Frame36 />
       <div className="flex items-end justify-end md:justify-start">
         <LiveTime />
@@ -751,11 +751,11 @@ function Frame39() {
   );
 }
 
-// Frame 40 - w-full damma spacing tika harigassanna
 function Frame40() {
   return (
-    <div className="relative shrink-0 w-full max-w-[1280px] mx-auto flex-1 flex flex-col justify-center">
-      <div className="content-stretch flex flex-col gap-[86px] items-start px-[80px] w-full md:gap-[60px] md:px-[40px] sm:gap-[40px] sm:px-[20px]">
+    <div className="relative shrink-0 w-full max-w-[1280px] mx-auto">
+      {/* items-start wenuwata items-stretch damma. Ethakota w-full eka hariyata wada karala time eka right ekatama yanawa */}
+      <div className="content-stretch flex flex-col gap-[86px] items-stretch px-[80px] w-full md:gap-[60px] md:px-[40px] sm:gap-[40px] sm:px-[20px]">
         <Frame37 />
         <Frame39 />
       </div>
