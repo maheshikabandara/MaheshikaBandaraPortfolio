@@ -475,7 +475,7 @@ function ContactFooter() {
 
 export default function AnimatedPortfolio() {
   return (
-    <div className="w-full bg-white scroll-smooth">
+    <div className="relative flex flex-col w-full bg-white">
       <Hero />
       <AboutMe />
       <MyWorks />
