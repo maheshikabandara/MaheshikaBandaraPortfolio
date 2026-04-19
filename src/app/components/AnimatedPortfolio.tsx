@@ -739,23 +739,23 @@ function LiveTime() {
   );
 }
 
-// Frame 39 - Fixed width issue, now uses w-full so it flexes correctly
+// Frame 39 - Email/WhatsApp left eketh, Time eka right eketh thiyenna fix kara
 function Frame39() {
   return (
-    <div className="content-stretch flex flex-row items-end justify-between relative shrink-0 w-full md:flex-col md:items-start md:gap-[40px] sm:gap-[30px]">
+    <div className="content-stretch flex flex-row items-end justify-between w-full md:flex-col md:items-start md:gap-[40px] sm:gap-[30px]">
       <Frame36 />
-      <div className="flex items-end justify-end w-full md:justify-start">
+      <div className="flex items-end justify-end md:justify-start">
         <LiveTime />
       </div>
     </div>
   );
 }
 
-// Frame 40 - Added max-w-[1280px] and mx-auto to align with the rest of the site
+// Frame 40 - w-full damma spacing tika harigassanna
 function Frame40() {
   return (
-    <div className="relative shrink-0 w-full max-w-[1280px] mx-auto">
-      <div className="content-stretch flex flex-col gap-[86px] items-start px-[80px] relative size-full md:gap-[60px] md:px-[40px] sm:gap-[40px] sm:px-[20px]">
+    <div className="relative shrink-0 w-full max-w-[1280px] mx-auto flex-1 flex flex-col justify-center">
+      <div className="content-stretch flex flex-col gap-[86px] items-start px-[80px] w-full md:gap-[60px] md:px-[40px] sm:gap-[40px] sm:px-[20px]">
         <Frame37 />
         <Frame39 />
       </div>
@@ -763,22 +763,29 @@ function Frame40() {
   );
 }
 
-// ContactFooter - Fixed the giant text so it crops correctly at the bottom
+// ContactFooter - min-h-screen damma full height wenna, saha text eka screen width eka ganna haduwa
 function ContactFooter() {
   return (
     <AnimatedSection delay={0.1} id="contact">
-      <div className="bg-[#1e1e1e] flex flex-col items-center justify-between pt-[90px] relative w-full overflow-hidden md:pt-[60px] sm:pt-[40px]" data-name="Contact + Footer">
+      {/* min-h-screen ekath ekka flex-col damma text eka pahlata thallu wenna */}
+      <div className="bg-[#1e1e1e] min-h-screen flex flex-col justify-between pt-[100px] relative w-full overflow-hidden md:pt-[60px] sm:pt-[40px]" data-name="Contact + Footer">
+        
         <Frame40 />
         
-        {/* Adjusted spacing, leading, and translate-y to perfectly crop the text at the bottom */}
-        <div className="relative w-full flex items-end justify-center mt-[80px] md:mt-[60px]">
+        {/* Giant "mahe." text eka width eka full ganna 28vw damma */}
+        <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden pointer-events-none select-none">
           <p
-            className="font-['Albert_Sans:Bold',sans-serif] font-bold leading-[0.75] relative text-[#fdfdfd] text-center whitespace-nowrap translate-y-[12%]"
-            style={{ fontSize: 'clamp(150px, 35.87vw, 516.614px)' }}
+            className="font-['Albert_Sans:Bold',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter"
+            style={{ 
+              fontSize: '28vw',     /* Screen width ekath ekka automatically loku/podi wenawa */
+              lineHeight: '0.75',   /* Text eke yata kalla lassanata crop wenna */
+              marginBottom: '-1%'   /* Text eka bottom edge ekatama thiyanna */
+            }}
           >
             mahe.
           </p>
         </div>
+
       </div>
     </AnimatedSection>
   );
