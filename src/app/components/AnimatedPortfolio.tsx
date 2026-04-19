@@ -71,25 +71,6 @@ function Frame2() {
         <p className="font-['Albert_Sans',sans-serif] font-medium leading-[24px] not-italic relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap md:text-[14px]">
           Contact me
         </p>
-        <div className="relative shrink-0 size-[20px]" data-name="ArrowUpRight">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
-            <g id="Vector" />
-          </svg>
-          <div className="absolute inset-1/4" data-name="Vector">
-            <div className="absolute inset-[-7.5%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.5 11.5">
-                <path d="M0.75 10.75L10.75 0.75" id="Vector" stroke="var(--stroke-0, #F5F5F5)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-              </svg>
-            </div>
-          </div>
-          <div className="absolute bottom-[34.38%] left-[34.38%] right-1/4 top-1/4" data-name="Vector">
-            <div className="absolute inset-[-9.23%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.625 9.625">
-                <path d="M0.75 0.75H8.875V8.875" id="Vector" stroke="var(--stroke-0, #F5F5F5)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-              </svg>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -101,7 +82,7 @@ function Nav() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="bg-[rgba(253,253,253,0.1)] backdrop-blur-md content-stretch flex flex-col items-center justify-center overflow-clip px-[24px] py-[12px] relative rounded-[20px] shrink-0 w-full max-w-[1062px] md:px-[16px] md:py-[10px]"
+      className="bg-[rgba(253,253,253,0.1)] backdrop-blur-md content-stretch flex flex-col items-center justify-center overflow-clip px-[24px] py-[12px] relative rounded-[20px] shrink-0 w-full md:px-[16px] md:py-[10px]"
       data-name="Nav"
     >
       <Frame2 />
@@ -130,66 +111,25 @@ function Frame() {
     <div className="content-stretch flex gap-[24px] items-center relative shrink-0 flex-wrap justify-center md:gap-[16px]">
       <div
         onClick={() => scrollToSection("contact")}
-        className="bg-[#1296cc] content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[16px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#0d7aa8] transition-colors md:px-[24px] md:py-[12px]"
-        data-name="Button"
+        className="bg-[#1296cc] content-stretch flex gap-[10px] items-center justify-center px-[40px] py-[16px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#0d7aa8] transition-colors md:px-[24px] md:py-[12px]"
       >
         <p className="font-['Albert_Sans',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#f5f5f5] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">
           Contact me
         </p>
-        <div className="relative shrink-0 size-[24px]" data-name="ArrowUpRight">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
-            <g id="Vector" />
-          </svg>
-          <div className="absolute inset-1/4" data-name="Vector">
-            <div className="absolute inset-[-6.25%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13.5 13.5">
-                <path d="M0.75 12.75L12.75 0.75" id="Vector" stroke="var(--stroke-0, #F5F5F5)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-              </svg>
-            </div>
-          </div>
-          <div className="absolute bottom-[34.38%] left-[34.38%] right-1/4 top-1/4" data-name="Vector">
-            <div className="absolute inset-[-7.69%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.25 11.25">
-                <path d="M0.75 0.75H10.5V10.5" id="Vector" stroke="var(--stroke-0, #F5F5F5)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-              </svg>
-            </div>
-          </div>
-        </div>
       </div>
       <div
         onClick={() => scrollToSection("works")}
-        className="content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[16px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#f5f5f5] transition-colors md:px-[24px] md:py-[12px]"
-        data-name="Button"
+        className="content-stretch flex gap-[10px] items-center justify-center px-[40px] py-[16px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#f5f5f5] transition-colors md:px-[24px] md:py-[12px]"
       >
         <div aria-hidden="true" className="absolute border border-[#1e1e1e] border-solid inset-0 pointer-events-none rounded-[50px]" />
         <p className="font-['Albert_Sans',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#1e1e1e] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">
           See My Work
         </p>
-        <div className="relative shrink-0 size-[24px]" data-name="ArrowUpRight">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
-            <g id="Vector" />
-          </svg>
-          <div className="absolute inset-1/4" data-name="Vector">
-            <div className="absolute inset-[-6.25%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13.5 13.5">
-                <path d="M0.75 12.75L12.75 0.75" id="Vector" stroke="var(--stroke-0, #1e1e1e)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-              </svg>
-            </div>
-          </div>
-          <div className="absolute bottom-[34.38%] left-[34.38%] right-1/4 top-1/4" data-name="Vector">
-            <div className="absolute inset-[-7.69%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 11.25 11.25">
-                <path d="M0.75 0.75H10.5V10.5" id="Vector" stroke="var(--stroke-0, #1e1e1e)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-              </svg>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
 }
 
-// Frame 22
 function Frame22() {
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-center justify-center relative shrink-0 w-full md:gap-[16px]">
@@ -198,7 +138,7 @@ function Frame22() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
         className="font-['Albert_Sans',sans-serif] font-semibold leading-[1.5] relative text-[#1e1e1e] text-center tracking-[-0.12px]"
-        style={{ fontSize: 'clamp(16px, 1.5vw, 24px)' }}
+        style={{ fontSize: 'clamp(16px, 1.5vw, 28px)' }}
       >
         Hi, I'm Maheshika Bandara!
       </motion.p>
@@ -207,8 +147,8 @@ function Frame22() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
-        className="font-['Instrument_Serif',serif] leading-[1.1] not-italic relative text-[#1e1e1e] text-center tracking-[-1.8px] w-full px-4"
-        style={{ fontSize: 'clamp(40px, 6.5vw, 90px)' }}
+        className="font-['Instrument_Serif',serif] leading-[1.1] not-italic relative text-[#1e1e1e] text-center tracking-[-1.8px] w-full"
+        style={{ fontSize: 'clamp(40px, 7vw, 130px)' }}
       >
         Design clean, professional websites for businesses
       </motion.p>
@@ -217,8 +157,8 @@ function Frame22() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="font-['Albert_Sans',sans-serif] font-normal leading-[1.5] relative text-[#404040] text-center tracking-[-0.1px] max-w-[800px] px-4"
-        style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}
+        className="font-['Albert_Sans',sans-serif] font-normal leading-[1.5] relative text-[#404040] text-center tracking-[-0.1px] w-full lg:w-[60%]"
+        style={{ fontSize: 'clamp(16px, 1.5vw, 24px)' }}
       >
         Whether you don't have a website yet or your current one needs a modern refresh, I help you get online fast, look trustworthy, and attract more customers.
       </motion.p>
@@ -227,7 +167,7 @@ function Frame22() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="mt-4"
+        className="mt-8"
       >
         <Frame />
       </motion.div>
@@ -235,17 +175,6 @@ function Frame22() {
   );
 }
 
-// Frame 1
-function Frame1() {
-  return (
-    <div className="content-stretch flex flex-col gap-[24px] items-center justify-center relative shrink-0 w-full max-w-[1000px] px-4">
-      <Frame23 />
-      <Frame22 />
-    </div>
-  );
-}
-
-// Hero
 function Hero() {
   return (
     <div className="min-h-screen relative shrink-0 w-full flex flex-col overflow-hidden" data-name="Hero">
@@ -255,398 +184,106 @@ function Hero() {
         <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-white via-[49.04%] via-[rgba(255,255,255,0.75)]" />
       </div>
 
-      <div className="w-full flex justify-center pt-[32px] px-[20px] relative z-10 md:pt-[24px] sm:pt-[16px]">
+      <div className="w-full flex justify-center pt-[32px] px-[20px] md:px-[60px] lg:px-[120px] relative z-10">
         <Nav />
       </div>
 
-      <div className="flex-1 flex flex-col items-center justify-center relative z-10 w-full px-[20px] pb-[80px]">
-        <Frame1 />
+      <div className="flex-1 flex flex-col items-center justify-center relative z-10 w-full px-[20px] md:px-[60px] lg:px-[120px] pb-[80px]">
+        <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full">
+          <Frame23 />
+          <Frame22 />
+        </div>
       </div>
     </div>
   );
 }
 
 // About Me Section
-function Frame24() {
-  return (
-    <div className="content-stretch flex items-center justify-center relative shrink-0 w-full px-4">
-      <p 
-        className="font-['Instrument_Serif',serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] max-w-[1171px]"
-        style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
-      >
-        UI/UX Designer, and Developer with a BSc in Information Technology who helps small businesses worldwide get a clean, professional online presence that attracts more customers. I create fast, mobile-friendly websites, whether it's building your first site from scratch or giving an existing one a modern polish, and design until every page feels simple, trustworthy, and meaningful.
-      </p>
-    </div>
-  );
-}
-
-function Frame25() {
-  return (
-    <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full max-w-[1280px] md:gap-[24px]">
-      <Frame24 />
-      <p
-        onClick={() => scrollToSection("works")}
-        className="font-['Albert_Sans',sans-serif] font-medium leading-[1.5] relative text-[#1296cc] text-center tracking-[-0.12px] w-full cursor-pointer hover:underline transition-all hover:scale-105"
-        style={{ fontSize: 'clamp(18px, 1.5vw, 24px)' }}
-      >
-        Explore My Work
-      </p>
-    </div>
-  );
-}
-
 function AboutMe() {
   return (
     <AnimatedSection id="about">
-      <div className="bg-white min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[40px] lg:px-[80px]" data-name="About me">
-        <Frame25 />
+      <div className="bg-white min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="About me">
+        <div className="content-stretch flex flex-col gap-[40px] items-center justify-center relative shrink-0 w-full">
+          <p 
+            className="font-['Instrument_Serif',serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] w-full"
+            style={{ fontSize: 'clamp(32px, 4.5vw, 70px)' }}
+          >
+            UI/UX Designer, and Developer with a BSc in Information Technology who helps small businesses worldwide get a clean, professional online presence that attracts more customers. I create fast, mobile-friendly websites, whether it's building your first site from scratch or giving an existing one a modern polish, and design until every page feels simple, trustworthy, and meaningful.
+          </p>
+          <p
+            onClick={() => scrollToSection("works")}
+            className="font-['Albert_Sans',sans-serif] font-medium leading-[1.5] relative text-[#1296cc] text-center tracking-[-0.12px] w-full cursor-pointer hover:underline transition-all hover:scale-105"
+            style={{ fontSize: 'clamp(18px, 1.5vw, 28px)' }}
+          >
+            Explore My Work
+          </p>
+        </div>
       </div>
     </AnimatedSection>
   );
 }
 
 // My Works Section
-function Frame28() {
-  return (
-    <div className="bg-[#cbf0ff] h-full w-[45%] md:w-[60%] sm:w-[70%] shrink-0" />
-  );
-}
-
-function Frame26() {
-  return (
-    <div className="bg-[#fdfdfd] flex items-center justify-end overflow-hidden relative rounded-[20px] shadow-[0px_0px_12px_-6px_rgba(0,0,0,0.15)] w-full aspect-[4/3] lg:aspect-[16/9] cursor-pointer hover:shadow-[0px_0px_24px_-6px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-all duration-300">
-      <Frame28 />
-    </div>
-  );
-}
-
-function Frame27() {
-  return (
-    <div className="flex flex-col gap-[48px] items-center relative w-full max-w-[1280px] md:gap-[32px] px-4">
-      <p 
-        className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full"
-        style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
-      >
-        Curated Works That Reflect Design Precision and Excellence
-      </p>
-      <Frame26 />
-    </div>
-  );
-}
-
 function MyWorks() {
   return (
     <AnimatedSection delay={0.1} id="works">
-      <div className="bg-[#f8fdff] min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[40px] lg:px-[80px]" data-name="My Works">
-        <Frame27 />
+      <div className="bg-[#f8fdff] min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="My Works">
+        <div className="flex flex-col gap-[48px] items-center relative w-full">
+          <p 
+            className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full"
+            style={{ fontSize: 'clamp(32px, 5vw, 80px)' }}
+          >
+            Curated Works That Reflect Design Precision and Excellence
+          </p>
+          <div className="bg-[#fdfdfd] flex items-center justify-end overflow-hidden relative rounded-[20px] shadow-[0px_0px_12px_-6px_rgba(0,0,0,0.15)] w-full aspect-[4/3] lg:aspect-[21/9] cursor-pointer hover:shadow-[0px_0px_24px_-6px_rgba(0,0,0,0.25)] hover:scale-[1.02] transition-all duration-300">
+            <div className="bg-[#cbf0ff] h-full w-[45%] md:w-[60%] shrink-0" />
+          </div>
+        </div>
       </div>
     </AnimatedSection>
   );
 }
 
 // Services Section
-function Frame8() {
+function ServiceCard({ title, description, target }) {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start leading-[27px] relative shrink-0 w-full">
-      <p className="font-['Instrument_Serif',serif] not-italic relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">New Website Creation</p>
-      <p className="font-['Albert_Sans',sans-serif] font-normal min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content]">
-        I will design and build a clean, modern, mobile-friendly website from scratch on Wix Studio.
-      </p>
-    </div>
-  );
-}
-
-function Frame15() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-      <Frame8 />
-    </div>
-  );
-}
-
-function Frame3() {
-  return (
-    <div className="bg-[#f5f5f5] overflow-clip relative rounded-[4px] shrink-0 size-[24px]">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[16px] top-1/2" data-name="Check">
-        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
-          <g id="Vector" />
-        </svg>
-        <div className="absolute inset-[28.13%_12.5%_21.88%_15.63%]" data-name="Vector">
-          <div className="absolute inset-[-12.5%_-8.7%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13.5 10">
-              <path d="M1 5.5L4.5 9L12.5 1" id="Vector" stroke="var(--stroke-0, #1296CC)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-            </svg>
+    <div className="bg-white flex-1 flex flex-col h-full relative rounded-[8px] w-full hover:scale-[1.02] transition-transform duration-300">
+      <div className="overflow-clip rounded-[inherit] flex-1 flex flex-col w-full h-full border border-[#f2f2f2]">
+        <div className="flex-1 flex flex-col items-start justify-between px-[24px] py-[32px] md:px-[40px] md:py-[48px] w-full h-full gap-[40px]">
+          
+          <div className="flex flex-col gap-[32px] w-full">
+            <div className="flex flex-col gap-[16px] w-full">
+              <p className="font-['Instrument_Serif',serif] text-[#1296cc] whitespace-nowrap" style={{ fontSize: 'clamp(24px, 2.5vw, 40px)' }}>
+                {title}
+              </p>
+              <p className="font-['Albert_Sans',sans-serif] text-[#1e1e1e] leading-[1.6]" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>
+                {description}
+              </p>
+            </div>
+            
+            <div className="flex gap-[12px] items-center w-full">
+              <div className="bg-[#f5f5f5] rounded-[4px] shrink-0 flex items-center justify-center p-1">
+                <svg className="size-[16px] lg:size-[20px]" fill="none" viewBox="0 0 13.5 10">
+                  <path d="M1 5.5L4.5 9L12.5 1" stroke="#1296CC" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                </svg>
+              </div>
+              <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d]" style={{ fontSize: 'clamp(14px, 1vw, 20px)' }}>
+                {target}
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
-function Frame9() {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
-      <Frame3 />
-      <p className="flex-[1_0_0] font-['Albert_Sans',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
-        For businesses that don't have a website yet
-      </p>
-    </div>
-  );
-}
-
-function Frame30() {
-  return (
-    <div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
-      <Frame15 />
-      <Frame9 />
-    </div>
-  );
-}
-
-function Frame16() {
-  return (
-    <div className="content-stretch flex flex-col h-full items-center justify-between relative shrink-0 w-full">
-      <Frame30 />
-      <div
-        onClick={() => scrollToSection("contact")}
-        className="bg-[#1296cc] relative rounded-[100px] shrink-0 w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[32px]"
-        data-name="Button"
-      >
-        <div className="flex flex-row items-center justify-center size-full">
-          <div className="content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[10px] relative size-full">
-            <p className="font-['Albert_Sans',sans-serif] font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
+          <div
+            onClick={() => scrollToSection("contact")}
+            className="bg-[#1296cc] rounded-[100px] w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-auto py-[16px] flex justify-center items-center"
+          >
+            <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] whitespace-nowrap" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>
               Contact me
             </p>
           </div>
+
         </div>
       </div>
-    </div>
-  );
-}
-
-function Frame7() {
-  return (
-    <div className="bg-white flex-1 flex flex-col h-full relative rounded-[8px] w-full hover:scale-[1.02] transition-transform duration-300">
-      <div className="overflow-clip rounded-[inherit] flex-1 flex flex-col w-full h-full">
-        <div className="content-stretch flex-1 flex items-start justify-between px-[24px] py-[32px] md:px-[32px] md:py-[40px] relative w-full h-full">
-          <Frame16 />
-        </div>
-      </div>
-      <div aria-hidden="true" className="absolute border border-[#f2f2f2] border-solid inset-0 pointer-events-none rounded-[8px]" />
-    </div>
-  );
-}
-
-function Frame11() {
-  return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-      <p className="font-['Instrument_Serif',serif] leading-[27px] relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">
-        Website Refresh / Rebuild
-      </p>
-      <div className="font-['Albert_Sans',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content] whitespace-pre-wrap">
-        <p className="leading-[27px] mb-[10px]">For businesses with an existing website (on any platform) that looks dated or doesn't convert well. </p>
-        <p className="leading-[27px]">I will give it a complete modern update by rebuilding it cleanly on Wix Studio. </p>
-      </div>
-    </div>
-  );
-}
-
-function Frame18() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-      <Frame11 />
-    </div>
-  );
-}
-
-function Frame5() {
-  return (
-    <div className="bg-[#f5f5f5] overflow-clip relative rounded-[4px] shrink-0 size-[24px]">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[16px] top-1/2" data-name="Check">
-        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
-          <g id="Vector" />
-        </svg>
-        <div className="absolute inset-[28.13%_12.5%_21.88%_15.63%]" data-name="Vector">
-          <div className="absolute inset-[-12.5%_-8.7%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13.5 10">
-              <path d="M1 5.5L4.5 9L12.5 1" id="Vector" stroke="var(--stroke-0, #1296CC)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Frame12() {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
-      <Frame5 />
-      <p className="flex-[1_0_0] font-['Albert_Sans',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
-        For businesses with an existing website
-      </p>
-    </div>
-  );
-}
-
-function Frame31() {
-  return (
-    <div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
-      <Frame18 />
-      <Frame12 />
-    </div>
-  );
-}
-
-function Frame17() {
-  return (
-    <div className="content-stretch flex flex-col h-full items-center justify-between relative shrink-0 w-full">
-      <Frame31 />
-      <div
-        onClick={() => scrollToSection("contact")}
-        className="bg-[#1296cc] relative rounded-[100px] shrink-0 w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[32px]"
-        data-name="Button"
-      >
-        <div className="flex flex-row items-center justify-center size-full">
-          <div className="content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[10px] relative size-full">
-            <p className="font-['Albert_Sans',sans-serif] font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
-              Contact me
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Frame10() {
-  return (
-    <div className="bg-white flex-1 flex flex-col h-full relative rounded-[8px] w-full hover:scale-[1.02] transition-transform duration-300">
-      <div className="overflow-clip rounded-[inherit] flex-1 flex flex-col w-full h-full">
-        <div className="content-stretch flex-1 flex items-start justify-between px-[24px] py-[32px] md:px-[32px] md:py-[40px] relative w-full h-full">
-          <Frame17 />
-        </div>
-      </div>
-      <div aria-hidden="true" className="absolute border border-[#f2f2f2] border-solid inset-0 pointer-events-none rounded-[8px]" />
-    </div>
-  );
-}
-
-function Frame14() {
-  return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-      <p className="font-['Instrument_Serif',serif] leading-[27px] not-italic relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">
-        Website Maintenance
-      </p>
-      <div className="font-['Albert_Sans',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content] whitespace-pre-wrap">
-        <p className="leading-[27px] mb-[10px]">For businesses that already have a website and want it to stay fast, secure, and up-to-date. </p>
-        <p className="leading-[27px]">I will handle regular updates, backups, minor edits, and monthly checks. </p>
-      </div>
-    </div>
-  );
-}
-
-function Frame20() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-      <Frame14 />
-    </div>
-  );
-}
-
-function Frame6() {
-  return (
-    <div className="bg-[#f5f5f5] overflow-clip relative rounded-[4px] shrink-0 size-[24px]">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[16px] top-1/2" data-name="Check">
-        <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
-          <g id="Vector" />
-        </svg>
-        <div className="absolute inset-[28.13%_12.5%_21.88%_15.63%]" data-name="Vector">
-          <div className="absolute inset-[-12.5%_-8.7%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13.5 10">
-              <path d="M1 5.5L4.5 9L12.5 1" id="Vector" stroke="var(--stroke-0, #1296CC)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Frame21() {
-  return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
-      <Frame6 />
-      <p className="flex-[1_0_0] font-['Albert_Sans',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
-        For businesses that already have a website
-      </p>
-    </div>
-  );
-}
-
-function Frame32() {
-  return (
-    <div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
-      <Frame20 />
-      <Frame21 />
-    </div>
-  );
-}
-
-function Frame19() {
-  return (
-    <div className="content-stretch flex flex-col h-full items-center justify-between relative shrink-0 w-full">
-      <Frame32 />
-      <div
-        onClick={() => scrollToSection("contact")}
-        className="bg-[#1296cc] relative rounded-[100px] shrink-0 w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[32px]"
-        data-name="Button"
-      >
-        <div className="flex flex-row items-center justify-center size-full">
-          <div className="content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[10px] relative size-full">
-            <p className="font-['Albert_Sans',sans-serif] font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
-              Contact me
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Frame13() {
-  return (
-    <div className="bg-white flex-1 flex flex-col h-full relative rounded-[8px] w-full hover:scale-[1.02] transition-transform duration-300">
-      <div className="overflow-clip rounded-[inherit] flex-1 flex flex-col w-full h-full">
-        <div className="content-stretch flex-1 flex items-start justify-between px-[24px] py-[32px] md:px-[32px] md:py-[40px] relative w-full h-full">
-          <Frame19 />
-        </div>
-      </div>
-      <div aria-hidden="true" className="absolute border border-[#f2f2f2] border-solid inset-0 pointer-events-none rounded-[8px]" />
-    </div>
-  );
-}
-
-function Frame29() {
-  return (
-    <div className="content-stretch grid grid-cols-1 lg:grid-cols-3 gap-[24px] items-stretch relative w-full max-w-[1280px]">
-      <Frame7 />
-      <Frame10 />
-      <Frame13 />
-    </div>
-  );
-}
-
-function Frame33() {
-  return (
-    <div className="content-stretch flex flex-col gap-[48px] items-center relative w-full md:gap-[40px] px-4 lg:px-0 z-10">
-      <p 
-        className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#fdfdfd] text-center tracking-[-0.28px] max-w-[800px] w-full"
-        style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
-      >
-        Services Designed to Deliver Clean Modern Digital Experiences
-      </p>
-      <Frame29 />
     </div>
   );
 }
@@ -654,90 +291,45 @@ function Frame33() {
 function MyServices() {
   return (
     <AnimatedSection delay={0.1} id="services">
-      <div className="min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[40px] lg:px-[80px]" data-name="My Services">
+      <div className="min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="My Services">
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute bg-[#fdfdfd] inset-0" />
           <img alt="" className="absolute max-w-none object-cover w-full h-full" src={imgHero} />
           <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-[46.487%] to-white" />
         </div>
-        <Frame33 />
+        
+        <div className="flex flex-col gap-[60px] items-center relative w-full z-10">
+          <p 
+            className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full lg:w-[70%]"
+            style={{ fontSize: 'clamp(32px, 5vw, 80px)' }}
+          >
+            Services Designed to Deliver Clean Modern Digital Experiences
+          </p>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-[24px] xl:gap-[40px] items-stretch relative w-full">
+            <ServiceCard 
+              title="New Website Creation" 
+              description="I will design and build a clean, modern, mobile-friendly website from scratch on Wix Studio." 
+              target="For businesses that don't have a website yet" 
+            />
+            <ServiceCard 
+              title="Website Refresh / Rebuild" 
+              description="For businesses with an existing website (on any platform) that looks dated or doesn't convert well. I will give it a complete modern update by rebuilding it cleanly on Wix Studio." 
+              target="For businesses with an existing website" 
+            />
+            <ServiceCard 
+              title="Website Maintenance" 
+              description="For businesses that already have a website and want it to stay fast, secure, and up-to-date. I will handle regular updates, backups, minor edits, and monthly checks." 
+              target="For businesses that already have a website" 
+            />
+          </div>
+        </div>
       </div>
     </AnimatedSection>
   );
 }
 
 // Contact Footer Section
-function Frame37() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0 w-full">
-      <div 
-        className="font-['Instrument_Serif',serif] not-italic relative text-[#fdfdfd] tracking-[-0.32px] w-full"
-        style={{ fontSize: 'clamp(40px, 6vw, 80px)' }} 
-      >
-        <p className="leading-[1.1] mb-0">Ready to Build Something</p>
-        <p className="leading-[1.1]">Modern and Impactful?</p>
-      </div>
-    </div>
-  );
-}
-
-function Frame34() {
-  return (
-    <a
-      href="mailto:mbmaheshika@gmail.com"
-      className="content-stretch flex gap-[12px] md:gap-[16px] items-center relative shrink-0 cursor-pointer hover:text-[#1296cc] transition-colors group"
-    >
-      <p 
-        className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
-        style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
-      >
-        Email
-      </p>
-      <div className="relative shrink-0 w-[0.8em] h-[0.8em]" data-name="ArrowUpRight">
-        <div className="absolute inset-0" data-name="Vector">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18.0006 18.0006">
-            <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" id="Vector" />
-          </svg>
-        </div>
-      </div>
-    </a>
-  );
-}
-
-function Frame35() {
-  return (
-    <a
-      href="https://wa.me/94707170906"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="content-stretch flex gap-[12px] md:gap-[16px] items-center relative shrink-0 w-full cursor-pointer hover:text-[#1296cc] transition-colors group"
-    >
-      <p 
-        className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
-        style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
-      >
-        WhatsApp
-      </p>
-      <div className="relative shrink-0 w-[0.8em] h-[0.8em]" data-name="ArrowUpRight">
-        <div className="absolute inset-0" data-name="Vector">
-          <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18.0006 18.0006">
-            <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" id="Vector" />
-          </svg>
-        </div>
-      </div>
-    </a>
-  );
-}
-
-function Frame36() {
-  return (
-    <div className="content-stretch flex flex-col gap-[12px] md:gap-[16px] items-start relative shrink-0">
-      <Frame34 />
-      <Frame35 />
-    </div>
-  );
-}
-
 function LiveTime() {
   const [time, setTime] = useState("");
 
@@ -754,44 +346,63 @@ function LiveTime() {
   }, []);
 
   return (
-    <div className="content-stretch flex font-['Instrument_Serif',serif] gap-[38px] items-center leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[24px] text-center tracking-[-0.12px] md:gap-[20px] md:text-[18px] sm:text-[16px]">
-      <p className="relative shrink-0 whitespace-nowrap">Based on Sri Lanka</p>
-      <p className="relative shrink-0 whitespace-nowrap">Local Time {time}</p>
+    <div 
+      className="flex flex-col sm:flex-row font-['Instrument_Serif',serif] gap-[8px] sm:gap-[20px] items-start sm:items-center leading-[1.2] text-[#fdfdfd]"
+      style={{ fontSize: 'clamp(16px, 1.5vw, 28px)' }}
+    >
+      <p className="whitespace-nowrap">Based on Sri Lanka</p>
+      <p className="whitespace-nowrap">Local Time {time}</p>
     </div>
   );
 }
 
-function Frame39() {
-  return (
-    <div className="flex flex-col md:flex-row items-start md:items-end justify-between w-full gap-[40px] md:gap-0 mt-[40px] md:mt-[60px]">
-      <Frame36 />
-      <div className="flex items-end justify-start md:justify-end">
-        <LiveTime />
-      </div>
-    </div>
-  );
-}
-
-function Frame40() {
-  return (
-    <div className="w-full max-w-[1280px] mx-auto px-[20px] md:px-[40px] lg:px-[80px]">
-      <div className="flex flex-col gap-[40px] md:gap-[86px] w-full">
-        <Frame37 />
-        <Frame39 />
-      </div>
-    </div>
-  );
-}
-
-// Main Footer Section
 function ContactFooter() {
   return (
     <AnimatedSection delay={0.1} id="contact">
       <div className="bg-[#1e1e1e] min-h-screen flex flex-col pt-[80px] md:pt-[120px] relative w-full overflow-hidden" data-name="Contact + Footer">
         
-        <div className="flex-1 flex flex-col justify-center w-full max-w-[1280px] mx-auto px-[20px] md:px-[40px] lg:px-[80px] z-10">
-          <Frame37 />
-          <Frame39 />
+        {/* Full width padding apply kara: px-[20px] md:px-[60px] lg:px-[120px] */}
+        <div className="flex-1 flex flex-col justify-center w-full px-[20px] md:px-[60px] lg:px-[120px] z-10">
+          
+          <div className="flex flex-col gap-[60px] md:gap-[100px] w-full">
+            <div 
+              className="font-['Instrument_Serif',serif] text-[#fdfdfd] w-full"
+              style={{ fontSize: 'clamp(40px, 6vw, 100px)' }} 
+            >
+              <p className="leading-[1.1]">Ready to Build Something</p>
+              <p className="leading-[1.1]">Modern and Impactful?</p>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-start md:items-end justify-between w-full gap-[40px] md:gap-0">
+              <div className="flex flex-col gap-[16px] md:gap-[24px] items-start">
+                <a href="mailto:mbmaheshika@gmail.com" className="flex gap-[16px] items-center cursor-pointer group">
+                  <p 
+                    className="font-['Instrument_Serif',serif] leading-[1.2] text-[#fdfdfd] group-hover:text-[#1296cc] transition-colors"
+                    style={{ fontSize: 'clamp(24px, 3vw, 48px)' }}
+                  >
+                    Email
+                  </p>
+                  <svg className="w-[0.8em] h-[0.8em]" fill="none" viewBox="0 0 18 18">
+                    <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" />
+                  </svg>
+                </a>
+                <a href="https://wa.me/94707170906" target="_blank" rel="noopener noreferrer" className="flex gap-[16px] items-center cursor-pointer group">
+                  <p 
+                    className="font-['Instrument_Serif',serif] leading-[1.2] text-[#fdfdfd] group-hover:text-[#1296cc] transition-colors"
+                    style={{ fontSize: 'clamp(24px, 3vw, 48px)' }}
+                  >
+                    WhatsApp
+                  </p>
+                  <svg className="w-[0.8em] h-[0.8em]" fill="none" viewBox="0 0 18 18">
+                    <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" />
+                  </svg>
+                </a>
+              </div>
+              <div className="flex items-end justify-start md:justify-end">
+                <LiveTime />
+              </div>
+            </div>
+          </div>
         </div>
         
         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden pointer-events-none select-none">
