@@ -39,7 +39,7 @@ const scrollToSection = (id: string) => {
 // Nav Components
 function Frame4() {
   return (
-    <div className="content-stretch flex font-albert font-medium gap-[19px] items-center leading-[27px] relative shrink-0 text-[#fdfdfd] text-[18px] text-center whitespace-nowrap md:gap-[12px] md:text-[16px]">
+    <div className="content-stretch flex font-['Albert_Sans',sans-serif] font-medium gap-[19px] items-center leading-[27px] relative shrink-0 text-[#fdfdfd] text-[18px] text-center whitespace-nowrap md:gap-[12px] md:text-[16px]">
       <p onClick={() => scrollToSection("about")} className="relative shrink-0 cursor-pointer hover:text-[#1296cc] transition-colors">
         About me
       </p>
@@ -59,7 +59,7 @@ function Frame4() {
 function Frame2() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
-      <p className="font-albert font-bold leading-[31.2px] relative shrink-0 text-[#fdfdfd] text-[24px] text-center whitespace-nowrap">
+      <p className="font-['Albert_Sans',sans-serif] font-bold leading-[31.2px] relative shrink-0 text-[#fdfdfd] text-[24px] text-center whitespace-nowrap">
         mahe.
       </p>
       <Frame4 />
@@ -68,7 +68,7 @@ function Frame2() {
         className="bg-[#1296cc] content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[12px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#0d7aa8] transition-colors md:px-[24px] md:py-[10px]"
         data-name="Button"
       >
-        <p className="font-albert font-medium leading-[24px] not-italic relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap md:text-[14px]">
+        <p className="font-['Albert_Sans',sans-serif] font-medium leading-[24px] not-italic relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap md:text-[14px]">
           Contact me
         </p>
         <div className="relative shrink-0 size-[20px]" data-name="ArrowUpRight">
@@ -133,7 +133,7 @@ function Frame() {
         className="bg-[#1296cc] content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[16px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#0d7aa8] transition-colors md:px-[24px] md:py-[12px]"
         data-name="Button"
       >
-        <p className="font-albert font-medium leading-[30px] relative shrink-0 text-[#f5f5f5] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">
+        <p className="font-['Albert_Sans',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#f5f5f5] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">
           Contact me
         </p>
         <div className="relative shrink-0 size-[24px]" data-name="ArrowUpRight">
@@ -162,7 +162,7 @@ function Frame() {
         data-name="Button"
       >
         <div aria-hidden="true" className="absolute border border-[#1e1e1e] border-solid inset-0 pointer-events-none rounded-[50px]" />
-        <p className="font-albert font-medium leading-[30px] relative shrink-0 text-[#1e1e1e] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">
+        <p className="font-['Albert_Sans',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#1e1e1e] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">
           See My Work
         </p>
         <div className="relative shrink-0 size-[24px]" data-name="ArrowUpRight">
@@ -197,7 +197,7 @@ function Frame22() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6, duration: 0.6 }}
-        className="font-albert font-semibold leading-[1.5] relative text-[#1e1e1e] text-center tracking-[-0.12px]"
+        className="font-['Albert_Sans',sans-serif] font-semibold leading-[1.5] relative text-[#1e1e1e] text-center tracking-[-0.12px]"
         style={{ fontSize: 'clamp(16px, 1.5vw, 24px)' }}
       >
         Hi, I'm Maheshika Bandara!
@@ -207,7 +207,7 @@ function Frame22() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
-        className="font-instrument leading-[1.1] not-italic relative text-[#1e1e1e] text-center tracking-[-1.8px] w-full px-4"
+        className="font-['Instrument_Serif',serif] leading-[1.1] not-italic relative text-[#1e1e1e] text-center tracking-[-1.8px] w-full px-4"
         style={{ fontSize: 'clamp(40px, 6.5vw, 90px)' }}
       >
         Design clean, professional websites for businesses
@@ -217,7 +217,7 @@ function Frame22() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="font-albert font-normal leading-[1.5] relative text-[#404040] text-center tracking-[-0.1px] max-w-[800px] px-4"
+        className="font-['Albert_Sans',sans-serif] font-normal leading-[1.5] relative text-[#404040] text-center tracking-[-0.1px] max-w-[800px] px-4"
         style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}
       >
         Whether you don't have a website yet or your current one needs a modern refresh, I help you get online fast, look trustworthy, and attract more customers.
@@ -271,7 +271,7 @@ function Frame24() {
   return (
     <div className="content-stretch flex items-center justify-center relative shrink-0 w-full px-4">
       <p 
-        className="font-instrument leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] max-w-[1171px]"
+        className="font-['Instrument_Serif',serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] max-w-[1171px]"
         style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
       >
         UI/UX Designer, and Developer with a BSc in Information Technology who helps small businesses worldwide get a clean, professional online presence that attracts more customers. I create fast, mobile-friendly websites, whether it's building your first site from scratch or giving an existing one a modern polish, and design until every page feels simple, trustworthy, and meaningful.
@@ -286,7 +286,7 @@ function Frame25() {
       <Frame24 />
       <p
         onClick={() => scrollToSection("works")}
-        className="font-albert font-medium leading-[1.5] relative text-[#1296cc] text-center tracking-[-0.12px] w-full cursor-pointer hover:underline transition-all hover:scale-105"
+        className="font-['Albert_Sans',sans-serif] font-medium leading-[1.5] relative text-[#1296cc] text-center tracking-[-0.12px] w-full cursor-pointer hover:underline transition-all hover:scale-105"
         style={{ fontSize: 'clamp(18px, 1.5vw, 24px)' }}
       >
         Explore My Work
@@ -324,7 +324,7 @@ function Frame27() {
   return (
     <div className="flex flex-col gap-[48px] items-center relative w-full max-w-[1280px] md:gap-[32px] px-4">
       <p 
-        className="font-instrument leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full"
+        className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full"
         style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
       >
         Curated Works That Reflect Design Precision and Excellence
@@ -348,8 +348,8 @@ function MyWorks() {
 function Frame8() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start leading-[27px] relative shrink-0 w-full">
-      <p className="font-instrument not-italic relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">New Website Creation</p>
-      <p className="font-albert font-normal min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content]">
+      <p className="font-['Instrument_Serif',serif] not-italic relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">New Website Creation</p>
+      <p className="font-['Albert_Sans',sans-serif] font-normal min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content]">
         I will design and build a clean, modern, mobile-friendly website from scratch on Wix Studio.
       </p>
     </div>
@@ -387,7 +387,7 @@ function Frame9() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
       <Frame3 />
-      <p className="flex-[1_0_0] font-albert font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
+      <p className="flex-[1_0_0] font-['Albert_Sans',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
         For businesses that don't have a website yet
       </p>
     </div>
@@ -414,7 +414,7 @@ function Frame16() {
       >
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[10px] relative size-full">
-            <p className="font-albert font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
+            <p className="font-['Albert_Sans',sans-serif] font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
               Contact me
             </p>
           </div>
@@ -440,10 +440,10 @@ function Frame7() {
 function Frame11() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-      <p className="font-instrument leading-[27px] relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">
+      <p className="font-['Instrument_Serif',serif] leading-[27px] relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">
         Website Refresh / Rebuild
       </p>
-      <div className="font-albert font-normal leading-[0] min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content] whitespace-pre-wrap">
+      <div className="font-['Albert_Sans',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content] whitespace-pre-wrap">
         <p className="leading-[27px] mb-[10px]">For businesses with an existing website (on any platform) that looks dated or doesn't convert well. </p>
         <p className="leading-[27px]">I will give it a complete modern update by rebuilding it cleanly on Wix Studio. </p>
       </div>
@@ -482,7 +482,7 @@ function Frame12() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
       <Frame5 />
-      <p className="flex-[1_0_0] font-albert font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
+      <p className="flex-[1_0_0] font-['Albert_Sans',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
         For businesses with an existing website
       </p>
     </div>
@@ -509,7 +509,7 @@ function Frame17() {
       >
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[10px] relative size-full">
-            <p className="font-albert font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
+            <p className="font-['Albert_Sans',sans-serif] font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
               Contact me
             </p>
           </div>
@@ -535,10 +535,10 @@ function Frame10() {
 function Frame14() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-      <p className="font-instrument leading-[27px] not-italic relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">
+      <p className="font-['Instrument_Serif',serif] leading-[27px] not-italic relative shrink-0 text-[#1296cc] text-[24px] whitespace-nowrap">
         Website Maintenance
       </p>
-      <div className="font-albert font-normal leading-[0] min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content] whitespace-pre-wrap">
+      <div className="font-['Albert_Sans',sans-serif] font-normal leading-[0] min-w-full relative shrink-0 text-[#1e1e1e] text-[16px] w-[min-content] whitespace-pre-wrap">
         <p className="leading-[27px] mb-[10px]">For businesses that already have a website and want it to stay fast, secure, and up-to-date. </p>
         <p className="leading-[27px]">I will handle regular updates, backups, minor edits, and monthly checks. </p>
       </div>
@@ -577,7 +577,7 @@ function Frame21() {
   return (
     <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
       <Frame6 />
-      <p className="flex-[1_0_0] font-albert font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
+      <p className="flex-[1_0_0] font-['Albert_Sans',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
         For businesses that already have a website
       </p>
     </div>
@@ -604,7 +604,7 @@ function Frame19() {
       >
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex gap-[10px] items-center justify-center px-[32px] py-[10px] relative size-full">
-            <p className="font-albert font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
+            <p className="font-['Albert_Sans',sans-serif] font-medium leading-[24px] relative shrink-0 text-[#f5f5f5] text-[16px] whitespace-nowrap">
               Contact me
             </p>
           </div>
@@ -641,7 +641,7 @@ function Frame33() {
   return (
     <div className="content-stretch flex flex-col gap-[48px] items-center relative w-full md:gap-[40px] px-4 lg:px-0 z-10">
       <p 
-        className="font-instrument leading-[1.2] not-italic relative text-[#fdfdfd] text-center tracking-[-0.28px] max-w-[800px] w-full"
+        className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#fdfdfd] text-center tracking-[-0.28px] max-w-[800px] w-full"
         style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
       >
         Services Designed to Deliver Clean Modern Digital Experiences
@@ -671,7 +671,7 @@ function Frame37() {
   return (
     <div className="content-stretch flex items-center relative shrink-0 w-full">
       <div 
-        className="font-instrument not-italic relative text-[#fdfdfd] tracking-[-0.32px] w-full"
+        className="font-['Instrument_Serif',serif] not-italic relative text-[#fdfdfd] tracking-[-0.32px] w-full"
         style={{ fontSize: 'clamp(40px, 6vw, 80px)' }} 
       >
         <p className="leading-[1.1] mb-0">Ready to Build Something</p>
@@ -688,7 +688,7 @@ function Frame34() {
       className="content-stretch flex gap-[12px] md:gap-[16px] items-center relative shrink-0 cursor-pointer hover:text-[#1296cc] transition-colors group"
     >
       <p 
-        className="font-instrument leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
+        className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
         style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
       >
         Email
@@ -713,7 +713,7 @@ function Frame35() {
       className="content-stretch flex gap-[12px] md:gap-[16px] items-center relative shrink-0 w-full cursor-pointer hover:text-[#1296cc] transition-colors group"
     >
       <p 
-        className="font-instrument leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
+        className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#fdfdfd] group-hover:text-[#1296cc] tracking-[-0.16px] whitespace-nowrap transition-colors"
         style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
       >
         WhatsApp
@@ -754,7 +754,7 @@ function LiveTime() {
   }, []);
 
   return (
-    <div className="content-stretch flex font-instrument gap-[38px] items-center leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[24px] text-center tracking-[-0.12px] md:gap-[20px] md:text-[18px] sm:text-[16px]">
+    <div className="content-stretch flex font-['Instrument_Serif',serif] gap-[38px] items-center leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[24px] text-center tracking-[-0.12px] md:gap-[20px] md:text-[18px] sm:text-[16px]">
       <p className="relative shrink-0 whitespace-nowrap">Based on Sri Lanka</p>
       <p className="relative shrink-0 whitespace-nowrap">Local Time {time}</p>
     </div>
@@ -796,7 +796,7 @@ function ContactFooter() {
         
         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden pointer-events-none select-none">
           <p
-            className="font-albert font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter"
+            className="font-['Albert_Sans',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter"
             style={{ 
               fontSize: '28vw',
               lineHeight: '0.75',
