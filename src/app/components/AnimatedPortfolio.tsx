@@ -372,7 +372,7 @@ function Frame3() {
 
 function Frame9() {
   return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-[363px] lg:w-full">
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
       <Frame3 />
       <p className="flex-[1_0_0] font-['Albert_Sans:Regular',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
         For businesses that don't have a website yet
@@ -392,11 +392,11 @@ function Frame30() {
 
 function Frame16() {
   return (
-    <div className="content-stretch flex flex-col h-full items-center justify-between relative shrink-0 w-[363px] lg:w-full">
+    <div className="content-stretch flex flex-col h-full items-center justify-between relative shrink-0 w-full">
       <Frame30 />
       <div
         onClick={() => scrollToSection("contact")}
-        className="bg-[#1296cc] relative rounded-[100px] shrink-0 w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors"
+        className="bg-[#1296cc] relative rounded-[100px] shrink-0 w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[32px]"
         data-name="Button"
       >
         <div className="flex flex-row items-center justify-center size-full">
@@ -413,7 +413,7 @@ function Frame16() {
 
 function Frame7() {
   return (
-    <div className="bg-white h-full relative rounded-[8px] shrink-0 w-[411px] hover:scale-105 transition-transform lg:w-full">
+    <div className="bg-white h-full relative rounded-[8px] shrink-0 w-full hover:scale-105 transition-transform">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex items-start justify-between px-[24px] py-[32px] relative size-full">
           <Frame16 />
@@ -467,7 +467,7 @@ function Frame5() {
 
 function Frame12() {
   return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-[363px] lg:w-full">
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
       <Frame5 />
       <p className="flex-[1_0_0] font-['Albert_Sans:Regular',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
         For businesses with an existing website
@@ -487,11 +487,11 @@ function Frame31() {
 
 function Frame17() {
   return (
-    <div className="content-stretch flex flex-col h-full items-center justify-between relative shrink-0 w-[363px] lg:w-full">
+    <div className="content-stretch flex flex-col h-full items-center justify-between relative shrink-0 w-full">
       <Frame31 />
       <div
         onClick={() => scrollToSection("contact")}
-        className="bg-[#1296cc] relative rounded-[100px] shrink-0 w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors"
+        className="bg-[#1296cc] relative rounded-[100px] shrink-0 w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[32px]"
         data-name="Button"
       >
         <div className="flex flex-row items-center justify-center size-full">
@@ -508,7 +508,7 @@ function Frame17() {
 
 function Frame10() {
   return (
-    <div className="bg-white h-full relative rounded-[8px] shrink-0 w-[411px] hover:scale-105 transition-transform lg:w-full">
+    <div className="bg-white h-full relative rounded-[8px] shrink-0 w-full hover:scale-105 transition-transform">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex items-start justify-between px-[24px] py-[32px] relative size-full">
           <Frame17 />
@@ -562,7 +562,7 @@ function Frame6() {
 
 function Frame21() {
   return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-[363px] lg:w-full">
+    <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
       <Frame6 />
       <p className="flex-[1_0_0] font-['Albert_Sans:Regular',sans-serif] font-normal leading-[20.8px] min-w-px relative text-[#6d6d6d] text-[16px]">
         For businesses that already have a website
@@ -582,11 +582,11 @@ function Frame32() {
 
 function Frame19() {
   return (
-    <div className="content-stretch flex flex-col h-full items-center justify-between relative shrink-0 w-[363px] lg:w-full">
+    <div className="content-stretch flex flex-col h-full items-center justify-between relative shrink-0 w-full">
       <Frame32 />
       <div
         onClick={() => scrollToSection("contact")}
-        className="bg-[#1296cc] relative rounded-[100px] shrink-0 w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors"
+        className="bg-[#1296cc] relative rounded-[100px] shrink-0 w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[32px]"
         data-name="Button"
       >
         <div className="flex flex-row items-center justify-center size-full">
@@ -603,7 +603,7 @@ function Frame19() {
 
 function Frame13() {
   return (
-    <div className="bg-white h-full relative rounded-[8px] shrink-0 w-[411px] hover:scale-105 transition-transform lg:w-full">
+    <div className="bg-white h-full relative rounded-[8px] shrink-0 w-full hover:scale-105 transition-transform">
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex items-start justify-between px-[24px] py-[32px] relative size-full">
           <Frame19 />
@@ -614,11 +614,10 @@ function Frame13() {
   );
 }
 
-// Services Section Layout Fix
 function Frame29() {
   return (
-    /* flex-row eka dammama cards tika harahata (horizontally) yanawa */
-    <div className="content-stretch flex flex-row gap-[24px] h-[376px] items-stretch justify-center relative shrink-0 w-full lg:flex-col lg:h-auto">
+    /* Grid system ekak use kala side-by-side thiyenna */
+    <div className="content-stretch grid grid-cols-1 lg:grid-cols-3 gap-[24px] items-stretch relative shrink-0 w-full max-w-[1280px]">
       <Frame7 />
       <Frame10 />
       <Frame13 />
@@ -626,11 +625,10 @@ function Frame29() {
   );
 }
 
-// Frame33 eka center wenna mehema thiyenna oni
 function Frame33() {
   return (
-    <div className="content-stretch flex flex-col gap-[48px] items-center relative shrink-0 w-full max-w-[1281px] lg:w-full md:gap-[32px] px-4 lg:px-0 mx-auto">
-      <p className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[56px] text-center tracking-[-0.28px] w-full max-w-[792px] md:text-[40px] sm:text-[32px]">
+    <div className="content-stretch flex flex-col gap-[48px] items-center relative shrink-0 w-full md:gap-[32px] px-4 lg:px-0">
+      <p className="font-['Instrument_Serif:Regular',sans-serif] leading-[1.2] not-italic relative shrink-0 text-[#fdfdfd] text-[56px] text-center tracking-[-0.28px] max-w-[792px] w-full md:text-[40px] sm:text-[32px]">
         Services Designed to Deliver Clean Modern Digital Experiences
       </p>
       <Frame29 />
