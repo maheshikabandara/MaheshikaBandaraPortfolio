@@ -4,11 +4,11 @@ import { formatInTimeZone } from "date-fns-tz";
 import svgPaths from "../../imports/ContactFooter/svg-f4p2vld91i";
 import imgHero from "../../imports/Portfolio-1/9b06e550a03f9722c147c637abe54e4634f08454.png";
 import imgFrame192 from "../../imports/Portfolio-1/a1889c3ea7bf7237fd5d6a613633cd9a624d7694.png";
-import imgZapnote from "../../imports/Zapnote Hero 1.png";
-import imgFitnity from "../../imports/Fitnity Hero.png";
-import imgEleanor from "../../imports/Eleanor Vance Weddings Hero.png";
-import imgElevate from "../../imports/Elevate Support Group Hero.png";
-import imgSunday from "../../imports/Sunday Companions Hero.png";
+import imgZapnote from "../../imports/Zapnote-Hero.png";
+import imgFitnity from "../../imports/Fitnity-Hero.png";
+import imgEleanor from "../../imports/Eleanor-Vance-Weddings-Hero.png";
+import imgElevate from "../../imports/Elevate-Support-Group-Hero.png";
+import imgSunday from "../../imports/Sunday-Companions-Hero.png";
  
 function AnimatedSection({ children, delay = 0, id }: { children: React.ReactNode; delay?: number; id?: string }) {
   const ref = useRef(null);
