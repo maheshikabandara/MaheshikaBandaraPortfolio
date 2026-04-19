@@ -60,7 +60,7 @@ function Frame2() {
   return (
     <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
       <p className="font-['Albert_Sans',sans-serif] font-bold leading-[31.2px] relative shrink-0 text-[#fdfdfd] text-[24px] text-center whitespace-nowrap">
-        mahe.
+        maheux.
       </p>
       <Frame4 />
       <div
@@ -150,8 +150,7 @@ function Frame22() {
         className="font-['Instrument_Serif',serif] leading-[1.1] not-italic relative text-[#1e1e1e] text-center tracking-[-1.8px] w-full"
         style={{ fontSize: 'clamp(40px, 7vw, 130px)' }}
       >
-        Design clean, professional websites 
-        for businesses
+       High-conversion websites for businesses
       </motion.p>
 
       <motion.p
@@ -209,7 +208,7 @@ function AboutMe() {
             className="font-['Instrument_Serif',serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] w-full"
             style={{ fontSize: 'clamp(32px, 4.5vw, 70px)' }}
           >
-            UI/UX Designer, and Developer with a BSc in Information Technology who helps small businesses worldwide get a clean, professional online presence that attracts more customers. I create fast, mobile-friendly websites, whether it's building your first site from scratch or giving an existing one a modern polish, and design until every page feels simple, trustworthy, and meaningful.
+            UI/UX Designer, and Developer with a BSc in Information Technology who helps businesses get a clean, professional online presence that attracts more customers. I create fast, mobile-friendly websites, whether it's building your first site from scratch or giving an existing one a modern polish, and design until every page feels simple, trustworthy, and meaningful.
           </p>
           <p
             onClick={() => scrollToSection("works")}
