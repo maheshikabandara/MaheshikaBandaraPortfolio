@@ -799,7 +799,6 @@ function Frame36() {
     </div>
   );
 }
-}
 
 function LiveTime() {
   const [time, setTime] = useState("");
