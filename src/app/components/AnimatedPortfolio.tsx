@@ -46,7 +46,50 @@ const scrollToSection = (id: string) => {
   }
 };
 
-// --- Updated Nav (Handles both Home and Project Views) ---
+// --- Back To Top Button Component ---
+function BackToTopButton() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      // Pixel 300k pallahata giyama button eka penwanawa
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
+  return (
+    <>
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          onClick={scrollToTop}
+          className="fixed bottom-[30px] right-[20px] md:bottom-[40px] md:right-[40px] z-[100] bg-[#1296cc] text-[#fdfdfd] p-[12px] md:p-[16px] rounded-full shadow-[0_8px_24px_rgba(18,150,204,0.4)] cursor-pointer hover:bg-[#0d7aa8] hover:-translate-y-2 transition-all duration-300 flex items-center justify-center"
+        >
+          <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
+          </svg>
+        </motion.div>
+      )}
+    </>
+  );
+}
+
+// --- Nav ---
 function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => void, isDarkText?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -187,7 +230,7 @@ function AboutMe() {
   );
 }
 
-// --- Updated Project Card (onClick support) ---
+// --- Project Card & Works Section ---
 function ProjectCard({ title, imageSrc, isFullWidth = false, onClick }: { title: string, imageSrc: string, isFullWidth?: boolean, onClick: () => void }) {
   return (
     <div 
@@ -217,11 +260,57 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
             <span className="text-[#6d6d6d]">Design Precision and Excellence</span>
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] md:gap-[40px] w-full">
-            <ProjectCard title="Zapnote" imageSrc={imgZapnoteHero} onClick={() => onProjectClick({ title: "Zapnote", category: "SaaS Landing Page", fullImg: imgZapnoteHome })} />
-            <ProjectCard title="Fitnity" imageSrc={imgFitnityHero} onClick={() => onProjectClick({ title: "Fitnity", category: "Mobile App Landing Page", fullImg: imgFitnityHome })} />
-            <ProjectCard title="Eleanor Vance Weddings" imageSrc={imgEleanorHero} isFullWidth={true} onClick={() => onProjectClick({ title: "Eleanor Vance Weddings", category: "Wedding Photography Website", fullImg: imgEleanorHome })} />
-            <ProjectCard title="Elevate Support Group" imageSrc={imgElevateHero} onClick={() => onProjectClick({ title: "Elevate Support Group", category: "Corporate Business Website", fullImg: imgElevateHome })} />
-            <ProjectCard title="Sunday Companions" imageSrc={imgSundayHero} onClick={() => onProjectClick({ title: "Sunday Companions", category: "Non-Profit Organization Website", fullImg: imgSundayHome })} />
+            <ProjectCard 
+              title="Zapnote" 
+              imageSrc={imgZapnoteHero} 
+              onClick={() => onProjectClick({ 
+                title: "Zapnote", 
+                category: "SaaS Landing Page", 
+                description: "A sleek landing page for an AI-powered meeting summarizer. It highlights core features, integrations, and flexible pricing plans to drive user sign-ups.",
+                fullImg: imgZapnoteHome 
+              })} 
+            />
+            <ProjectCard 
+              title="Fitnity" 
+              imageSrc={imgFitnityHero} 
+              onClick={() => onProjectClick({ 
+                title: "Fitnity", 
+                category: "Mobile App Landing Page", 
+                description: "A modern, vibrant website designed for a fitness tracking app. It showcases key app functionalities, user testimonials, and clear subscription tiers.",
+                fullImg: imgFitnityHome 
+              })} 
+            />
+            <ProjectCard 
+              title="Eleanor Vance Weddings" 
+              imageSrc={imgEleanorHero} 
+              isFullWidth={true} 
+              onClick={() => onProjectClick({ 
+                title: "Eleanor Vance Weddings", 
+                category: "Wedding Planner Website", 
+                description: "An elegant and visually rich website for a boutique wedding planning and event design business. It emphasizes high-end photography, sophisticated typography, and a seamless inquiry process for luxury clientele.",
+                fullImg: imgEleanorHome 
+              })} 
+            />
+            <ProjectCard 
+              title="Elevate Support Group" 
+              imageSrc={imgElevateHero} 
+              onClick={() => onProjectClick({ 
+                title: "Elevate Support Group", 
+                category: "Corporate Business Website", 
+                description: "A professional corporate website for a B2B staffing and call center agency. The design focuses on trust, security compliance, and detailing their specialized remote support services for U.S. businesses.",
+                fullImg: imgElevateHome 
+              })} 
+            />
+            <ProjectCard 
+              title="Sunday Companions" 
+              imageSrc={imgSundayHero} 
+              onClick={() => onProjectClick({ 
+                title: "Sunday Companions", 
+                category: "Elder Care Service Website", 
+                description: "A warm and accessible website for a service providing regular phone check-ins and companionship for elderly individuals. It prioritizes a user-friendly layout, clear safety protocols, and an empathetic tone.",
+                fullImg: imgSundayHome 
+              })} 
+            />
           </div>
         </div>
       </div>
@@ -321,10 +410,10 @@ function ContactFooter() {
   );
 }
 
-// --- NEW Component: Individual Project Detail Page ---
+// --- Component: Individual Project Detail Page ---
 function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => void }) {
   useEffect(() => {
-    window.scrollTo(0, 0); // Component eka load weddima udata yanawa
+    window.scrollTo(0, 0); 
   }, [project]);
 
   return (
@@ -350,20 +439,23 @@ function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => v
           </div>
         </div>
 
-        {/* Title & Category */}
-        <div className="flex flex-col items-center gap-[16px] mb-[60px] md:mb-[80px] px-[20px] md:px-[60px] lg:px-[120px]">
-          <h1 className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] text-center tracking-[-0.28px]" style={{ fontSize: 'clamp(48px, 6vw, 90px)' }}>
+        {/* Title, Category & Description */}
+        <div className="flex flex-col items-center gap-[12px] mb-[60px] md:mb-[80px] px-[20px] md:px-[60px] lg:px-[120px] max-w-[1000px] text-center">
+          <h1 className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.28px]" style={{ fontSize: 'clamp(48px, 6vw, 90px)' }}>
             {project.title}
           </h1>
-          <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d]" style={{ fontSize: 'clamp(18px, 2vw, 24px)' }}>
+          <p className="font-['Albert_Sans',sans-serif] font-medium text-[#1296cc]" style={{ fontSize: 'clamp(18px, 2vw, 24px)' }}>
             {project.category}
+          </p>
+          <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] mt-[16px] leading-[1.6]" style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}>
+            {project.description}
           </p>
         </div>
 
         {/* Full Project Image */}
         <div className="w-full px-[20px] md:px-[60px] lg:px-[120px]">
             <div className="w-full rounded-[16px] md:rounded-[24px] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.08)] bg-[#f5f5f5]">
-            <img src={project.fullImg} alt={project.title} className="w-full h-auto object-cover" />
+              <img src={project.fullImg} alt={project.title} className="w-full h-auto object-cover" />
             </div>
         </div>
       </div>
@@ -371,22 +463,19 @@ function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => v
   );
 }
 
-// --- Main App Wrapper (Handles Navigation between Home and Project View) ---
+// --- Main App Wrapper ---
 export default function AnimatedPortfolio() {
   const [currentView, setCurrentView] = useState<'home' | 'project'>('home');
   const [activeProject, setActiveProject] = useState<any>(null);
 
-  // Card ekak click kalama call wena function eka
   const handleProjectClick = (projectData: any) => {
     setActiveProject(projectData);
     setCurrentView('project');
   };
 
-  // Menu item ekak click kalama call wena function eka
   const handleNavClick = (id: string) => {
     if (currentView !== 'home') {
       setCurrentView('home');
-      // Home page eka load wenakan poddak inna
       setTimeout(() => {
         scrollToSection(id);
       }, 100);
@@ -406,28 +495,26 @@ export default function AnimatedPortfolio() {
           <MyServices />
         </>
       ) : (
-        <>
-          {/* Project Details View eka pennana kalla */}
-          <div className="w-full bg-[#fdfdfd]">
-            {/* Nav eka light background ekata hariyanna isDarkText dala thiyenne */}
-            <div className="w-full flex justify-center pt-[32px] px-[20px] md:px-[60px] lg:px-[120px] relative z-20">
-              <Nav onNavClick={handleNavClick} isDarkText={true} />
-            </div>
-            {activeProject && (
-              <ProjectDetailsPage
-                project={activeProject}
-                onBack={() => {
-                  setCurrentView('home');
-                  setTimeout(() => scrollToSection('works'), 100); // Back kalama direct works grid ekata enawa
-                }}
-              />
-            )}
+        <div className="w-full bg-[#fdfdfd]">
+          <div className="w-full flex justify-center pt-[32px] px-[20px] md:px-[60px] lg:px-[120px] relative z-20">
+            <Nav onNavClick={handleNavClick} isDarkText={true} />
           </div>
-        </>
+          {activeProject && (
+            <ProjectDetailsPage
+              project={activeProject}
+              onBack={() => {
+                setCurrentView('home');
+                setTimeout(() => scrollToSection('works'), 100); 
+              }}
+            />
+          )}
+        </div>
       )}
 
-      {/* Footer eka page dekema yatin pennanawa */}
       <ContactFooter />
+      
+      {/* Scroll to Top Button (Page dekema yatin penewi) */}
+      <BackToTopButton />
     </div>
   );
 }
