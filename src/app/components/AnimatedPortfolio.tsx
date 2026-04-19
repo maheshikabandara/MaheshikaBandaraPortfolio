@@ -183,7 +183,16 @@ function Frame22() {
         className="font-['Instrument_Serif',serif] leading-[1.1] not-italic relative text-[#1e1e1e] text-center tracking-[-1.8px] w-full"
         style={{ fontSize: 'clamp(40px, 7vw, 130px)' }}
       >
-       High-conversion websites for businesses
+       High-conversion websites
+      </motion.p>
+     <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+        className="font-['Instrument_Serif',serif] leading-[1.1] not-italic relative text-[#1e1e1e] text-center tracking-[-1.8px] w-full"
+        style={{ fontSize: 'clamp(40px, 7vw, 130px)' }}
+      >
+       for businesses
       </motion.p>
 
       <motion.p
