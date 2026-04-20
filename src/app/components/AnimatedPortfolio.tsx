@@ -215,7 +215,6 @@ function Hero({ onNavClick }: { onNavClick: (id: string) => void }) {
 function AboutMe() {
   return (
     <AnimatedSection id="about">
-      {/* Full screen height eka anith sections wage min-h-screen walin gannawa */}
       <div className="bg-[#fdfdfd] min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="About me">
 
         <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center gap-[32px] md:gap-[48px] text-center">
@@ -236,12 +235,12 @@ function AboutMe() {
             UI/UX Designer • Web Designer • Wix Studio Developer
           </p>
 
-          {/* Description */}
+          {/* Description - Width limit eka ain karala w-full damma */}
           <p
-            className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.5] max-w-[900px]"
+            className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.5] w-full"
             style={{ fontSize: 'clamp(18px, 2vw, 32px)' }}
           >
-            I'm Maheshika, a UI/UX designer and web developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in Figma and Wix Studio, I create seamless web experiences tailored to your brand. Let's transform your digital presence with unique, attention-grabbing designs.
+            I'm Maheshika, a UI/UX designer and web developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in UI/UX Design and Web Development, I create seamless experiences tailored to your brand. Let's transform your digital presence with unique, attention-grabbing designs.
           </p>
 
           {/* Location & Social Icons Container */}
@@ -288,7 +287,6 @@ function AboutMe() {
     </AnimatedSection>
   );
 }
-
 // --- Project Card & Works Section ---
 function ProjectCardWork({ title, imageSrc, isFullWidth = false, onClick }: { title: string, imageSrc: string, isFullWidth?: boolean, onClick: () => void }) {
   return (
