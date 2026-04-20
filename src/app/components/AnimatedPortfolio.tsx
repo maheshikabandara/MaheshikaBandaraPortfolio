@@ -77,7 +77,7 @@ function BackToTopButton() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           onClick={scrollToTop}
-          className="fixed bottom-[30px] right-[20px] md:bottom-[40px] md:right-[40px] z-[100] bg-[#000000] text-[#fdfdfd] p-[12px] md:p-[16px] rounded-full shadow-[0_8px_24px_rgba(18,150,204,0.4)] cursor-pointer hover:bg-[#0d7aa8] hover:-translate-y-2 transition-all duration-300 flex items-center justify-center"
+          className="fixed bottom-[30px] right-[20px] md:bottom-[40px] md:right-[40px] z-[100] bg-[#000000] text-[#fdfdfd] p-[12px] md:p-[16px] rounded-full shadow-[0_8px_24px_rgba(255, 255, 255, 0.4)] cursor-pointer hover:bg-[#0d7aa8] hover:-translate-y-2 transition-all duration-300 flex items-center justify-center"
         >
           <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
@@ -366,6 +366,110 @@ function MyServices() {
   );
 }
 
+// --- NEW PROCESS SECTION ---
+interface ProcessStepProps {
+  index: number;
+  title: string;
+  description: string;
+}
+
+function ProcessRow({ index, title, description }: ProcessStepProps) {
+  const num = (index + 1).toString().padStart(2, '0');
+
+  return (
+    <div className="w-full flex flex-col justify-center">
+      {index === 0 && (
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "100%" }}
+          viewport={{ once: false, margin: "-10%" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="h-[1px] bg-[#e5e5e5] w-full"
+        />
+      )}
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, margin: "-10%" }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+        className="flex flex-col md:flex-row items-start md:items-center py-[40px] md:py-[60px] gap-[20px] md:gap-[40px]"
+      >
+        <div className="w-full md:w-[15%] shrink-0">
+          <p className="font-['Instrument_Serif',serif] text-[#1296cc] text-[40px] md:text-[60px] leading-none">
+            {num}
+          </p>
+        </div>
+        <div className="w-full md:w-[40%] shrink-0">
+          <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] text-[24px] md:text-[32px] leading-[1.3] tracking-[-0.02em]">
+            {title}
+          </p>
+        </div>
+        <div className="w-full md:w-[45%]">
+          <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] text-[16px] md:text-[20px] leading-[1.6]">
+            {description}
+          </p>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ width: 0 }}
+        whileInView={{ width: "100%" }}
+        viewport={{ once: false, margin: "-10%" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="h-[1px] bg-[#e5e5e5] w-full"
+      />
+    </div>
+  );
+}
+
+function ProcessSection() {
+  const processSteps = [
+    {
+      title: "You Contact me",
+      description: "Reach out through WhatsApp or email. I reply quickly and we get started."
+    },
+    {
+      title: "You Share Your Content",
+      description: "Send me your logo, text, photos, and any other details you want on the site."
+    },
+    {
+      title: "I Design and Develop",
+      description: "I create the full design and build your clean, modern website on Wix Studio."
+    },
+    {
+      title: "Revisions, Launch & Handover",
+      description: "We make any revisions together, then I launch the site and hand everything over to you."
+    }
+  ];
+
+  return (
+    <AnimatedSection delay={0.1} id="process">
+      <div className="bg-white relative w-full py-[100px] md:py-[140px] overflow-hidden" data-name="Process">
+        <div className="w-full px-[20px] md:px-[60px] lg:px-[120px] mx-auto flex flex-col gap-[60px] md:gap-[80px]">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
+            className="w-full"
+          >
+            <p className="font-['Instrument_Serif',serif] text-[#1e1e1e] text-[40px] md:text-[60px] lg:text-[80px] leading-[1.1] tracking-[-0.02em]">
+              Process Built for Clarity,<br />
+              <span className="text-[#6d6d6d]">Speed and Smooth Delivery</span>
+            </p>
+          </motion.div>
+          <div className="w-full flex flex-col">
+            {processSteps.map((step, index) => (
+              <ProcessRow key={index} index={index} title={step.title} description={step.description} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </AnimatedSection>
+  );
+}
+
 // Contact Footer
 function LiveTime() {
   const [time, setTime] = useState("");
@@ -492,6 +596,8 @@ export default function AnimatedPortfolio() {
           <AboutMe />
           <MyWorks onProjectClick={handleProjectClick} />
           <MyServices />
+          {/* Aluthin add karapu Process Section eka methana render wenawa */}
+          <ProcessSection />
         </>
       ) : (
         <div className="w-full bg-[#fdfdfd]">
