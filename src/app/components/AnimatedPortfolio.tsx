@@ -218,7 +218,7 @@ function AboutMe() {
       <div className="bg-white min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="About me">
         <div className="content-stretch flex flex-col gap-[40px] items-center justify-center relative shrink-0 w-full">
           <p 
-            className="font-['Instrument_Serif',serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] w-full max-w-[1180px] mx-auto" 
+            className="font-['Instrument_Serif',serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] w-full max-w-[1280px] mx-auto" 
             style={{ fontSize: 'clamp(32px, 4.5vw, 70px)' }}
           >
             UI/UX Designer, and Developer with a BSc in Information Technology who helps businesses get a clean, professional online presence that attracts more customers. I create fast, mobile-friendly websites, whether it's building your first site from scratch or giving an existing one a modern polish, and design until every page feels simple, trustworthy, and meaningful.
