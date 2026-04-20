@@ -111,8 +111,8 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
 
         <div className={`hidden md:flex font-['Albert_Sans',sans-serif] font-medium gap-[19px] items-center ${textColorClass} text-[16px]`}>
           <p onClick={() => handleScroll("about")} className="cursor-pointer hover:text-[#1296cc] transition-colors">About me</p>
-          <p onClick={() => handleScroll("pricing")} className="cursor-pointer hover:text-[#1296cc] transition-colors">Pricing</p>
           <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Works</p>
+          <p onClick={() => handleScroll("pricing")} className="cursor-pointer hover:text-[#1296cc] transition-colors">Pricing</p>
           <p onClick={() => handleScroll("process")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Process</p>
         </div>
 
@@ -139,8 +139,8 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
           className={`md:hidden flex flex-col items-center gap-[16px] w-full pt-[24px] pb-[10px] font-['Albert_Sans',sans-serif] ${textColorClass}`}
         >
           <p onClick={() => handleScroll("about")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">About me</p>
+         <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Works</p>
           <p onClick={() => handleScroll("pricing")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">Pricing</p>
-          <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Works</p>
           <p onClick={() => handleScroll("process")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Process</p>
           <div onClick={() => handleScroll("contact")} className="bg-[#1296cc] px-[32px] py-[12px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] mt-[10px] w-full text-center">
             <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] text-[18px]">Contact me</p>
