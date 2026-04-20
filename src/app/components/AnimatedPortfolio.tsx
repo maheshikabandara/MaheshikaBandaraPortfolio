@@ -46,7 +46,7 @@ const scrollToSection = (id: string) => {
   }
 };
 
-// --- Back To Top Button Component ---
+// --- Back To Top Button ---
 function BackToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -58,16 +58,12 @@ function BackToTopButton() {
         setIsVisible(false);
       }
     };
-
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -117,7 +113,7 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
           <p onClick={() => handleScroll("about")} className="cursor-pointer hover:text-[#1296cc] transition-colors">About me</p>
           <p onClick={() => handleScroll("services")} className="cursor-pointer hover:text-[#1296cc] transition-colors">Services</p>
           <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Works</p>
-          <p onClick={() => handleScroll("contact")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Process</p>
+          <p onClick={() => handleScroll("process")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Process</p>
         </div>
 
         <div
@@ -259,57 +255,11 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
             <span className="text-[#6d6d6d]">Design Precision and Excellence</span>
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] md:gap-[40px] w-full">
-            <ProjectCardWork 
-              title="Zapnote" 
-              imageSrc={imgZapnoteHero} 
-              onClick={() => onProjectClick({ 
-                title: "Zapnote", 
-                category: "SaaS Landing Page", 
-                description: "A sleek landing page for an AI-powered meeting summarizer. It highlights core features, integrations, and flexible pricing plans to drive user sign-ups.",
-                fullImg: imgZapnoteHome 
-              })} 
-            />
-            <ProjectCardWork 
-              title="Fitnity" 
-              imageSrc={imgFitnityHero} 
-              onClick={() => onProjectClick({ 
-                title: "Fitnity", 
-                category: "Mobile App Landing Page", 
-                description: "A modern, vibrant website designed for a fitness tracking app. It showcases key app functionalities, user testimonials, and clear subscription tiers.",
-                fullImg: imgFitnityHome 
-              })} 
-            />
-            <ProjectCardWork 
-              title="Eleanor Vance Weddings" 
-              imageSrc={imgEleanorHero} 
-              isFullWidth={true} 
-              onClick={() => onProjectClick({ 
-                title: "Eleanor Vance Weddings", 
-                category: "Wedding Planner Website", 
-                description: "An elegant and visually rich website for a boutique wedding planning and event design business. It emphasizes high-end photography, sophisticated typography, and a seamless inquiry process for luxury clientele.",
-                fullImg: imgEleanorHome 
-              })} 
-            />
-            <ProjectCardWork 
-              title="Elevate Support Group" 
-              imageSrc={imgElevateHero} 
-              onClick={() => onProjectClick({ 
-                title: "Elevate Support Group", 
-                category: "Corporate Business Website", 
-                description: "A professional corporate website for a B2B staffing and call center agency. The design focuses on trust, security compliance, and detailing their specialized remote support services for U.S. businesses.",
-                fullImg: imgElevateHome 
-              })} 
-            />
-            <ProjectCardWork 
-              title="Sunday Companions" 
-              imageSrc={imgSundayHero} 
-              onClick={() => onProjectClick({ 
-                title: "Sunday Companions", 
-                category: "Elder Care Service Website", 
-                description: "A warm and accessible website for a service providing regular phone check-ins and companionship for elderly individuals. It prioritizes a user-friendly layout, clear safety protocols, and an empathetic tone.",
-                fullImg: imgSundayHome 
-              })} 
-            />
+            <ProjectCardWork title="Zapnote" imageSrc={imgZapnoteHero} onClick={() => onProjectClick({ title: "Zapnote", category: "SaaS Landing Page", description: "A sleek landing page for an AI-powered meeting summarizer. It highlights core features, integrations, and flexible pricing plans to drive user sign-ups.", fullImg: imgZapnoteHome })} />
+            <ProjectCardWork title="Fitnity" imageSrc={imgFitnityHero} onClick={() => onProjectClick({ title: "Fitnity", category: "Mobile App Landing Page", description: "A modern, vibrant website designed for a fitness tracking app. It showcases key app functionalities, user testimonials, and clear subscription tiers.", fullImg: imgFitnityHome })} />
+            <ProjectCardWork title="Eleanor Vance Weddings" imageSrc={imgEleanorHero} isFullWidth={true} onClick={() => onProjectClick({ title: "Eleanor Vance Weddings", category: "Wedding Planner Website", description: "An elegant and visually rich website for a boutique wedding planning and event design business. It emphasizes high-end photography, sophisticated typography, and a seamless inquiry process for luxury clientele.", fullImg: imgEleanorHome })} />
+            <ProjectCardWork title="Elevate Support Group" imageSrc={imgElevateHero} onClick={() => onProjectClick({ title: "Elevate Support Group", category: "Corporate Business Website", description: "A professional corporate website for a B2B staffing and call center agency. The design focuses on trust, security compliance, and detailing their specialized remote support services for U.S. businesses.", fullImg: imgElevateHome })} />
+            <ProjectCardWork title="Sunday Companions" imageSrc={imgSundayHero} onClick={() => onProjectClick({ title: "Sunday Companions", category: "Elder Care Service Website", description: "A warm and accessible website for a service providing regular phone check-ins and companionship for elderly individuals. It prioritizes a user-friendly layout, clear safety protocols, and an empathetic tone.", fullImg: imgSundayHome })} />
           </div>
         </div>
       </div>
@@ -366,7 +316,7 @@ function MyServices() {
   );
 }
 
-// --- NEW PROCESS SECTION (RESTORED STACKING CARDS WITH NUMBERS) ---
+// --- UPDATED PROCESS SECTION (WITH DASHED LINE & STACKING CARDS) ---
 interface ProcessCardProps {
   index: number;
   title: string;
@@ -391,11 +341,12 @@ function ProcessCard({ index, title, description, totalCards }: ProcessCardProps
   const rotateX = useTransform(cardProgress, [0, 1], [2, 0]);
   const opacity = useTransform(cardProgress, [0, 0.3, 1], [0.7, 0.85, 1]);
 
-  // Number eka 01, 02 widiyata
+  // Card Numbers (01, 02...)
   const num = (index + 1).toString().padStart(2, '0');
 
   return (
-    <div ref={containerRef} className="h-[400px] md:h-[350px] sm:h-[300px]">
+    // Card eka athara space eka adu karanna kalin thibba 'h-[400px]' eka 'h-[260px]' walata adu kara
+    <div ref={containerRef} className="h-[260px] md:h-[220px] sm:h-[180px]">
       <motion.div
         style={{ scale, y, rotateX, opacity }}
         className="sticky top-[150px] md:top-[120px]"
@@ -403,17 +354,12 @@ function ProcessCard({ index, title, description, totalCards }: ProcessCardProps
         <div className="relative rounded-[24px] shrink-0 w-full bg-white shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-[#f2f2f2] hover:shadow-[0px_12px_40px_rgba(0,0,0,0.12)] transition-shadow">
           <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[24px]" />
           
-          {/* Card Content Layout */}
-          <div className="flex flex-col md:flex-row items-start md:items-center px-[24px] py-[32px] md:px-[40px] md:py-[48px] gap-[24px] md:gap-[32px]">
-            
-            {/* Number Indicator (Replaced the circle) */}
+          <div className="flex flex-col md:flex-row items-start md:items-center px-[24px] py-[32px] md:px-[40px] md:py-[40px] gap-[20px] md:gap-[32px]">
             <div className="flex items-center justify-center shrink-0">
               <p className="font-['Instrument_Serif',serif] text-[#1296cc] text-[40px] md:text-[56px] leading-none">
                 {num}
               </p>
             </div>
-
-            {/* Text Content */}
             <div className="flex flex-col gap-[12px] items-start flex-1">
               <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] text-[24px] md:text-[32px] leading-[1.3] tracking-[-0.02em]">
                 {title}
@@ -422,8 +368,8 @@ function ProcessCard({ index, title, description, totalCards }: ProcessCardProps
                 {description}
               </p>
             </div>
-
           </div>
+
         </div>
       </motion.div>
     </div>
@@ -431,29 +377,25 @@ function ProcessCard({ index, title, description, totalCards }: ProcessCardProps
 }
 
 function ProcessSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  // Meken thama mulu process section ekema scroll progress eka ganne kada iri fill karanna
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start center", "end center"]
+  });
+
   const processSteps = [
-    {
-      title: "You Contact me",
-      description: "Reach out through WhatsApp or email. I reply quickly and we get started."
-    },
-    {
-      title: "You Share Your Content",
-      description: "Send me your logo, text, photos, and any other details you want on the site."
-    },
-    {
-      title: "I Design and Develop",
-      description: "I create the full design and build your clean, modern website on Wix Studio."
-    },
-    {
-      title: "Revisions, Launch & Handover",
-      description: "We make any revisions together, then I launch the site and hand everything over to you."
-    }
+    { title: "You Contact me", description: "Reach out through WhatsApp or email. I reply quickly and we get started." },
+    { title: "You Share Your Content", description: "Send me your logo, text, photos, and any other details you want on the site." },
+    { title: "I Design and Develop", description: "I create the full design and build your clean, modern website on Wix Studio." },
+    { title: "Revisions, Launch & Handover", description: "We make any revisions together, then I launch the site and hand everything over to you." }
   ];
 
   return (
     <AnimatedSection delay={0.1} id="process">
-      <div className="bg-white relative w-full py-[100px] md:py-[140px]" data-name="Process">
-        <div className="flex flex-col gap-[60px] md:gap-[80px] items-center justify-center relative w-full px-[20px] md:px-[60px] lg:px-[120px]">
+      <div className="bg-white relative w-full py-[100px] md:py-[140px] overflow-hidden" data-name="Process">
+        <div className="flex flex-col gap-[60px] md:gap-[80px] items-center relative w-full px-[20px] md:px-[60px] lg:px-[120px]">
           
           <div className="flex flex-col items-center relative w-full">
             <p className="font-['Instrument_Serif',serif] leading-[1.1] text-[#1e1e1e] text-center tracking-[-0.02em] w-full" style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}>
@@ -462,16 +404,40 @@ function ProcessSection() {
             </p>
           </div>
 
-          <div className="relative w-full max-w-[800px]">
-            {processSteps.map((step, index) => (
-              <ProcessCard
-                key={index}
-                index={index}
-                title={step.title}
-                description={step.description}
-                totalCards={processSteps.length}
+          <div ref={sectionRef} className="relative w-full max-w-[800px] mx-auto">
+            
+            {/* Animated Dashed Timeline (Kada Iri) */}
+            {/* Meka wam paththe lassanata connect wela penewi */}
+            <div className="absolute left-[8px] md:left-[20px] top-[40px] bottom-[40px] w-[3px] z-10 hidden sm:block">
+              {/* Yatin thiyena Ash color dashed line eka */}
+              <div 
+                className="absolute inset-0 w-full h-full" 
+                style={{ backgroundImage: 'linear-gradient(to bottom, #e5e5e5 50%, transparent 50%)', backgroundSize: '3px 16px' }} 
               />
-            ))}
+              {/* Udin ena Blue color fill wena dashed line eka */}
+              <motion.div 
+                className="absolute top-0 left-0 w-full"
+                style={{ 
+                  height: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+                  backgroundImage: 'linear-gradient(to bottom, #1296cc 50%, transparent 50%)', 
+                  backgroundSize: '3px 16px'
+                }}
+              />
+            </div>
+
+            {/* Cards Wrapper */}
+            <div className="w-full pl-[0px] sm:pl-[40px] md:pl-[60px] flex flex-col">
+              {processSteps.map((step, index) => (
+                <ProcessCard
+                  key={index}
+                  index={index}
+                  title={step.title}
+                  description={step.description}
+                  totalCards={processSteps.length}
+                />
+              ))}
+            </div>
+
           </div>
 
         </div>
@@ -537,8 +503,6 @@ function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => v
       className="w-full flex flex-col items-center bg-[#fdfdfd]"
     >
       <div className="w-full flex flex-col items-center pt-[60px] md:pt-[100px] pb-[80px] md:pb-[120px]">
-        
-        {/* Back Button */}
         <div className="w-full flex justify-start mb-[40px] md:mb-[60px] px-[20px] md:px-[60px] lg:px-[120px]">
           <div
             onClick={onBack}
@@ -551,21 +515,11 @@ function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => v
             Back to Home
           </div>
         </div>
-
-        {/* Title, Category & Description */}
         <div className="flex flex-col items-center gap-[12px] mb-[60px] md:mb-[80px] px-[20px] md:px-[60px] lg:px-[120px] max-w-[1000px] text-center">
-          <h1 className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.28px]" style={{ fontSize: 'clamp(48px, 6vw, 90px)' }}>
-            {project.title}
-          </h1>
-          <p className="font-['Albert_Sans',sans-serif] font-medium text-[#1296cc]" style={{ fontSize: 'clamp(18px, 2vw, 24px)' }}>
-            {project.category}
-          </p>
-          <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] mt-[16px] leading-[1.6]" style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}>
-            {project.description}
-          </p>
+          <h1 className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.28px]" style={{ fontSize: 'clamp(48px, 6vw, 90px)' }}>{project.title}</h1>
+          <p className="font-['Albert_Sans',sans-serif] font-medium text-[#1296cc]" style={{ fontSize: 'clamp(18px, 2vw, 24px)' }}>{project.category}</p>
+          <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] mt-[16px] leading-[1.6]" style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}>{project.description}</p>
         </div>
-
-        {/* Full Project Image */}
         <div className="w-full px-[20px] md:px-[60px] lg:px-[120px]">
             <div className="w-full rounded-[16px] md:rounded-[24px] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.08)] bg-[#f5f5f5]">
               <img src={project.fullImg} alt={project.title} className="w-full h-auto object-cover" />
@@ -589,9 +543,7 @@ export default function AnimatedPortfolio() {
   const handleNavClick = (id: string) => {
     if (currentView !== 'home') {
       setCurrentView('home');
-      setTimeout(() => {
-        scrollToSection(id);
-      }, 100);
+      setTimeout(() => { scrollToSection(id); }, 100);
     } else {
       scrollToSection(id);
     }
@@ -599,14 +551,13 @@ export default function AnimatedPortfolio() {
 
   return (
     <div className="w-full bg-white relative flex flex-col overflow-clip">
-      
       {currentView === 'home' ? (
         <>
           <Hero onNavClick={handleNavClick} />
           <AboutMe />
           <MyWorks onProjectClick={handleProjectClick} />
           <MyServices />
-          {/* Stacking Cards Process Section */}
+          {/* Animated Dashed Timeline & Stacking Cards */}
           <ProcessSection />
         </>
       ) : (
@@ -625,10 +576,7 @@ export default function AnimatedPortfolio() {
           )}
         </div>
       )}
-
       <ContactFooter />
-      
-      {/* Scroll to Top Button (Page dekema yatin penewi) */}
       <BackToTopButton />
     </div>
   );
