@@ -232,7 +232,7 @@ function AboutMe() {
             className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.2em] opacity-80"
             style={{ fontSize: 'clamp(12px, 1.5vw, 18px)' }}
           >
-            UI/UX Designer • Web Designer • Wix Studio Developer
+            UI/UX Designer • Web Developer
           </p>
 
           {/* Description - Width limit eka ain karala w-full damma */}
