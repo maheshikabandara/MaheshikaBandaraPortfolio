@@ -217,8 +217,19 @@ function AboutMe() {
     <AnimatedSection id="about">
       <div className="bg-white min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="About me">
         <div className="content-stretch flex flex-col gap-[40px] items-center justify-center relative shrink-0 w-full">
-          <p className="font-['Instrument_Serif',serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] w-full" style={{ fontSize: 'clamp(32px, 4.5vw, 70px)' }}>UI/UX Designer, and Developer with a BSc in Information Technology who helps businesses get a clean, professional online presence that attracts more customers. I create fast, mobile-friendly websites, whether it's building your first site from scratch or giving an existing one a modern polish, and design until every page feels simple, trustworthy, and meaningful.</p>
-          <p onClick={() => scrollToSection("works")} className="font-['Albert_Sans',sans-serif] font-medium leading-[1.5] relative text-[#1296cc] text-center tracking-[-0.12px] w-full cursor-pointer hover:underline transition-all hover:scale-105" style={{ fontSize: 'clamp(18px, 1.5vw, 28px)' }}>Explore My Work</p>
+          <p 
+            className="font-['Instrument_Serif',serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] w-full max-w-[1100px] mx-auto" 
+            style={{ fontSize: 'clamp(32px, 4.5vw, 70px)' }}
+          >
+            UI/UX Designer, and Developer with a BSc in Information Technology who helps businesses get a clean, professional online presence that attracts more customers. I create fast, mobile-friendly websites, whether it's building your first site from scratch or giving an existing one a modern polish, and design until every page feels simple, trustworthy, and meaningful.
+          </p>
+          <p 
+            onClick={() => scrollToSection("works")} 
+            className="font-['Albert_Sans',sans-serif] font-medium leading-[1.5] relative text-[#1296cc] text-center tracking-[-0.12px] w-full cursor-pointer hover:underline transition-all hover:scale-105" 
+            style={{ fontSize: 'clamp(18px, 1.5vw, 28px)' }}
+          >
+            Explore My Work
+          </p>
         </div>
       </div>
     </AnimatedSection>
@@ -508,6 +519,7 @@ function LiveTime() {
   );
 }
 
+// Contact Footer
 function ContactFooter() {
   return (
     <AnimatedSection delay={0.1} id="contact">
@@ -516,20 +528,45 @@ function ContactFooter() {
           <div className="flex flex-col gap-[60px] md:gap-[100px] w-full">
             <div className="font-['Instrument_Serif',serif] w-full" style={{ fontSize: 'clamp(40px, 6vw, 100px)' }}>
               <p className="leading-[1.1] text-[#fdfdfd]/50">Ready to Build Something</p>
-              <p className="leading-[1.1]"><span className="text-[#fdfdfd]/50">Modern and Impactful?</span><span className="text-[#fdfdfd]"> Let's talk!</span></p>
+              <p className="leading-[1.1]">
+                <span className="text-[#fdfdfd]/50">Modern and Impactful? </span>
+                {/* Email Link added to Let's talk! */}
+                <a href="mailto:mbmaheshika@gmail.com" className="text-[#fdfdfd] hover:text-[#1296cc] cursor-pointer transition-colors duration-300">
+                  Let's talk!
+                </a>
+              </p>
             </div>
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between w-full gap-[40px] md:gap-0">
               <div className="flex flex-col gap-[16px] md:gap-[24px] items-start">
-                <a href="mailto:mbmaheshika@gmail.com" className="flex gap-[16px] items-center cursor-pointer group"><p className="font-['Instrument_Serif',serif] leading-[1.2] text-[#fdfdfd] group-hover:text-[#1296cc] transition-colors" style={{ fontSize: 'clamp(24px, 3vw, 48px)' }}>Email</p><svg className="w-[0.8em] h-[0.8em]" fill="none" viewBox="0 0 18 18"><path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" /></svg></a>
-                <a href="https://wa.me/94707170906" target="_blank" rel="noopener noreferrer" className="flex gap-[16px] items-center cursor-pointer group"><p className="font-['Instrument_Serif',serif] leading-[1.2] text-[#fdfdfd] group-hover:text-[#1296cc] transition-colors" style={{ fontSize: 'clamp(24px, 3vw, 48px)' }}>WhatsApp</p><svg className="w-[0.8em] h-[0.8em]" fill="none" viewBox="0 0 18 18"><path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" /></svg></a>
+                <a href="mailto:mbmaheshika@gmail.com" className="flex gap-[16px] items-center cursor-pointer group">
+                  <p className="font-['Instrument_Serif',serif] leading-[1.2] text-[#fdfdfd] group-hover:text-[#1296cc] transition-colors" style={{ fontSize: 'clamp(24px, 3vw, 48px)' }}>Email</p>
+                  <svg className="w-[0.8em] h-[0.8em]" fill="none" viewBox="0 0 18 18">
+                    <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" />
+                  </svg>
+                </a>
+                <a href="https://wa.me/94707170906" target="_blank" rel="noopener noreferrer" className="flex gap-[16px] items-center cursor-pointer group">
+                  <p className="font-['Instrument_Serif',serif] leading-[1.2] text-[#fdfdfd] group-hover:text-[#1296cc] transition-colors" style={{ fontSize: 'clamp(24px, 3vw, 48px)' }}>WhatsApp</p>
+                  <svg className="w-[0.8em] h-[0.8em]" fill="none" viewBox="0 0 18 18">
+                    <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" />
+                  </svg>
+                </a>
               </div>
-              <div className="flex items-end justify-start md:justify-end"><LiveTime /></div>
+              <div className="flex items-end justify-start md:justify-end">
+                <LiveTime />
+              </div>
             </div>
           </div>
         </div>
-        <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden pointer-events-none select-none">
-          <p className="font-['Albert_Sans',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter opacity-50" style={{ fontSize: '28vw', lineHeight: '0.75', marginBottom: '-1%' }}>maheux.</p>
+        
+        {/* Email Link added to maheux. text */}
+        <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden select-none z-20">
+          <a href="mailto:mbmaheshika@gmail.com" className="cursor-pointer hover:opacity-80 transition-opacity duration-300">
+            <p className="font-['Albert_Sans',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter opacity-50" style={{ fontSize: '28vw', lineHeight: '0.75', marginBottom: '-1%' }}>
+              maheux.
+            </p>
+          </a>
         </div>
+
       </div>
     </AnimatedSection>
   );
