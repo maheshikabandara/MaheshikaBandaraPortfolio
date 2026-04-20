@@ -1,4 +1,4 @@
-import { motion, useInView } from "motion/react";
+import { motion, useInView, useScroll, useTransform } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import { formatInTimeZone } from "date-fns-tz";
 
@@ -77,7 +77,7 @@ function BackToTopButton() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           onClick={scrollToTop}
-          className="fixed bottom-[30px] right-[20px] md:bottom-[40px] md:right-[40px] z-[100] bg-[#000000] text-[#fdfdfd] p-[12px] md:p-[16px] rounded-full shadow-[0_8px_24px_rgba(255, 255, 255, 0.4)] cursor-pointer hover:bg-[#0d7aa8] hover:-translate-y-2 transition-all duration-300 flex items-center justify-center"
+          className="fixed bottom-[30px] right-[20px] md:bottom-[40px] md:right-[40px] z-[100] bg-[#000000] text-[#fdfdfd] p-[12px] md:p-[16px] rounded-full shadow-[0_8px_24px_rgba(18,150,204,0.4)] cursor-pointer hover:bg-[#0d7aa8] hover:-translate-y-2 transition-all duration-300 flex items-center justify-center"
         >
           <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
@@ -117,7 +117,7 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
           <p onClick={() => handleScroll("about")} className="cursor-pointer hover:text-[#1296cc] transition-colors">About me</p>
           <p onClick={() => handleScroll("services")} className="cursor-pointer hover:text-[#1296cc] transition-colors">Services</p>
           <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Works</p>
-          <p onClick={() => handleScroll("contact")} className="cursor-pointer hover:text-[#1296cc] transition-colors">Testimonials</p>
+          <p onClick={() => handleScroll("contact")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Process</p>
         </div>
 
         <div
@@ -145,7 +145,7 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
           <p onClick={() => handleScroll("about")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">About me</p>
           <p onClick={() => handleScroll("services")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">Services</p>
           <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Works</p>
-          <p onClick={() => handleScroll("contact")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">Testimonials</p>
+          <p onClick={() => handleScroll("process")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Process</p>
           <div onClick={() => handleScroll("contact")} className="bg-[#1296cc] px-[32px] py-[12px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] mt-[10px] w-full text-center">
             <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] text-[18px]">Contact me</p>
           </div>
@@ -230,7 +230,7 @@ function AboutMe() {
 }
 
 // --- Project Card & Works Section ---
-function ProjectCard({ title, imageSrc, isFullWidth = false, onClick }: { title: string, imageSrc: string, isFullWidth?: boolean, onClick: () => void }) {
+function ProjectCardWork({ title, imageSrc, isFullWidth = false, onClick }: { title: string, imageSrc: string, isFullWidth?: boolean, onClick: () => void }) {
   return (
     <div 
       onClick={onClick} 
@@ -259,7 +259,7 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
             <span className="text-[#6d6d6d]">Design Precision and Excellence</span>
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] md:gap-[40px] w-full">
-            <ProjectCard 
+            <ProjectCardWork 
               title="Zapnote" 
               imageSrc={imgZapnoteHero} 
               onClick={() => onProjectClick({ 
@@ -269,7 +269,7 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
                 fullImg: imgZapnoteHome 
               })} 
             />
-            <ProjectCard 
+            <ProjectCardWork 
               title="Fitnity" 
               imageSrc={imgFitnityHero} 
               onClick={() => onProjectClick({ 
@@ -279,7 +279,7 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
                 fullImg: imgFitnityHome 
               })} 
             />
-            <ProjectCard 
+            <ProjectCardWork 
               title="Eleanor Vance Weddings" 
               imageSrc={imgEleanorHero} 
               isFullWidth={true} 
@@ -290,7 +290,7 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
                 fullImg: imgEleanorHome 
               })} 
             />
-            <ProjectCard 
+            <ProjectCardWork 
               title="Elevate Support Group" 
               imageSrc={imgElevateHero} 
               onClick={() => onProjectClick({ 
@@ -300,7 +300,7 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
                 fullImg: imgElevateHome 
               })} 
             />
-            <ProjectCard 
+            <ProjectCardWork 
               title="Sunday Companions" 
               imageSrc={imgSundayHero} 
               onClick={() => onProjectClick({ 
@@ -366,59 +366,66 @@ function MyServices() {
   );
 }
 
-// --- NEW PROCESS SECTION ---
-interface ProcessStepProps {
+// --- NEW PROCESS SECTION (RESTORED STACKING CARDS WITH NUMBERS) ---
+interface ProcessCardProps {
   index: number;
   title: string;
   description: string;
+  totalCards: number;
 }
 
-function ProcessRow({ index, title, description }: ProcessStepProps) {
+function ProcessCard({ index, title, description, totalCards }: ProcessCardProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+
+  const rangeStart = index / totalCards;
+  const rangeEnd = (index + 1) / totalCards;
+
+  const cardProgress = useTransform(scrollYProgress, [rangeStart, rangeEnd], [0, 1]);
+  const scale = useTransform(cardProgress, [0, 0.5, 1], [0.9 - (totalCards - index - 1) * 0.05, 0.95, 1]);
+  const y = useTransform(cardProgress, [0, 1], [(totalCards - index - 1) * 30, 0]);
+  const rotateX = useTransform(cardProgress, [0, 1], [2, 0]);
+  const opacity = useTransform(cardProgress, [0, 0.3, 1], [0.7, 0.85, 1]);
+
+  // Number eka 01, 02 widiyata
   const num = (index + 1).toString().padStart(2, '0');
 
   return (
-    <div className="w-full flex flex-col justify-center">
-      {index === 0 && (
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: "100%" }}
-          viewport={{ once: false, margin: "-10%" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="h-[1px] bg-[#e5e5e5] w-full"
-        />
-      )}
-
+    <div ref={containerRef} className="h-[400px] md:h-[350px] sm:h-[300px]">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, margin: "-10%" }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-        className="flex flex-col md:flex-row items-start md:items-center py-[40px] md:py-[60px] gap-[20px] md:gap-[40px]"
+        style={{ scale, y, rotateX, opacity }}
+        className="sticky top-[150px] md:top-[120px]"
       >
-        <div className="w-full md:w-[15%] shrink-0">
-          <p className="font-['Instrument_Serif',serif] text-[#1296cc] text-[40px] md:text-[60px] leading-none">
-            {num}
-          </p>
-        </div>
-        <div className="w-full md:w-[40%] shrink-0">
-          <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] text-[24px] md:text-[32px] leading-[1.3] tracking-[-0.02em]">
-            {title}
-          </p>
-        </div>
-        <div className="w-full md:w-[45%]">
-          <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] text-[16px] md:text-[20px] leading-[1.6]">
-            {description}
-          </p>
+        <div className="relative rounded-[24px] shrink-0 w-full bg-white shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-[#f2f2f2] hover:shadow-[0px_12px_40px_rgba(0,0,0,0.12)] transition-shadow">
+          <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[24px]" />
+          
+          {/* Card Content Layout */}
+          <div className="flex flex-col md:flex-row items-start md:items-center px-[24px] py-[32px] md:px-[40px] md:py-[48px] gap-[24px] md:gap-[32px]">
+            
+            {/* Number Indicator (Replaced the circle) */}
+            <div className="flex items-center justify-center shrink-0">
+              <p className="font-['Instrument_Serif',serif] text-[#1296cc] text-[40px] md:text-[56px] leading-none">
+                {num}
+              </p>
+            </div>
+
+            {/* Text Content */}
+            <div className="flex flex-col gap-[12px] items-start flex-1">
+              <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] text-[24px] md:text-[32px] leading-[1.3] tracking-[-0.02em]">
+                {title}
+              </p>
+              <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] text-[16px] md:text-[20px] leading-[1.6]">
+                {description}
+              </p>
+            </div>
+
+          </div>
         </div>
       </motion.div>
-
-      <motion.div
-        initial={{ width: 0 }}
-        whileInView={{ width: "100%" }}
-        viewport={{ once: false, margin: "-10%" }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="h-[1px] bg-[#e5e5e5] w-full"
-      />
     </div>
   );
 }
@@ -445,25 +452,28 @@ function ProcessSection() {
 
   return (
     <AnimatedSection delay={0.1} id="process">
-      <div className="bg-white relative w-full py-[100px] md:py-[140px] overflow-hidden" data-name="Process">
-        <div className="w-full px-[20px] md:px-[60px] lg:px-[120px] mx-auto flex flex-col gap-[60px] md:gap-[80px]">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6 }}
-            className="w-full"
-          >
-            <p className="font-['Instrument_Serif',serif] text-[#1e1e1e] text-[40px] md:text-[60px] lg:text-[80px] leading-[1.1] tracking-[-0.02em]">
+      <div className="bg-white relative w-full py-[100px] md:py-[140px]" data-name="Process">
+        <div className="flex flex-col gap-[60px] md:gap-[80px] items-center justify-center relative w-full px-[20px] md:px-[60px] lg:px-[120px]">
+          
+          <div className="flex flex-col items-center relative w-full">
+            <p className="font-['Instrument_Serif',serif] leading-[1.1] text-[#1e1e1e] text-center tracking-[-0.02em] w-full" style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}>
               Process Built for Clarity,<br />
               <span className="text-[#6d6d6d]">Speed and Smooth Delivery</span>
             </p>
-          </motion.div>
-          <div className="w-full flex flex-col">
+          </div>
+
+          <div className="relative w-full max-w-[800px]">
             {processSteps.map((step, index) => (
-              <ProcessRow key={index} index={index} title={step.title} description={step.description} />
+              <ProcessCard
+                key={index}
+                index={index}
+                title={step.title}
+                description={step.description}
+                totalCards={processSteps.length}
+              />
             ))}
           </div>
+
         </div>
       </div>
     </AnimatedSection>
@@ -596,7 +606,7 @@ export default function AnimatedPortfolio() {
           <AboutMe />
           <MyWorks onProjectClick={handleProjectClick} />
           <MyServices />
-          {/* Aluthin add karapu Process Section eka methana render wenawa */}
+          {/* Stacking Cards Process Section */}
           <ProcessSection />
         </>
       ) : (
