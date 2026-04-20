@@ -215,78 +215,75 @@ function Hero({ onNavClick }: { onNavClick: (id: string) => void }) {
 function AboutMe() {
   return (
     <AnimatedSection id="about">
+      {/* Full screen height eka anith sections wage min-h-screen walin gannawa */}
       <div className="bg-[#fdfdfd] min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="About me">
 
-        <div className="w-full max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[100px] items-center">
+        <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center gap-[32px] md:gap-[48px] text-center">
 
-          {/* Left Side: Image with Yellow Background */}
-          <div className="relative w-[80%] max-w-[380px] mx-auto lg:mx-0">
-            <motion.div
-              whileHover={{ rotate: 0, scale: 1.02 }}
-              transition={{ duration: 0.4 }}
-              className="relative bg-[#fbb03b] p-[12px] md:p-[16px] rotate-[-4deg] rounded-[8px] shadow-[0_12px_40px_rgba(0,0,0,0.1)]"
+          {/* Title */}
+          <h2
+            className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.02em]"
+            style={{ fontSize: 'clamp(56px, 8vw, 120px)' }}
+          >
+            Meet Maheshika
+          </h2>
+
+          {/* Subtitle */}
+          <p 
+            className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.2em] opacity-80"
+            style={{ fontSize: 'clamp(12px, 1.5vw, 18px)' }}
+          >
+            UI/UX Designer • Web Designer • Wix Studio Developer
+          </p>
+
+          {/* Description */}
+          <p
+            className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.5] max-w-[900px]"
+            style={{ fontSize: 'clamp(18px, 2vw, 32px)' }}
+          >
+            I'm Maheshika, a UI/UX designer and web developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in Figma and Wix Studio, I create seamless web experiences tailored to your brand. Let's transform your digital presence with unique, attention-grabbing designs.
+          </p>
+
+          {/* Location & Social Icons Container */}
+          <div className="flex flex-col items-center gap-[24px] mt-[24px]">
+            
+            {/* Location */}
+            <p 
+              className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.15em]"
+              style={{ fontSize: 'clamp(14px, 1.5vw, 20px)' }}
             >
-              {/* Methana 'imgFrame192' wenuwata oyata oni nam wena image ekak denna puluwan */}
-              <img
-                src={imgFrame192} 
-                alt="Maheshika Bandara"
-                className="w-full h-auto object-cover rounded-[4px] grayscale hover:grayscale-0 transition-all duration-500"
-              />
-            </motion.div>
-          </div>
-
-          {/* Right Side: Text Content */}
-          <div className="flex flex-col items-start gap-[24px]">
-            <h2
-              className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.02em]"
-              style={{ fontSize: 'clamp(48px, 6vw, 80px)' }}
-            >
-              Meet Maheshika
-            </h2>
-
-            <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] text-[12px] md:text-[14px] uppercase tracking-[0.2em] opacity-80">
-              UI/UX Designer • Web Designer • Wix Studio Developer
+              Kandy, Sri Lanka
             </p>
 
-            <p
-              className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.6]"
-              style={{ fontSize: 'clamp(18px, 1.5vw, 22px)' }}
-            >
-              I'm Maheshika, a UI/UX designer and web developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in Figma and Wix Studio, I create seamless web experiences tailored to your brand. Let's transform your digital presence with unique, attention-grabbing designs.
-            </p>
-
-            {/* Location & Socials Footer */}
-            <div className="flex flex-wrap items-center gap-[24px] md:gap-[32px] mt-[16px] pt-[24px] border-t border-[#e5e5e5] w-full">
+            {/* Icons */}
+            <div className="flex items-center justify-center gap-[24px] md:gap-[32px]">
               
-              <div onClick={() => scrollToSection('contact')} className="flex items-center gap-[8px] group cursor-pointer">
-                <span className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] text-[13px] md:text-[14px] uppercase tracking-[0.15em] group-hover:text-[#1296cc] transition-colors">
-                  Kandy, Sri Lanka
-                </span>
-                <svg className="w-[18px] h-[18px] text-[#1e1e1e] group-hover:text-[#1296cc] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 19L19 5M19 5v10M19 5H9" />
+              {/* Email Icon */}
+              <a href="mailto:mbmaheshika@gmail.com" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all duration-300">
+                <svg className="w-[clamp(28px,3vw,40px)] h-[clamp(28px,3vw,40px)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-[16px]">
-                {/* LinkedIn Icon */}
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all">
-                  <svg className="w-[22px] h-[22px]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                </a>
-                {/* Dribbble Icon */}
-                <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all">
-                  <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
-                  </svg>
-                </a>
-              </div>
+              {/* WhatsApp Icon */}
+              <a href="https://wa.me/94707170906" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all duration-300">
+                <svg className="w-[clamp(28px,3vw,40px)] h-[clamp(28px,3vw,40px)]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                </svg>
+              </a>
+
+              {/* Dribbble Icon */}
+              <a href="https://dribbble.com/maheshikabandara" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all duration-300">
+                <svg className="w-[clamp(28px,3vw,40px)] h-[clamp(28px,3vw,40px)]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
+                </svg>
+              </a>
+
             </div>
-
           </div>
-        </div>
 
+        </div>
       </div>
     </AnimatedSection>
   );
