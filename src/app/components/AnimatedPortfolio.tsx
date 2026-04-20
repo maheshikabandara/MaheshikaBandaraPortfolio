@@ -215,22 +215,78 @@ function Hero({ onNavClick }: { onNavClick: (id: string) => void }) {
 function AboutMe() {
   return (
     <AnimatedSection id="about">
-      <div className="bg-white min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="About me">
-        <div className="content-stretch flex flex-col gap-[40px] items-center justify-center relative shrink-0 w-full">
-          <p 
-            className="font-['Instrument_Serif',serif] leading-[1.3] not-italic relative text-[#1e1e1e] text-center tracking-[-1.12px] w-full max-w-[1280px] mx-auto" 
-            style={{ fontSize: 'clamp(32px, 4.5vw, 70px)' }}
-          >
-            UI/UX Designer, and Developer with a BSc in Information Technology who helps businesses get a clean, professional online presence that attracts more customers. I create fast, mobile-friendly websites, whether it's building your first site from scratch or giving an existing one a modern polish, and design until every page feels simple, trustworthy, and meaningful.
-          </p>
-          <p 
-            onClick={() => scrollToSection("works")} 
-            className="font-['Albert_Sans',sans-serif] font-medium leading-[1.5] relative text-[#1296cc] text-center tracking-[-0.12px] w-full cursor-pointer hover:underline transition-all hover:scale-105" 
-            style={{ fontSize: 'clamp(18px, 1.5vw, 28px)' }}
-          >
-            Explore My Work
-          </p>
+      <div className="bg-[#fdfdfd] min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="About me">
+
+        <div className="w-full max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[100px] items-center">
+
+          {/* Left Side: Image with Yellow Background */}
+          <div className="relative w-[80%] max-w-[380px] mx-auto lg:mx-0">
+            <motion.div
+              whileHover={{ rotate: 0, scale: 1.02 }}
+              transition={{ duration: 0.4 }}
+              className="relative bg-[#fbb03b] p-[12px] md:p-[16px] rotate-[-4deg] rounded-[8px] shadow-[0_12px_40px_rgba(0,0,0,0.1)]"
+            >
+              {/* Methana 'imgFrame192' wenuwata oyata oni nam wena image ekak denna puluwan */}
+              <img
+                src={imgFrame192} 
+                alt="Maheshika Bandara"
+                className="w-full h-auto object-cover rounded-[4px] grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            </motion.div>
+          </div>
+
+          {/* Right Side: Text Content */}
+          <div className="flex flex-col items-start gap-[24px]">
+            <h2
+              className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.02em]"
+              style={{ fontSize: 'clamp(48px, 6vw, 80px)' }}
+            >
+              Meet Maheshika
+            </h2>
+
+            <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] text-[12px] md:text-[14px] uppercase tracking-[0.2em] opacity-80">
+              UI/UX Designer • Web Designer • Wix Studio Developer
+            </p>
+
+            <p
+              className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.6]"
+              style={{ fontSize: 'clamp(18px, 1.5vw, 22px)' }}
+            >
+              I'm Maheshika, a UI/UX designer and web developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in Figma and Wix Studio, I create seamless web experiences tailored to your brand. Let's transform your digital presence with unique, attention-grabbing designs.
+            </p>
+
+            {/* Location & Socials Footer */}
+            <div className="flex flex-wrap items-center gap-[24px] md:gap-[32px] mt-[16px] pt-[24px] border-t border-[#e5e5e5] w-full">
+              
+              <div onClick={() => scrollToSection('contact')} className="flex items-center gap-[8px] group cursor-pointer">
+                <span className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] text-[13px] md:text-[14px] uppercase tracking-[0.15em] group-hover:text-[#1296cc] transition-colors">
+                  Kandy, Sri Lanka
+                </span>
+                <svg className="w-[18px] h-[18px] text-[#1e1e1e] group-hover:text-[#1296cc] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 19L19 5M19 5v10M19 5H9" />
+                </svg>
+              </div>
+
+              <div className="flex items-center gap-[16px]">
+                {/* LinkedIn Icon */}
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all">
+                  <svg className="w-[22px] h-[22px]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+                {/* Dribbble Icon */}
+                <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all">
+                  <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </AnimatedSection>
   );
