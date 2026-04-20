@@ -111,7 +111,7 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
 
         <div className={`hidden md:flex font-['Albert_Sans',sans-serif] font-medium gap-[19px] items-center ${textColorClass} text-[16px]`}>
           <p onClick={() => handleScroll("about")} className="cursor-pointer hover:text-[#1296cc] transition-colors">About me</p>
-          <p onClick={() => handleScroll("services")} className="cursor-pointer hover:text-[#1296cc] transition-colors">Services</p>
+          <p onClick={() => handleScroll("pricing")} className="cursor-pointer hover:text-[#1296cc] transition-colors">Pricing</p>
           <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Works</p>
           <p onClick={() => handleScroll("process")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Process</p>
         </div>
@@ -139,7 +139,7 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
           className={`md:hidden flex flex-col items-center gap-[16px] w-full pt-[24px] pb-[10px] font-['Albert_Sans',sans-serif] ${textColorClass}`}
         >
           <p onClick={() => handleScroll("about")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">About me</p>
-          <p onClick={() => handleScroll("services")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">Services</p>
+          <p onClick={() => handleScroll("pricing")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">Pricing</p>
           <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Works</p>
           <p onClick={() => handleScroll("process")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Process</p>
           <div onClick={() => handleScroll("contact")} className="bg-[#1296cc] px-[32px] py-[12px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] mt-[10px] w-full text-center">
@@ -267,48 +267,103 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
   );
 }
 
-// Services
-function ServiceCard({ title, description, target }: { title: string, description: string, target: string }) {
+// --- NEW PRICING SECTION ---
+function PricingCard({ title, price, features }: { title: string, price: string, features: string[] }) {
   return (
-    <div className="bg-white flex-1 flex flex-col h-full relative rounded-[8px] w-full hover:scale-[1.02] transition-transform duration-300">
-      <div className="overflow-clip rounded-[inherit] flex-1 flex flex-col w-full h-full border border-[#f2f2f2]">
-        <div className="flex-1 flex flex-col items-start justify-between px-[24px] py-[32px] md:px-[40px] md:py-[48px] w-full h-full gap-[40px]">
-          <div className="flex flex-col gap-[32px] w-full">
-            <div className="flex flex-col gap-[16px] w-full">
-              <p className="font-['Instrument_Serif',serif] text-[#1296cc] whitespace-nowrap" style={{ fontSize: 'clamp(24px, 2.5vw, 40px)' }}>{title}</p>
-              <p className="font-['Albert_Sans',sans-serif] text-[#1e1e1e] leading-[1.6]" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>{description}</p>
-            </div>
-            <div className="flex gap-[12px] items-center w-full">
-              <div className="bg-[#f5f5f5] rounded-[4px] shrink-0 flex items-center justify-center p-1">
-                <svg className="size-[16px] lg:size-[20px]" fill="none" viewBox="0 0 13.5 10"><path d="M1 5.5L4.5 9L12.5 1" stroke="#1296CC" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" /></svg>
+    <div className="bg-white flex-1 flex flex-col h-full relative rounded-[20px] w-full hover:scale-[1.02] transition-transform duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#f2f2f2]">
+      <div className="flex-1 flex flex-col items-start px-[24px] py-[32px] md:px-[40px] md:py-[48px] w-full h-full gap-[32px]">
+        
+        {/* Title & Price */}
+        <div className="flex flex-col gap-[16px] w-full">
+          <p className="font-['Instrument_Serif',serif] text-[#1296cc] leading-none" style={{ fontSize: 'clamp(28px, 3vw, 40px)' }}>{title}</p>
+          <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e]" style={{ fontSize: 'clamp(32px, 3.5vw, 48px)' }}>{price}</p>
+        </div>
+
+        {/* Line Divider */}
+        <div className="w-full h-[1px] bg-[#f2f2f2]" />
+
+        {/* Features List */}
+        <div className="flex flex-col gap-[20px] w-full flex-1">
+          {features.map((feature, idx) => (
+            <div key={idx} className="flex gap-[16px] items-start w-full">
+              {/* Rounded Tick Icon */}
+              <div className="bg-[#e7f5fb] rounded-full shrink-0 flex items-center justify-center size-[24px] mt-[2px]">
+                <svg className="size-[12px]" fill="none" viewBox="0 0 14 10">
+                  <path d="M1 5L4.5 8.5L13 1" stroke="#1296CC" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" />
+                </svg>
               </div>
-              <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d]" style={{ fontSize: 'clamp(14px, 1vw, 20px)' }}>{target}</p>
+              <p className="font-['Albert_Sans',sans-serif] text-[#404040] leading-[1.6]" style={{ fontSize: 'clamp(15px, 1.2vw, 18px)' }}>
+                {feature}
+              </p>
             </div>
-          </div>
-          <div onClick={() => scrollToSection("contact")} className="bg-[#1296cc] rounded-[100px] w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-auto py-[16px] flex justify-center items-center">
-            <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] whitespace-nowrap" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>Contact me</p>
-          </div>
+          ))}
+        </div>
+
+        {/* CTA Button */}
+        <div onClick={() => scrollToSection("contact")} className="bg-[#1296cc] rounded-[100px] w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[20px] py-[16px] flex justify-center items-center">
+          <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] whitespace-nowrap" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>Choose Plan</p>
         </div>
       </div>
     </div>
   );
 }
 
-function MyServices() {
+function PricingSection() {
+  const plans = [
+    {
+      title: "New Website Creation",
+      price: "USD 500",
+      features: [
+        "One complete project is enough to build your brand new website from scratch.",
+        "Perfect if you don’t have a site yet.",
+        "The entire project is designed and developed personally by me — Maheshika Bandara.",
+        "You get a clean, modern, mobile-friendly website with contact form, Google Maps, WhatsApp button, and basic SEO.",
+        "You receive full handover so you can easily edit the site yourself anytime."
+      ]
+    },
+    {
+      title: "Website Refresh / Rebuild",
+      price: "USD 450",
+      features: [
+        "One complete project is enough to modernize your existing website.",
+        "Perfect if your current site looks dated or doesn’t convert well.",
+        "The entire project is designed and developed personally by me — Maheshika Bandara.",
+        "I will rebuild and polish your site on Wix Studio with faster loading, better mobile experience, updated design, and stronger calls-to-action.",
+        "You receive full handover so you can easily edit the site yourself anytime."
+      ]
+    },
+    {
+      title: "Website Maintenance",
+      price: "USD 100 / month",
+      features: [
+        "Keep your website fast, secure, and up-to-date every month.",
+        "The work is done personally by me — Maheshika Bandara.",
+        "You get regular updates, backups, minor content edits, security checks, and priority support via WhatsApp or email."
+      ]
+    }
+  ];
+
   return (
-    <AnimatedSection delay={0.1} id="services">
-      <div className="min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="My Services">
+    <AnimatedSection delay={0.1} id="pricing">
+      <div className="min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="Pricing">
         <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute bg-[#fdfdfd] inset-0" />
           <img alt="" className="absolute max-w-none object-cover w-full h-full" src={imgHero} />
           <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-[46.487%] to-white" />
         </div>
         <div className="flex flex-col gap-[60px] items-center relative w-full z-10">
-          <p className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full lg:w-[70%]" style={{ fontSize: 'clamp(32px, 5vw, 80px)' }}>Services Designed to Deliver Clean Modern Digital Experiences</p>
+          <p className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full lg:w-[70%]" style={{ fontSize: 'clamp(32px, 5vw, 80px)' }}>
+            Pricing Packages Designed to Deliver Clean Modern Digital Experiences
+          </p>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-[24px] xl:gap-[40px] items-stretch relative w-full">
-            <ServiceCard title="New Website Creation" description="I will design and build a clean, modern, mobile-friendly website from scratch on Wix Studio." target="For businesses that don't have a website yet" />
-            <ServiceCard title="Website Refresh / Rebuild" description="For businesses with an existing website (on any platform) that looks dated or doesn't convert well. I will give it a complete modern update by rebuilding it cleanly on Wix Studio." target="For businesses with an existing website" />
-            <ServiceCard title="Website Maintenance" description="For businesses that already have a website and want it to stay fast, secure, and up-to-date. I will handle regular updates, backups, minor edits, and monthly checks." target="For businesses that already have a website" />
+            {plans.map((plan, idx) => (
+              <PricingCard 
+                key={idx}
+                title={plan.title} 
+                price={plan.price} 
+                features={plan.features} 
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -341,11 +396,9 @@ function ProcessCard({ index, title, description, totalCards }: ProcessCardProps
   const rotateX = useTransform(cardProgress, [0, 1], [2, 0]);
   const opacity = useTransform(cardProgress, [0, 0.3, 1], [0.7, 0.85, 1]);
 
-  // Card Numbers (01, 02...)
   const num = (index + 1).toString().padStart(2, '0');
 
   return (
-    // Card eka athara space eka adu karanna kalin thibba 'h-[400px]' eka 'h-[260px]' walata adu kara
     <div ref={containerRef} className="h-[260px] md:h-[220px] sm:h-[180px]">
       <motion.div
         style={{ scale, y, rotateX, opacity }}
@@ -379,7 +432,6 @@ function ProcessCard({ index, title, description, totalCards }: ProcessCardProps
 function ProcessSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   
-  // Meken thama mulu process section ekema scroll progress eka ganne kada iri fill karanna
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start center", "end center"]
@@ -405,16 +457,11 @@ function ProcessSection() {
           </div>
 
           <div ref={sectionRef} className="relative w-full max-w-[800px] mx-auto">
-            
-            {/* Animated Dashed Timeline (Kada Iri) */}
-            {/* Meka wam paththe lassanata connect wela penewi */}
             <div className="absolute left-[8px] md:left-[20px] top-[40px] bottom-[40px] w-[3px] z-10 hidden sm:block">
-              {/* Yatin thiyena Ash color dashed line eka */}
               <div 
                 className="absolute inset-0 w-full h-full" 
                 style={{ backgroundImage: 'linear-gradient(to bottom, #e5e5e5 50%, transparent 50%)', backgroundSize: '3px 16px' }} 
               />
-              {/* Udin ena Blue color fill wena dashed line eka */}
               <motion.div 
                 className="absolute top-0 left-0 w-full"
                 style={{ 
@@ -425,7 +472,6 @@ function ProcessSection() {
               />
             </div>
 
-            {/* Cards Wrapper */}
             <div className="w-full pl-[0px] sm:pl-[40px] md:pl-[60px] flex flex-col">
               {processSteps.map((step, index) => (
                 <ProcessCard
@@ -556,7 +602,8 @@ export default function AnimatedPortfolio() {
           <Hero onNavClick={handleNavClick} />
           <AboutMe />
           <MyWorks onProjectClick={handleProjectClick} />
-          <MyServices />
+          {/* New Pricing Section */}
+          <PricingSection />
           {/* Animated Dashed Timeline & Stacking Cards */}
           <ProcessSection />
         </>
