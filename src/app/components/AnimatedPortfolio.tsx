@@ -7,14 +7,14 @@ import svgPaths from "../../imports/ContactFooter/svg-f4p2vld91i";
 import imgHero from "../../imports/Portfolio-1/9b06e550a03f9722c147c637abe54e4634f08454.png";
 import imgFrame192 from "../../imports/Portfolio-1/a1889c3ea7bf7237fd5d6a613633cd9a624d7694.png";
 
-// Cards wala thiyena Hero Images
+// Hero images for the project cards
 import imgZapnoteHero from "../../imports/Zapnote-Hero.png";
 import imgFitnityHero from "../../imports/Fitnity-Hero.png";
 import imgEleanorHero from "../../imports/Eleanor-Vance-Weddings-Hero.png";
 import imgElevateHero from "../../imports/Elevate-Support-Group-Hero.png";
 import imgSundayHero from "../../imports/Sunday-Companions-Hero.png";
 
-// Project eka click kalama penna oni Full Home Images
+// Full homepage images displayed when a project is clicked
 import imgZapnoteHome from "../../imports/Zapnote-Home.png";
 import imgFitnityHome from "../../imports/Fitnity-Home.png";
 import imgEleanorHome from "../../imports/Eleanor-Vance-Weddings.png";
@@ -73,7 +73,7 @@ function BackToTopButton() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           onClick={scrollToTop}
-          className="fixed bottom-[30px] right-[20px] md:bottom-[40px] md:right-[40px] z-[100] bg-[#000000] text-[#fdfdfd] p-[12px] md:p-[16px] rounded-full shadow-[0_8px_24px_rgba(18,150,204,0.4)] cursor-pointer hover:bg-[#0d7aa8] hover:-translate-y-2 transition-all duration-300 flex items-center justify-center"
+          className="fixed bottom-[30px] right-[20px] md:bottom-[40px] md:right-[40px] z-[100] bg-[#000000] text-[#fdfdfd] p-[12px] md:p-[16px] rounded-full shadow-[0_8px_24px_rgba(255, 255, 255, 0.4)] cursor-pointer hover:bg-[#0d7aa8] hover:-translate-y-2 transition-all duration-300 flex items-center justify-center"
         >
           <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
@@ -235,7 +235,7 @@ function AboutMe() {
             UI/UX Designer • Web Developer
           </p>
 
-          {/* Description - Width limit eka ain karala w-full damma */}
+          {/* Description - Responsive full width */}
           <p
             className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.5] w-full"
             style={{ fontSize: 'clamp(18px, 2vw, 32px)' }}
@@ -254,7 +254,7 @@ function AboutMe() {
               Kandy, Sri Lanka
             </p>
 
-            {/* Icons */}
+            {/* Social Icons */}
             <div className="flex items-center justify-center gap-[24px] md:gap-[32px]">
               
               {/* Email Icon */}
@@ -287,6 +287,7 @@ function AboutMe() {
     </AnimatedSection>
   );
 }
+
 // --- Project Card & Works Section ---
 function ProjectCardWork({ title, imageSrc, isFullWidth = false, onClick }: { title: string, imageSrc: string, isFullWidth?: boolean, onClick: () => void }) {
   return (
@@ -570,7 +571,7 @@ function LiveTime() {
   );
 }
 
-// Contact Footer
+// Contact Footer Section
 function ContactFooter() {
   return (
     <AnimatedSection delay={0.1} id="contact">
@@ -637,6 +638,8 @@ function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => v
       className="w-full flex flex-col items-center bg-[#fdfdfd]"
     >
       <div className="w-full flex flex-col items-center pt-[60px] md:pt-[100px] pb-[80px] md:pb-[120px]">
+        
+        {/* Back Button */}
         <div className="w-full flex justify-start mb-[40px] md:mb-[60px] px-[20px] md:px-[60px] lg:px-[120px]">
           <div
             onClick={onBack}
@@ -649,11 +652,15 @@ function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => v
             Back to Home
           </div>
         </div>
+
+        {/* Title, Category & Description */}
         <div className="flex flex-col items-center gap-[12px] mb-[60px] md:mb-[80px] px-[20px] md:px-[60px] lg:px-[120px] max-w-[1000px] text-center">
           <h1 className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.28px]" style={{ fontSize: 'clamp(48px, 6vw, 90px)' }}>{project.title}</h1>
           <p className="font-['Albert_Sans',sans-serif] font-medium text-[#1296cc]" style={{ fontSize: 'clamp(18px, 2vw, 24px)' }}>{project.category}</p>
           <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] mt-[16px] leading-[1.6]" style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}>{project.description}</p>
         </div>
+
+        {/* Full Project Image */}
         <div className="w-full px-[20px] md:px-[60px] lg:px-[120px]">
             <div className="w-full rounded-[16px] md:rounded-[24px] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.08)] bg-[#f5f5f5]">
               <img src={project.fullImg} alt={project.title} className="w-full h-auto object-cover" />
@@ -690,7 +697,7 @@ export default function AnimatedPortfolio() {
           <Hero onNavClick={handleNavClick} />
           <AboutMe />
           <MyWorks onProjectClick={handleProjectClick} />
-          {/* New Pricing Section */}
+          {/* Pricing Section */}
           <PricingSection />
           {/* Animated Dashed Timeline & Stacking Cards */}
           <ProcessSection />
