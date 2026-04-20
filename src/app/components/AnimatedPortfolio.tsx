@@ -240,7 +240,7 @@ function AboutMe() {
             className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.5] w-full"
             style={{ fontSize: 'clamp(18px, 2vw, 32px)' }}
           >
-            I'm Maheshika, a UI/UX designer and web developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in UI/UX Design and Web Development, I create seamless experiences tailored to your brand. Let's transform your digital presence with unique, attention-grabbing designs.
+            I'm Maheshika, a UI/UX designer and web developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in UI/UX design and Web Development, I create seamless experiences tailored to your brand. Let's transform your digital presence with unique, attention-grabbing designs.
           </p>
 
           {/* Location & Social Icons Container */}
