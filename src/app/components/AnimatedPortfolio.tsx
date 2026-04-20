@@ -312,22 +312,22 @@ function PricingSection() {
   const plans = [
     {
       title: "New Website Creation",
-      price: "USD 500",
+      price: "Starting from USD 500",
       features: [
         "One complete project is enough to build your brand new website from scratch.",
         "Perfect if you don’t have a site yet.",
-        "The entire project is designed and developed personally by me — Maheshika Bandara.",
-        "You get a clean, modern, mobile-friendly website with contact form, Google Maps, WhatsApp button, and basic SEO.",
+        "The entire project is designed and developed personally by me.",
+        "You get a clean, modern, mobile-friendly website with basic SEO.",
         "You receive full handover so you can easily edit the site yourself anytime."
       ]
     },
     {
       title: "Website Refresh / Rebuild",
-      price: "USD 450",
+      price: "Starting from USD 450",
       features: [
         "One complete project is enough to modernize your existing website.",
         "Perfect if your current site looks dated or doesn’t convert well.",
-        "The entire project is designed and developed personally by me — Maheshika Bandara.",
+        "The entire project is designed and developed personally by me.",
         "I will rebuild and polish your site on Wix Studio with faster loading, better mobile experience, updated design, and stronger calls-to-action.",
         "You receive full handover so you can easily edit the site yourself anytime."
       ]
@@ -337,7 +337,7 @@ function PricingSection() {
       price: "USD 100 / month",
       features: [
         "Keep your website fast, secure, and up-to-date every month.",
-        "The work is done personally by me — Maheshika Bandara.",
+        "The work is done personally by me.",
         "You get regular updates, backups, minor content edits, security checks, and priority support via WhatsApp or email."
       ]
     }
