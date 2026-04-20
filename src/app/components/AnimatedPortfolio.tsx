@@ -258,7 +258,7 @@ function AboutMe() {
             <div className="flex items-center justify-center gap-[24px] md:gap-[32px]">
               
               {/* Email Icon */}
-              <a href="mailto:mbmaheshika@gmail.com" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all duration-300">
+              <a href="mailto:hello@maheux.me" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all duration-300">
                 <svg className="w-[clamp(28px,3vw,40px)] h-[clamp(28px,3vw,40px)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -583,14 +583,14 @@ function ContactFooter() {
               <p className="leading-[1.1]">
                 <span className="text-[#fdfdfd]/50">Modern and Impactful? </span>
                 {/* Email Link added to Let's talk! */}
-                <a href="mailto:mbmaheshika@gmail.com" className="text-[#fdfdfd] hover:text-[#1296cc] cursor-pointer transition-colors duration-300">
+                <a href="mailto:hello@maheux.me" className="text-[#fdfdfd] hover:text-[#1296cc] cursor-pointer transition-colors duration-300">
                   Let's talk!
                 </a>
               </p>
             </div>
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between w-full gap-[40px] md:gap-0">
               <div className="flex flex-col gap-[16px] md:gap-[24px] items-start">
-                <a href="mailto:mbmaheshika@gmail.com" className="flex gap-[16px] items-center cursor-pointer group">
+                <a href="mailto:hello@maheux.me" className="flex gap-[16px] items-center cursor-pointer group">
                   <p className="font-['Instrument_Serif',serif] leading-[1.2] text-[#fdfdfd] group-hover:text-[#1296cc] transition-colors" style={{ fontSize: 'clamp(24px, 3vw, 48px)' }}>Email</p>
                   <svg className="w-[0.8em] h-[0.8em]" fill="none" viewBox="0 0 18 18">
                     <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" />
@@ -612,7 +612,7 @@ function ContactFooter() {
         
         {/* Email Link added to maheux. text */}
         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden select-none z-20">
-          <a href="mailto:mbmaheshika@gmail.com" className="cursor-pointer hover:opacity-80 transition-opacity duration-300">
+          <a href="mailto:hello@maheux.me" className="cursor-pointer hover:opacity-80 transition-opacity duration-300">
             <p className="font-['Albert_Sans',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter opacity-50" style={{ fontSize: '28vw', lineHeight: '0.75', marginBottom: '-1%' }}>
               maheux.
             </p>
