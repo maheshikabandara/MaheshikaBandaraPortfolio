@@ -20,7 +20,7 @@ import imgFitnityHome from "../../imports/Fitnity-Home.png";
 import imgEleanorHome from "../../imports/Eleanor-Vance-Weddings.png";
 import imgElevateHome from "../../imports/Elevate-Support-Group.png";
 import imgSundayHome from "../../imports/Sunday-Companions.png";
- 
+
 function AnimatedSection({ children, delay = 0, id }: { children: React.ReactNode; delay?: number; id?: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.05 });
@@ -73,7 +73,7 @@ function BackToTopButton() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           onClick={scrollToTop}
-          className="fixed bottom-[30px] right-[20px] md:bottom-[40px] md:right-[40px] z-[100] bg-[#000000] text-[#fdfdfd] p-[12px] md:p-[16px] rounded-full shadow-[0_8px_24px_rgba(255, 255, 255, 0.8)] cursor-pointer hover:bg-[#0d7aa8] hover:-translate-y-2 transition-all duration-300 flex items-center justify-center"
+          className="fixed bottom-[30px] right-[20px] md:bottom-[40px] md:right-[40px] z-[100] bg-[#000000] text-[#fdfdfd] p-[12px] md:p-[16px] rounded-full shadow-[0_8px_24px_rgba(255, 255, 255, 0.8)] cursor-pointer hover:bg-[#1296cc] hover:-translate-y-2 transition-all duration-300 flex items-center justify-center"
         >
           <svg className="w-[24px] h-[24px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
@@ -139,7 +139,7 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
           className={`md:hidden flex flex-col items-center gap-[16px] w-full pt-[24px] pb-[10px] font-['Albert_Sans',sans-serif] ${textColorClass}`}
         >
           <p onClick={() => handleScroll("about")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">About me</p>
-         <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Works</p>
+          <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Works</p>
           <p onClick={() => handleScroll("pricing")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">Pricing</p>
           <p onClick={() => handleScroll("process")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Process</p>
           <div onClick={() => handleScroll("contact")} className="bg-[#1296cc] px-[32px] py-[12px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] mt-[10px] w-full text-center">
@@ -232,7 +232,7 @@ function AboutMe() {
             className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.2em] opacity-80"
             style={{ fontSize: 'clamp(12px, 1.5vw, 18px)' }}
           >
-            UI/UX Designer • Web Developer
+            UI/UX Designer • Framer Developer
           </p>
 
           {/* Description - Responsive full width */}
@@ -240,7 +240,7 @@ function AboutMe() {
             className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.5] w-full"
             style={{ fontSize: 'clamp(18px, 2vw, 32px)' }}
           >
-            I'm Maheshika, a UI/UX designer and web developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in UI/UX design and Web Development, I create seamless experiences tailored to your brand. Let's transform your digital presence with unique, attention-grabbing designs.
+            I'm Maheshika, a UI/UX designer and Framer developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in modern web design, I create seamless, animated experiences tailored to your brand. Let's transform your digital presence with unique, lightning-fast designs.
           </p>
 
           {/* Location & Social Icons Container */}
@@ -379,9 +379,9 @@ function PricingSection() {
       features: [
         "One complete project is enough to build your brand new website from scratch.",
         "Perfect if you don’t have a site yet.",
-        "The entire project is designed and developed personally by me.",
-        "You get a clean, modern, mobile-friendly website with basic SEO.",
-        "You receive full handover so you can easily edit the site yourself anytime."
+        "The entire project is designed and developed personally by me using Framer.",
+        "You get a clean, modern, mobile-friendly website with optimized performance.",
+        "You receive full handover so you can easily manage the site yourself anytime."
       ]
     },
     {
@@ -391,8 +391,8 @@ function PricingSection() {
         "One complete project is enough to modernize your existing website.",
         "Perfect if your current site looks dated or doesn’t convert well.",
         "The entire project is designed and developed personally by me.",
-        "I will rebuild and polish your site on Wix Studio with faster loading, better mobile experience, updated design, and stronger calls-to-action.",
-        "You receive full handover so you can easily edit the site yourself anytime."
+        "I will rebuild and polish your site on Framer with smooth animations, updated design, and stronger calls-to-action.",
+        "You receive full handover so you can easily manage the site yourself anytime."
       ]
     },
     {
@@ -401,7 +401,7 @@ function PricingSection() {
       features: [
         "Keep your website fast, secure, and up-to-date every month.",
         "The work is done personally by me.",
-        "You get regular updates, backups, minor content edits, security checks, and priority support via WhatsApp or email."
+        "You get regular updates, minor content edits, security checks, and priority support via WhatsApp or email."
       ]
     }
   ];
@@ -503,7 +503,7 @@ function ProcessSection() {
   const processSteps = [
     { title: "You Contact me", description: "Reach out through WhatsApp or email. I reply quickly and we get started." },
     { title: "You Share Your Content", description: "Send me your logo, text, photos, and any other details you want on the site." },
-    { title: "I Design and Develop", description: "I create the full design and build your clean, modern website on Wix Studio." },
+    { title: "I Design and Develop", description: "I create the full design and build your clean, modern website on Framer for maximum performance." },
     { title: "Revisions, Launch & Handover", description: "We make any revisions together, then I launch the site and hand everything over to you." }
   ];
 
@@ -582,7 +582,6 @@ function ContactFooter() {
               <p className="leading-[1.1] text-[#fdfdfd]/50">Ready to Build Something</p>
               <p className="leading-[1.1]">
                 <span className="text-[#fdfdfd]/50">Modern and Impactful? </span>
-                {/* Email Link added to Let's talk! */}
                 <a href="mailto:hello@maheux.me" className="text-[#fdfdfd] hover:text-[#1296cc] cursor-pointer transition-colors duration-300">
                   Let's talk!
                 </a>
@@ -610,7 +609,6 @@ function ContactFooter() {
           </div>
         </div>
         
-        {/* Email Link added to maheux. text */}
         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden select-none z-20">
           <a href="mailto:hello@maheux.me" className="cursor-pointer hover:opacity-80 transition-opacity duration-300">
             <p className="font-['Albert_Sans',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter opacity-50" style={{ fontSize: '28vw', lineHeight: '0.75', marginBottom: '-1%' }}>
@@ -697,9 +695,7 @@ export default function AnimatedPortfolio() {
           <Hero onNavClick={handleNavClick} />
           <AboutMe />
           <MyWorks onProjectClick={handleProjectClick} />
-          {/* Pricing Section */}
           <PricingSection />
-          {/* Animated Dashed Timeline & Stacking Cards */}
           <ProcessSection />
         </>
       ) : (
