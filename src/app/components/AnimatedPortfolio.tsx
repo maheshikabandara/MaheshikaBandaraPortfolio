@@ -102,7 +102,8 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={`${bgColorClass} backdrop-blur-md flex flex-col justify-center px-[24px] py-[12px] md:px-[24px] md:py-[10px] relative rounded-[20px] w-full max-w-[1062px] z-50 overflow-hidden`}
+      // max-w-[1440px] added here
+      className={`${bgColorClass} backdrop-blur-md flex flex-col justify-center px-[24px] py-[12px] md:px-[24px] md:py-[10px] relative rounded-[20px] w-full max-w-[1440px] mx-auto z-50 overflow-hidden`}
     >
       <div className="flex items-center justify-between w-full">
         <p className={`font-['Albert_Sans',sans-serif] font-bold ${textColorClass} text-[24px] whitespace-nowrap`}>
@@ -202,7 +203,8 @@ function Hero({ onNavClick }: { onNavClick: (id: string) => void }) {
         <Nav onNavClick={onNavClick} />
       </div>
       <div className="flex-1 flex flex-col items-center justify-center relative z-10 w-full px-[20px] md:px-[60px] lg:px-[120px] pb-[80px] mt-[40px]">
-        <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full">
+        {/* max-w-[1440px] mx-auto added here */}
+        <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full max-w-[1440px] mx-auto">
           <Frame23 />
           <Frame22 />
         </div>
@@ -216,8 +218,8 @@ function AboutMe() {
   return (
     <AnimatedSection id="about">
       <div className="bg-[#fdfdfd] min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="About me">
-
-        <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center gap-[32px] md:gap-[48px] text-center">
+        {/* max-w-[1440px] mx-auto added here */}
+        <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center justify-center gap-[32px] md:gap-[48px] text-center">
 
           {/* Title */}
           <h2
@@ -235,7 +237,7 @@ function AboutMe() {
             UI/UX Designer • Framer Developer
           </p>
 
-          {/* Description - Responsive full width */}
+          {/* Description */}
           <p
             className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.5] w-full"
             style={{ fontSize: 'clamp(18px, 2vw, 32px)' }}
@@ -312,7 +314,8 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
   return (
     <AnimatedSection delay={0.1} id="works">
       <div className="bg-[#f8fdff] min-h-screen flex flex-col justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="My Works">
-        <div className="w-full flex flex-col items-center gap-[60px] md:gap-[80px]">
+        {/* max-w-[1440px] mx-auto added here */}
+        <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-[60px] md:gap-[80px]">
           <p className="font-['Instrument_Serif',serif] leading-[1.1] text-center tracking-[-0.28px] w-full" style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}>
             <span className="text-[#1e1e1e]">Curated Works That Reflect</span><br/>
             <span className="text-[#6d6d6d]">Design Precision and Excellence</span>
@@ -414,7 +417,8 @@ function PricingSection() {
           <img alt="" className="absolute max-w-none object-cover w-full h-full" src={imgHero} />
           <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-[46.487%] to-white" />
         </div>
-        <div className="flex flex-col gap-[60px] items-center relative w-full z-10">
+        {/* max-w-[1440px] mx-auto added here */}
+        <div className="flex flex-col gap-[60px] items-center relative w-full z-10 max-w-[1440px] mx-auto">
           <p className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full lg:w-[70%]" style={{ fontSize: 'clamp(32px, 5vw, 80px)' }}>
             Pricing Packages Designed to Deliver Clean Modern Digital Experiences
           </p>
@@ -512,14 +516,16 @@ function ProcessSection() {
       <div className="bg-white relative w-full py-[100px] md:py-[140px] overflow-hidden" data-name="Process">
         <div className="flex flex-col gap-[60px] md:gap-[80px] items-center relative w-full px-[20px] md:px-[60px] lg:px-[120px]">
           
-          <div className="flex flex-col items-center relative w-full">
+          {/* max-w-[1440px] mx-auto added here */}
+          <div className="flex flex-col items-center relative w-full max-w-[1440px] mx-auto">
             <p className="font-['Instrument_Serif',serif] leading-[1.1] text-[#1e1e1e] text-center tracking-[-0.02em] w-full" style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}>
               Process Built for Clarity,<br />
               <span className="text-[#6d6d6d]">Speed and Smooth Delivery</span>
             </p>
           </div>
 
-          <div ref={sectionRef} className="relative w-full max-w-[800px] mx-auto">
+          {/* max-w-[1440px] mx-auto added here */}
+          <div ref={sectionRef} className="relative w-full max-w-[1440px] mx-auto">
             <div className="absolute left-[8px] md:left-[20px] top-[40px] bottom-[40px] w-[3px] z-10 hidden sm:block">
               <div 
                 className="absolute inset-0 w-full h-full" 
@@ -577,11 +583,13 @@ function ContactFooter() {
     <AnimatedSection delay={0.1} id="contact">
       <div className="bg-[#1e1e1e] min-h-screen flex flex-col pt-[80px] md:pt-[120px] relative w-full overflow-hidden" data-name="Contact + Footer">
         <div className="flex-1 flex flex-col justify-center w-full px-[20px] md:px-[60px] lg:px-[120px] z-10">
-          <div className="flex flex-col gap-[60px] md:gap-[100px] w-full">
+          {/* max-w-[1440px] mx-auto added here */}
+          <div className="flex flex-col gap-[60px] md:gap-[100px] w-full max-w-[1440px] mx-auto">
             <div className="font-['Instrument_Serif',serif] w-full" style={{ fontSize: 'clamp(40px, 6vw, 100px)' }}>
               <p className="leading-[1.1] text-[#fdfdfd]/50">Ready to Build Something</p>
               <p className="leading-[1.1]">
                 <span className="text-[#fdfdfd]/50">Modern and Impactful? </span>
+                {/* Email Link added to Let's talk! */}
                 <a href="mailto:hello@maheux.me" className="text-[#fdfdfd] hover:text-[#1296cc] cursor-pointer transition-colors duration-300">
                   Let's talk!
                 </a>
@@ -609,6 +617,7 @@ function ContactFooter() {
           </div>
         </div>
         
+        {/* Email Link added to maheux. text */}
         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden select-none z-20">
           <a href="mailto:hello@maheux.me" className="cursor-pointer hover:opacity-80 transition-opacity duration-300">
             <p className="font-['Albert_Sans',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter opacity-50" style={{ fontSize: '28vw', lineHeight: '0.75', marginBottom: '-1%' }}>
@@ -638,7 +647,7 @@ function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => v
       <div className="w-full flex flex-col items-center pt-[60px] md:pt-[100px] pb-[80px] md:pb-[120px]">
         
         {/* Back Button */}
-        <div className="w-full flex justify-start mb-[40px] md:mb-[60px] px-[20px] md:px-[60px] lg:px-[120px]">
+        <div className="w-full flex justify-start mb-[40px] md:mb-[60px] px-[20px] md:px-[60px] lg:px-[120px] max-w-[1440px] mx-auto">
           <div
             onClick={onBack}
             className="cursor-pointer flex items-center gap-[8px] text-[#6d6d6d] hover:text-[#1296cc] font-['Albert_Sans',sans-serif] transition-colors"
@@ -652,14 +661,14 @@ function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => v
         </div>
 
         {/* Title, Category & Description */}
-        <div className="flex flex-col items-center gap-[12px] mb-[60px] md:mb-[80px] px-[20px] md:px-[60px] lg:px-[120px] max-w-[1000px] text-center">
+        <div className="flex flex-col items-center gap-[12px] mb-[60px] md:mb-[80px] px-[20px] md:px-[60px] lg:px-[120px] max-w-[1200px] mx-auto text-center">
           <h1 className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.28px]" style={{ fontSize: 'clamp(48px, 6vw, 90px)' }}>{project.title}</h1>
           <p className="font-['Albert_Sans',sans-serif] font-medium text-[#1296cc]" style={{ fontSize: 'clamp(18px, 2vw, 24px)' }}>{project.category}</p>
           <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] mt-[16px] leading-[1.6]" style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}>{project.description}</p>
         </div>
 
         {/* Full Project Image */}
-        <div className="w-full px-[20px] md:px-[60px] lg:px-[120px]">
+        <div className="w-full px-[20px] md:px-[60px] lg:px-[120px] max-w-[1440px] mx-auto">
             <div className="w-full rounded-[16px] md:rounded-[24px] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.08)] bg-[#f5f5f5]">
               <img src={project.fullImg} alt={project.title} className="w-full h-auto object-cover" />
             </div>
