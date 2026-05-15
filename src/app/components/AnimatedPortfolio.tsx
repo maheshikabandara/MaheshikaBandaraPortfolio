@@ -102,7 +102,6 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      // max-w-[1440px] added here
       className={`${bgColorClass} backdrop-blur-md flex flex-col justify-center px-[24px] py-[12px] md:px-[24px] md:py-[10px] relative rounded-[20px] w-full max-w-[1440px] mx-auto z-50 overflow-hidden`}
     >
       <div className="flex items-center justify-between w-full">
@@ -117,11 +116,12 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
           <p onClick={() => handleScroll("process")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Process</p>
         </div>
 
+        {/* Updated Book a Call Button */}
         <div
-          onClick={() => handleScroll("contact")}
+          onClick={() => window.open("https://cal.com/maheshikabandara/15min", "_blank")}
           className="hidden md:flex bg-[#1296cc] px-[24px] py-[10px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] transition-colors items-center justify-center"
         >
-          <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] text-[14px] whitespace-nowrap">Contact me</p>
+          <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] text-[14px] whitespace-nowrap">Book a Call</p>
         </div>
 
         <div className={`md:hidden flex items-center justify-center cursor-pointer ${textColorClass}`} onClick={toggleMenu}>
@@ -143,8 +143,9 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
           <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Works</p>
           <p onClick={() => handleScroll("pricing")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">Pricing</p>
           <p onClick={() => handleScroll("process")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Process</p>
-          <div onClick={() => handleScroll("contact")} className="bg-[#1296cc] px-[32px] py-[12px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] mt-[10px] w-full text-center">
-            <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] text-[18px]">Contact me</p>
+          {/* Updated Book a Call Button for Mobile */}
+          <div onClick={() => window.open("https://cal.com/maheshikabandara/15min", "_blank")} className="bg-[#1296cc] px-[32px] py-[12px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] mt-[10px] w-full text-center">
+            <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] text-[18px]">Book a Call</p>
           </div>
         </motion.div>
       )}
@@ -166,8 +167,9 @@ function Frame23() {
 function Frame() {
   return (
     <div className="content-stretch flex gap-[24px] items-center relative shrink-0 flex-wrap justify-center md:gap-[16px]">
-      <div onClick={() => scrollToSection("contact")} className="bg-[#1296cc] content-stretch flex gap-[10px] items-center justify-center px-[40px] py-[16px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#0d7aa8] transition-colors md:px-[24px] md:py-[12px]">
-        <p className="font-['Albert_Sans',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#f5f5f5] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">Contact me</p>
+      {/* Updated Hero Book a Call Button */}
+      <div onClick={() => window.open("https://cal.com/maheshikabandara/15min", "_blank")} className="bg-[#1296cc] content-stretch flex gap-[10px] items-center justify-center px-[40px] py-[16px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#0d7aa8] transition-colors md:px-[24px] md:py-[12px]">
+        <p className="font-['Albert_Sans',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#f5f5f5] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">Book a Call</p>
       </div>
       <div onClick={() => scrollToSection("works")} className="content-stretch flex gap-[10px] items-center justify-center px-[40px] py-[16px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#f5f5f5] transition-colors md:px-[24px] md:py-[12px]">
         <div aria-hidden="true" className="absolute border border-[#1e1e1e] border-solid inset-0 pointer-events-none rounded-[50px]" />
@@ -203,7 +205,6 @@ function Hero({ onNavClick }: { onNavClick: (id: string) => void }) {
         <Nav onNavClick={onNavClick} />
       </div>
       <div className="flex-1 flex flex-col items-center justify-center relative z-10 w-full px-[20px] md:px-[60px] lg:px-[120px] pb-[80px] mt-[40px]">
-        {/* max-w-[1440px] mx-auto added here */}
         <div className="content-stretch flex flex-col gap-[32px] items-center justify-center relative shrink-0 w-full max-w-[1440px] mx-auto">
           <Frame23 />
           <Frame22 />
@@ -218,7 +219,6 @@ function AboutMe() {
   return (
     <AnimatedSection id="about">
       <div className="bg-[#fdfdfd] min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="About me">
-        {/* max-w-[1440px] mx-auto added here */}
         <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center justify-center gap-[32px] md:gap-[48px] text-center">
 
           {/* Title */}
@@ -314,7 +314,6 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
   return (
     <AnimatedSection delay={0.1} id="works">
       <div className="bg-[#f8fdff] min-h-screen flex flex-col justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="My Works">
-        {/* max-w-[1440px] mx-auto added here */}
         <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-[60px] md:gap-[80px]">
           <p className="font-['Instrument_Serif',serif] leading-[1.1] text-center tracking-[-0.28px] w-full" style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}>
             <span className="text-[#1e1e1e]">Curated Works That Reflect</span><br/>
@@ -366,7 +365,7 @@ function PricingCard({ title, price, features }: { title: string, price: string,
         </div>
 
         {/* CTA Button */}
-        <div onClick={() => scrollToSection("contact")} className="bg-[#1296cc] rounded-[100px] w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[20px] py-[16px] flex justify-center items-center">
+        <div onClick={() => window.open("https://cal.com/maheshikabandara/15min", "_blank")} className="bg-[#1296cc] rounded-[100px] w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[20px] py-[16px] flex justify-center items-center">
           <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] whitespace-nowrap" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>Choose Plan</p>
         </div>
       </div>
@@ -417,7 +416,6 @@ function PricingSection() {
           <img alt="" className="absolute max-w-none object-cover w-full h-full" src={imgHero} />
           <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-[46.487%] to-white" />
         </div>
-        {/* max-w-[1440px] mx-auto added here */}
         <div className="flex flex-col gap-[60px] items-center relative w-full z-10 max-w-[1440px] mx-auto">
           <p className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full lg:w-[70%]" style={{ fontSize: 'clamp(32px, 5vw, 80px)' }}>
             Pricing Packages Designed to Deliver Clean Modern Digital Experiences
@@ -504,8 +502,9 @@ function ProcessSection() {
     offset: ["start center", "end center"]
   });
 
+  // Updated the first step to match "Book a Call"
   const processSteps = [
-    { title: "You Contact me", description: "Reach out through WhatsApp or email. I reply quickly and we get started." },
+    { title: "Book a Discovery Call", description: "Schedule a quick 15-minute call via my calendar. We'll discuss your goals and see if we're a good fit." },
     { title: "You Share Your Content", description: "Send me your logo, text, photos, and any other details you want on the site." },
     { title: "I Design and Develop", description: "I create the full design and build your clean, modern website on Framer for maximum performance." },
     { title: "Revisions, Launch & Handover", description: "We make any revisions together, then I launch the site and hand everything over to you." }
@@ -516,7 +515,6 @@ function ProcessSection() {
       <div className="bg-white relative w-full py-[100px] md:py-[140px] overflow-hidden" data-name="Process">
         <div className="flex flex-col gap-[60px] md:gap-[80px] items-center relative w-full px-[20px] md:px-[60px] lg:px-[120px]">
           
-          {/* max-w-[1440px] mx-auto added here */}
           <div className="flex flex-col items-center relative w-full max-w-[1440px] mx-auto">
             <p className="font-['Instrument_Serif',serif] leading-[1.1] text-[#1e1e1e] text-center tracking-[-0.02em] w-full" style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}>
               Process Built for Clarity,<br />
@@ -524,7 +522,6 @@ function ProcessSection() {
             </p>
           </div>
 
-          {/* max-w-[1440px] mx-auto added here */}
           <div ref={sectionRef} className="relative w-full max-w-[1440px] mx-auto">
             <div className="absolute left-[8px] md:left-[20px] top-[40px] bottom-[40px] w-[3px] z-10 hidden sm:block">
               <div 
@@ -583,14 +580,13 @@ function ContactFooter() {
     <AnimatedSection delay={0.1} id="contact">
       <div className="bg-[#1e1e1e] min-h-screen flex flex-col pt-[80px] md:pt-[120px] relative w-full overflow-hidden" data-name="Contact + Footer">
         <div className="flex-1 flex flex-col justify-center w-full px-[20px] md:px-[60px] lg:px-[120px] z-10">
-          {/* max-w-[1440px] mx-auto added here */}
           <div className="flex flex-col gap-[60px] md:gap-[100px] w-full max-w-[1440px] mx-auto">
             <div className="font-['Instrument_Serif',serif] w-full" style={{ fontSize: 'clamp(40px, 6vw, 100px)' }}>
               <p className="leading-[1.1] text-[#fdfdfd]/50">Ready to Build Something</p>
               <p className="leading-[1.1]">
                 <span className="text-[#fdfdfd]/50">Modern and Impactful? </span>
-                {/* Email Link added to Let's talk! */}
-                <a href="mailto:hello@maheux.me" className="text-[#fdfdfd] hover:text-[#1296cc] cursor-pointer transition-colors duration-300">
+                {/* Updated Let's talk! link to cal.com */}
+                <a href="https://cal.com/maheshikabandara/15min" target="_blank" rel="noopener noreferrer" className="text-[#fdfdfd] hover:text-[#1296cc] cursor-pointer transition-colors duration-300">
                   Let's talk!
                 </a>
               </p>
@@ -609,6 +605,13 @@ function ContactFooter() {
                     <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" />
                   </svg>
                 </a>
+                {/* Added Book a Call link below WhatsApp */}
+                <a href="https://cal.com/maheshikabandara/15min" target="_blank" rel="noopener noreferrer" className="flex gap-[16px] items-center cursor-pointer group mt-[8px]">
+                  <p className="font-['Instrument_Serif',serif] leading-[1.2] text-[#fdfdfd] group-hover:text-[#1296cc] transition-colors" style={{ fontSize: 'clamp(24px, 3vw, 48px)' }}>Book a Call</p>
+                  <svg className="w-[0.8em] h-[0.8em]" fill="none" viewBox="0 0 18 18">
+                    <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" />
+                  </svg>
+                </a>
               </div>
               <div className="flex items-end justify-start md:justify-end">
                 <LiveTime />
@@ -617,7 +620,6 @@ function ContactFooter() {
           </div>
         </div>
         
-        {/* Email Link added to maheux. text */}
         <div className="relative w-full flex items-end justify-center mt-auto overflow-hidden select-none z-20">
           <a href="mailto:hello@maheux.me" className="cursor-pointer hover:opacity-80 transition-opacity duration-300">
             <p className="font-['Albert_Sans',sans-serif] font-bold text-[#fdfdfd] text-center whitespace-nowrap tracking-tighter opacity-50" style={{ fontSize: '28vw', lineHeight: '0.75', marginBottom: '-1%' }}>
