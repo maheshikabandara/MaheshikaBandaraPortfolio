@@ -116,7 +116,6 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
           <p onClick={() => handleScroll("process")} className="cursor-pointer hover:text-[#1296cc] transition-colors">My Process</p>
         </div>
 
-        {/* Updated Book a Call Button */}
         <div
           onClick={() => window.open("https://cal.com/maheshikabandara/15min", "_blank")}
           className="hidden md:flex bg-[#1296cc] px-[24px] py-[10px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] transition-colors items-center justify-center"
@@ -143,7 +142,6 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
           <p onClick={() => handleScroll("works")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Works</p>
           <p onClick={() => handleScroll("pricing")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">Pricing</p>
           <p onClick={() => handleScroll("process")} className="cursor-pointer hover:text-[#1296cc] text-[18px]">My Process</p>
-          {/* Updated Book a Call Button for Mobile */}
           <div onClick={() => window.open("https://cal.com/maheshikabandara/15min", "_blank")} className="bg-[#1296cc] px-[32px] py-[12px] rounded-[50px] cursor-pointer hover:bg-[#0d7aa8] mt-[10px] w-full text-center">
             <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] text-[18px]">Book a Call</p>
           </div>
@@ -167,7 +165,6 @@ function Frame23() {
 function Frame() {
   return (
     <div className="content-stretch flex gap-[24px] items-center relative shrink-0 flex-wrap justify-center md:gap-[16px]">
-      {/* Updated Hero Book a Call Button */}
       <div onClick={() => window.open("https://cal.com/maheshikabandara/15min", "_blank")} className="bg-[#1296cc] content-stretch flex gap-[10px] items-center justify-center px-[40px] py-[16px] relative rounded-[50px] shrink-0 cursor-pointer hover:bg-[#0d7aa8] transition-colors md:px-[24px] md:py-[12px]">
         <p className="font-['Albert_Sans',sans-serif] font-medium leading-[30px] relative shrink-0 text-[#f5f5f5] text-[20px] whitespace-nowrap md:text-[18px] md:leading-[24px]">Book a Call</p>
       </div>
@@ -339,9 +336,10 @@ function PricingCard({ title, price, features }: { title: string, price: string,
       <div className="flex-1 flex flex-col items-start px-[24px] py-[32px] md:px-[40px] md:py-[48px] w-full h-full gap-[32px]">
         
         {/* Title & Price */}
-        <div className="flex flex-col gap-[16px] w-full">
-          <p className="font-['Instrument_Serif',serif] text-[#1296cc] leading-none" style={{ fontSize: 'clamp(28px, 3vw, 40px)' }}>{title}</p>
-          <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e]" style={{ fontSize: 'clamp(32px, 3.5vw, 48px)' }}>{price}</p>
+        <div className="flex flex-col gap-[12px] w-full">
+          <p className="font-['Instrument_Serif',serif] text-[#1296cc] leading-none" style={{ fontSize: 'clamp(28px, 3vw, 36px)' }}>{title}</p>
+          {/* Reduced font size for price */}
+          <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e]" style={{ fontSize: 'clamp(24px, 2.5vw, 36px)' }}>{price}</p>
         </div>
 
         {/* Line Divider */}
@@ -364,9 +362,9 @@ function PricingCard({ title, price, features }: { title: string, price: string,
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button linking to cal.com */}
         <div onClick={() => window.open("https://cal.com/maheshikabandara/15min", "_blank")} className="bg-[#1296cc] rounded-[100px] w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[20px] py-[16px] flex justify-center items-center">
-          <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] whitespace-nowrap" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>Choose Plan</p>
+          <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] whitespace-nowrap" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>Book a Call</p>
         </div>
       </div>
     </div>
@@ -376,34 +374,42 @@ function PricingCard({ title, price, features }: { title: string, price: string,
 function PricingSection() {
   const plans = [
     {
-      title: "New Website Creation",
-      price: "Starting from USD 500",
+      title: "Starter Package",
+      price: "USD 500 - 1100",
       features: [
-        "One complete project is enough to build your brand new website from scratch.",
-        "Perfect if you don’t have a site yet.",
-        "The entire project is designed and developed personally by me using Framer.",
-        "You get a clean, modern, mobile-friendly website with optimized performance.",
-        "You receive full handover so you can easily manage the site yourself anytime."
+        "4 - 6 pages",
+        "Custom design",
+        "Basic SEO",
+        "Responsive design",
+        "Modern clean layout",
+        "3 revision rounds",
+        "Timeline: 1 to 2 weeks"
       ]
     },
     {
-      title: "Website Refresh / Rebuild",
-      price: "Starting from USD 450",
+      title: "Premium Package",
+      price: "USD 1200 - 1700",
       features: [
-        "One complete project is enough to modernize your existing website.",
-        "Perfect if your current site looks dated or doesn’t convert well.",
-        "The entire project is designed and developed personally by me.",
-        "I will rebuild and polish your site on Framer with smooth animations, updated design, and stronger calls-to-action.",
-        "You receive full handover so you can easily manage the site yourself anytime."
+        "7 - 11 pages",
+        "Custom design",
+        "Basic SEO",
+        "Responsive design",
+        "Modern clean layout",
+        "3 revision rounds",
+        "Timeline: 2 to 3 weeks"
       ]
     },
     {
-      title: "Website Maintenance",
-      price: "USD 100 / month",
+      title: "Growth Package",
+      price: "USD 1800+",
       features: [
-        "Keep your website fast, secure, and up-to-date every month.",
-        "The work is done personally by me.",
-        "You get regular updates, minor content edits, security checks, and priority support via WhatsApp or email."
+        "Up to 12 pages",
+        "Fully custom design",
+        "Basic SEO",
+        "Responsive design",
+        "Modern clean layout",
+        "4 revision rounds",
+        "Timeline: 4 to 5 weeks"
       ]
     }
   ];
@@ -502,7 +508,7 @@ function ProcessSection() {
     offset: ["start center", "end center"]
   });
 
-  // Updated the first step to match "Book a Call"
+  // Updated Process Steps
   const processSteps = [
     { title: "Book a Discovery Call", description: "Schedule a quick 15-minute call via my calendar. We'll discuss your goals and see if we're a good fit." },
     { title: "You Share Your Content", description: "Send me your logo, text, photos, and any other details you want on the site." },
