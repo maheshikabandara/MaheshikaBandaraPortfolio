@@ -349,69 +349,28 @@ function PricingCard({ title, price, features }: { title: string, price: string,
 
 function PricingSection() {
   const plans = [
-    {
-      title: "Starter Package",
-      price: "USD 500 - 1100",
-      features: [
-        "4 - 6 pages",
-        "Custom design",
-        "Basic SEO",
-        "Responsive design",
-        "Modern clean layout",
-        "3 revision rounds",
-        "Timeline: 1 to 2 weeks"
-      ]
-    },
-    {
-      title: "Premium Package",
-      price: "USD 1200 - 1700",
-      features: [
-        "7 - 11 pages",
-        "Custom design",
-        "Basic SEO",
-        "Responsive design",
-        "Modern clean layout",
-        "3 revision rounds",
-        "Timeline: 2 to 3 weeks"
-      ]
-    },
-    {
-      title: "Growth Package",
-      price: "USD 1800+",
-      features: [
-        "Up to 12 pages",
-        "Fully custom design",
-        "Basic SEO",
-        "Responsive design",
-        "Modern clean layout",
-        "4 revision rounds",
-        "Timeline: 4 to 5 weeks"
-      ]
-    }
+    { title: "Starter Package", price: "USD 500 – 1,100", desc: "4–6 pages · Custom design · Responsive · Basic SEO · 3 revisions · 1–2 weeks", featured: false },
+    { title: "Premium Package", price: "USD 1,200 – 1,700", desc: "7–11 pages · Custom design · Responsive · Basic SEO · 3 revisions · 2–3 weeks", featured: true },
+    { title: "Growth Package", price: "USD 1,800+", desc: "Up to 12 pages · Fully custom · Responsive · Basic SEO · 4 revisions · 4–5 weeks", featured: false },
   ];
-
   return (
-    <AnimatedSection delay={0.1} id="pricing">
-      <div className="min-h-screen flex flex-col items-center justify-center relative w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="Pricing">
-        <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
-          <div className="absolute bg-[#fdfdfd] inset-0" />
-          <img alt="" className="absolute max-w-none object-cover w-full h-full" src={imgHero} />
-          <div className="absolute bg-gradient-to-b from-[rgba(255,255,255,0)] inset-0 to-[46.487%] to-white" />
-        </div>
-        <div className="flex flex-col gap-[60px] items-center relative w-full z-10 max-w-[1440px] mx-auto">
-          <p className="font-['Instrument_Serif',serif] leading-[1.2] not-italic relative text-[#1e1e1e] text-center tracking-[-0.28px] w-full lg:w-[70%]" style={{ fontSize: 'clamp(32px, 5vw, 80px)' }}>
-            Pricing Packages Designed to Deliver Clean Modern Digital Experiences
-          </p>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-[24px] xl:gap-[40px] items-stretch relative w-full">
-            {plans.map((plan, idx) => (
-              <PricingCard 
-                key={idx}
-                title={plan.title} 
-                price={plan.price} 
-                features={plan.features} 
-              />
-            ))}
-          </div>
+    <AnimatedSection id="pricing">
+      <div className="py-[80px] px-6 max-w-[860px] mx-auto">
+        <h2 className="text-[28px] font-serif text-center mb-[40px]">Investment</h2>
+        <div className="flex flex-col gap-[12px]">
+          {plans.map((p, i) => (
+            <div key={i} className={`bg-white flex items-center justify-between gap-4 px-[24px] py-[20px] rounded-[12px] ${p.featured ? "border-2 border-[#1296cc]" : "border border-[#f2f2f2]"} flex-wrap`}>
+              <div>
+                <p className="font-medium text-[#1e1e1e] text-[15px]">{p.title}</p>
+                <p className="text-[#6d6d6d] text-[13px] mt-[2px]">{p.desc}</p>
+              </div>
+              <div className="flex items-center gap-[20px]">
+                {p.featured && <span className="text-[11px] font-medium px-[10px] py-[3px] rounded-[6px] bg-blue-50 text-blue-600">Most popular</span>}
+                <p className="font-medium text-[#1e1e1e] text-[15px] whitespace-nowrap">{p.price}</p>
+                <button onClick={() => window.open("https://cal.com/maheshikabandara/15min", "_blank")} className="bg-[#1e1e1e] px-[20px] py-[8px] rounded-[50px] text-[#fdfdfd] text-[13px] font-medium hover:bg-[#1296cc] transition-all whitespace-nowrap">Book a Call</button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </AnimatedSection>
