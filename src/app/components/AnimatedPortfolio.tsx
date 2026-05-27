@@ -230,7 +230,7 @@ function AboutMe() {
       <div className="bg-[#fdfdfd] min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="About me">
         <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center justify-center gap-[32px] md:gap-[48px] text-center">
           <h2 className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.02em]" style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}>Meet Maheshika</h2>
-          <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.2em] opacity-80" style={{ fontSize: 'clamp(12px, 1vw, 14px)' }}>UI/UX Designer • Framer Developer</p>
+          <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.2em] opacity-80" style={{ fontSize: 'clamp(12px, 1vw, 14px)' }}>UI/UX Designer • Web Designer</p>
           <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.6] w-full max-w-[800px]" style={{ fontSize: 'clamp(16px, 1.2vw, 20px)' }}>I'm Maheshika, a UI/UX designer and Framer developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in modern web design, I create seamless, animated experiences tailored to your brand. Let's transform your digital presence with unique, lightning-fast designs.</p>
           {/* Social Links & Contact */}
         <div className="flex gap-[24px] justify-center items-center">
@@ -261,7 +261,7 @@ function AboutMe() {
   </a>
 
 </div>
-          <div className="flex flex-col items-center gap-[8px] mt-[8px]">
+          <div className="flex flex-col items-center gap-[0px] mt-[4px]">
             <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.15em]" style={{ fontSize: 'clamp(14px, 1vw, 16px)' }}>Kandy, Sri Lanka</p>
           </div>
         </div>
