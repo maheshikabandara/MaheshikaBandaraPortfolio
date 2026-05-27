@@ -261,7 +261,7 @@ function AboutMe() {
   </a>
 
 </div>
-          <div className="flex flex-col items-center gap-[24px] mt-[24px]">
+          <div className="flex flex-col items-center gap-[8px] mt-[8px]">
             <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.15em]" style={{ fontSize: 'clamp(14px, 1vw, 16px)' }}>Kandy, Sri Lanka</p>
           </div>
         </div>
