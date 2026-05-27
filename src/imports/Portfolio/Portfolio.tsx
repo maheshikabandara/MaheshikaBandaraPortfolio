@@ -336,9 +336,10 @@ function PricingCard({ title, price, features }: { title: string, price: string,
       <div className="flex-1 flex flex-col items-start px-[24px] py-[32px] md:px-[40px] md:py-[48px] w-full h-full gap-[32px]">
         
         {/* Title & Price */}
-        <div className="flex flex-col gap-[16px] w-full">
-          <p className="font-['Instrument_Serif',serif] text-[#1296cc] leading-none" style={{ fontSize: 'clamp(28px, 3vw, 40px)' }}>{title}</p>
-          <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e]" style={{ fontSize: 'clamp(32px, 3.5vw, 48px)' }}>{price}</p>
+        <div className="flex flex-col gap-[12px] w-full">
+          <p className="font-['Instrument_Serif',serif] text-[#1296cc] leading-none" style={{ fontSize: 'clamp(28px, 3vw, 36px)' }}>{title}</p>
+          {/* Reduced font size for price */}
+          <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e]" style={{ fontSize: 'clamp(24px, 2.5vw, 36px)' }}>{price}</p>
         </div>
 
         {/* Line Divider */}
@@ -361,7 +362,7 @@ function PricingCard({ title, price, features }: { title: string, price: string,
           ))}
         </div>
 
-        {/* Updated CTA Button linking to cal.com */}
+        {/* CTA Button linking to cal.com */}
         <div onClick={() => window.open("https://cal.com/maheshikabandara/15min", "_blank")} className="bg-[#1296cc] rounded-[100px] w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[20px] py-[16px] flex justify-center items-center">
           <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] whitespace-nowrap" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>Book a Call</p>
         </div>
@@ -376,7 +377,7 @@ function PricingSection() {
       title: "Starter Package",
       price: "USD 500 - 1100",
       features: [
-        "4 to 6 pages",
+        "4 - 6 pages",
         "Custom design",
         "Basic SEO",
         "Responsive design",
@@ -386,10 +387,10 @@ function PricingSection() {
       ]
     },
     {
-      title: "Premium Business Package",
+      title: "Premium Package",
       price: "USD 1200 - 1700",
       features: [
-        "7 to 11 pages",
+        "7 - 11 pages",
         "Custom design",
         "Basic SEO",
         "Responsive design",
@@ -400,7 +401,7 @@ function PricingSection() {
     },
     {
       title: "Growth Package",
-      price: "Starting from USD 1800",
+      price: "USD 1800+",
       features: [
         "Up to 12 pages",
         "Fully custom design",
