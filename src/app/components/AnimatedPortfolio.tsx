@@ -346,7 +346,7 @@ function PricingCard({ title, price, features }: { title: string, price: string,
         <div className="w-full h-[1px] bg-[#f2f2f2]" />
 
         {/* Features List */}
-        <div className="flex flex-col gap-[20px] w-full flex-1">
+        <div className="flex flex-col gap-[16px] w-full flex-1">
           {features.map((feature, idx) => (
             <div key={idx} className="flex gap-[16px] items-start w-full">
               {/* Rounded Tick Icon */}
