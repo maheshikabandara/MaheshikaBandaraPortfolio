@@ -257,7 +257,7 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
         <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center gap-[60px] md:gap-[80px]">
           <p className="font-['Instrument_Serif',serif] leading-[1.1] text-center tracking-[-0.28px] w-full" style={{ fontSize: 'clamp(32px, 4vw, 64px)' }}>
             <span className="text-[#1e1e1e]">Curated Works That Reflect</span><br/>
-            <span className="text-[#6d6d6d]">Design Precision and Excellence</span>
+            <span className="text-[#1e1e1e]">Design Precision and Excellence</span>
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] md:gap-[40px] w-full">
             <ProjectCardWork title="Zapnote" imageSrc={imgZapnoteHero} onClick={() => onProjectClick({ title: "Zapnote", category: "SaaS Landing Page", description: "A sleek landing page for an AI-powered meeting summarizer.", fullImg: imgZapnoteHome })} />
@@ -295,7 +295,12 @@ function PricingSection() {
   return (
     <AnimatedSection delay={0.1} id="pricing">
       <div className="bg-[#fdfdfd] py-[100px] px-[20px] md:px-[60px] max-w-[1000px] mx-auto">
-        <h2 className="font-['Instrument_Serif',serif] text-[40px] text-center mb-[60px]">Pricing Packages</h2>
+        <h2
+          className="font-['Instrument_Serif',serif] text-center mb-[60px] leading-[1.1]"
+          style={{ fontSize: 'clamp(32px, 4vw, 64px)' }}
+        >
+          Pricing Packages
+        </h2>
         <div className="flex flex-col gap-[20px]">
           {plans.map((plan, idx) => (
             <div key={idx} className="border-b border-[#e5e5e5] py-[32px] flex flex-col md:flex-row justify-between items-start md:items-center gap-[16px] group">
@@ -397,9 +402,9 @@ function ProcessSection() {
       <div className="bg-white relative w-full py-[100px] md:py-[140px] overflow-hidden" data-name="Process">
         <div className="flex flex-col gap-[60px] md:gap-[80px] items-center relative w-full px-[20px] md:px-[60px] lg:px-[120px]">
           <div className="flex flex-col items-center relative w-full max-w-[1440px] mx-auto">
-            <p className="font-['Instrument_Serif',serif] leading-[1.1] text-[#1e1e1e] text-center tracking-[-0.02em] w-full" style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}>
+            <p className="font-['Instrument_Serif',serif] leading-[1.1] text-[#1e1e1e] text-center tracking-[-0.02em] w-full" style={{ fontSize: 'clamp(32px, 4vw, 64px)' }}>
               Process Built for Clarity,<br />
-              <span className="text-[#6d6d6d]">Speed and Smooth Delivery</span>
+              <span className="text-[#1e1e1e]">Speed and Smooth Delivery</span>
             </p>
           </div>
           <div ref={sectionRef} className="relative w-full max-w-[1440px] mx-auto">
@@ -457,7 +462,7 @@ function ContactFooter() {
       <div className="bg-[#1e1e1e] min-h-screen flex flex-col pt-[80px] md:pt-[120px] relative w-full overflow-hidden" data-name="Contact + Footer">
         <div className="flex-1 flex flex-col justify-center w-full px-[20px] md:px-[60px] lg:px-[120px] z-10">
           <div className="flex flex-col gap-[60px] md:gap-[100px] w-full max-w-[1440px] mx-auto">
-            <div className="font-['Instrument_Serif',serif] w-full" style={{ fontSize: 'clamp(40px, 6vw, 100px)' }}>
+            <div className="font-['Instrument_Serif',serif] w-full" style={{ fontSize: 'clamp(40px, 6vw, 80px)' }}>
               <p className="leading-[1.1] text-[#fdfdfd]/50">Ready to Build Something</p>
               <p className="leading-[1.1]">
                 <span className="text-[#fdfdfd]/50">Modern and Impactful? </span>
