@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { formatInTimeZone } from "date-fns-tz";
 
 import {
-  EnvelopeSimple,
+  EnvelopeSimple, 
   DribbbleLogo,
   WhatsappLogo
 } from "@phosphor-icons/react";
