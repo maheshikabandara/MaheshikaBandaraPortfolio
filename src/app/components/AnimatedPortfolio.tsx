@@ -21,6 +21,7 @@ import imgEleanorHome from "../../imports/Eleanor-Vance-Weddings.png";
 import imgElevateHome from "../../imports/Elevate-Support-Group.png";
 import imgSundayHome from "../../imports/Sunday-Companions.png";
 
+// --- Reusable Animated Wrapper ---
 function AnimatedSection({ children, delay = 0, id }: { children: React.ReactNode; delay?: number; id?: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.05 });
@@ -39,10 +40,13 @@ function AnimatedSection({ children, delay = 0, id }: { children: React.ReactNod
   );
 }
 
+// --- Smooth Scrolling & URL Hash Update ---
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView({ behavior: "smooth", block: "start" });
+    // Update the URL hash to allow sharing direct links
+    window.history.pushState(null, '', `#${id}`);
   }
 };
 
@@ -64,6 +68,8 @@ function BackToTopButton() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    // Clear the URL hash when returning to the top
+    window.history.pushState(null, '', window.location.pathname);
   };
 
   return (
@@ -84,7 +90,7 @@ function BackToTopButton() {
   );
 }
 
-// --- Nav ---
+// --- Navigation Bar ---
 function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => void, isDarkText?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -151,7 +157,7 @@ function Nav({ onNavClick, isDarkText = false }: { onNavClick: (id: string) => v
   );
 }
 
-// Hero Sections
+// --- Hero Sections ---
 function Frame23() {
   return (
     <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="relative rounded-[100px] shrink-0 size-[90px] md:size-[70px]">
@@ -211,76 +217,56 @@ function Hero({ onNavClick }: { onNavClick: (id: string) => void }) {
   );
 }
 
-// About Me
+// --- About Me Section ---
 function AboutMe() {
   return (
     <AnimatedSection id="about">
       <div className="bg-[#fdfdfd] min-h-screen flex flex-col items-center justify-center relative shrink-0 w-full py-[100px] px-[20px] md:px-[60px] lg:px-[120px]" data-name="About me">
         <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center justify-center gap-[32px] md:gap-[48px] text-center">
-
-          {/* Title */}
           <h2
             className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.02em]"
             style={{ fontSize: 'clamp(56px, 8vw, 120px)' }}
           >
             Meet Maheshika
           </h2>
-
-          {/* Subtitle */}
           <p 
             className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.2em] opacity-80"
             style={{ fontSize: 'clamp(12px, 1.5vw, 18px)' }}
           >
             UI/UX Designer • Framer Developer
           </p>
-
-          {/* Description */}
           <p
             className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.5] w-full"
             style={{ fontSize: 'clamp(18px, 2vw, 32px)' }}
           >
             I'm Maheshika, a UI/UX designer and Framer developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in modern web design, I create seamless, animated experiences tailored to your brand. Let's transform your digital presence with unique, lightning-fast designs.
           </p>
-
-          {/* Location & Social Icons Container */}
           <div className="flex flex-col items-center gap-[24px] mt-[24px]">
-            
-            {/* Location */}
             <p 
               className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.15em]"
               style={{ fontSize: 'clamp(14px, 1.5vw, 20px)' }}
             >
               Kandy, Sri Lanka
             </p>
-
-            {/* Social Icons */}
             <div className="flex items-center justify-center gap-[24px] md:gap-[32px]">
-              
-              {/* Email Icon */}
               <a href="mailto:hello@maheux.me" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all duration-300">
                 <svg className="w-[clamp(28px,3vw,40px)] h-[clamp(28px,3vw,40px)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </a>
-
-              {/* WhatsApp Icon */}
               <a href="https://wa.me/94707170906" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all duration-300">
                 <svg className="w-[clamp(28px,3vw,40px)] h-[clamp(28px,3vw,40px)]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
                 </svg>
               </a>
-
-              {/* Dribbble Icon */}
               <a href="https://dribbble.com/maheshikabandara" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] hover:-translate-y-1 transition-all duration-300">
                 <svg className="w-[clamp(28px,3vw,40px)] h-[clamp(28px,3vw,40px)]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="10"></circle>
                   <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
                 </svg>
               </a>
-
             </div>
           </div>
-
         </div>
       </div>
     </AnimatedSection>
@@ -329,27 +315,19 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
   );
 }
 
-// --- NEW PRICING SECTION ---
+// --- Pricing Section ---
 function PricingCard({ title, price, features }: { title: string, price: string, features: string[] }) {
   return (
     <div className="bg-white flex-1 flex flex-col h-full relative rounded-[20px] w-full hover:scale-[1.02] transition-transform duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#f2f2f2]">
       <div className="flex-1 flex flex-col items-start px-[24px] py-[32px] md:px-[40px] md:py-[48px] w-full h-full gap-[32px]">
-        
-        {/* Title & Price */}
         <div className="flex flex-col gap-[12px] w-full">
           <p className="font-['Instrument_Serif',serif] text-[#1296cc] leading-none" style={{ fontSize: 'clamp(28px, 3vw, 36px)' }}>{title}</p>
-          {/* Reduced font size for price */}
           <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e]" style={{ fontSize: 'clamp(24px, 2.5vw, 36px)' }}>{price}</p>
         </div>
-
-        {/* Line Divider */}
         <div className="w-full h-[1px] bg-[#f2f2f2]" />
-
-        {/* Features List */}
         <div className="flex flex-col gap-[16px] w-full flex-1">
           {features.map((feature, idx) => (
             <div key={idx} className="flex gap-[16px] items-start w-full">
-              {/* Rounded Tick Icon */}
               <div className="bg-[#e7f5fb] rounded-full shrink-0 flex items-center justify-center size-[24px] mt-[2px]">
                 <svg className="size-[12px]" fill="none" viewBox="0 0 14 10">
                   <path d="M1 5L4.5 8.5L13 1" stroke="#1296CC" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" />
@@ -361,8 +339,6 @@ function PricingCard({ title, price, features }: { title: string, price: string,
             </div>
           ))}
         </div>
-
-        {/* CTA Button linking to cal.com */}
         <div onClick={() => window.open("https://cal.com/maheshikabandara/15min", "_blank")} className="bg-[#1296cc] rounded-[100px] w-full cursor-pointer hover:bg-[#0d7aa8] transition-colors mt-[20px] py-[16px] flex justify-center items-center">
           <p className="font-['Albert_Sans',sans-serif] font-medium text-[#f5f5f5] whitespace-nowrap" style={{ fontSize: 'clamp(16px, 1.2vw, 22px)' }}>Book a Call</p>
         </div>
@@ -442,7 +418,7 @@ function PricingSection() {
   );
 }
 
-// --- UPDATED PROCESS SECTION (WITH DASHED LINE & STACKING CARDS) ---
+// --- Process Section ---
 interface ProcessCardProps {
   index: number;
   title: string;
@@ -493,7 +469,6 @@ function ProcessCard({ index, title, description, totalCards }: ProcessCardProps
               </p>
             </div>
           </div>
-
         </div>
       </motion.div>
     </div>
@@ -508,7 +483,6 @@ function ProcessSection() {
     offset: ["start center", "end center"]
   });
 
-  // Updated Process Steps
   const processSteps = [
     { title: "Book a Discovery Call", description: "Schedule a quick 15-minute call via my calendar. We'll discuss your goals and see if we're a good fit." },
     { title: "You Share Your Content", description: "Send me your logo, text, photos, and any other details you want on the site." },
@@ -520,14 +494,12 @@ function ProcessSection() {
     <AnimatedSection delay={0.1} id="process">
       <div className="bg-white relative w-full py-[100px] md:py-[140px] overflow-hidden" data-name="Process">
         <div className="flex flex-col gap-[60px] md:gap-[80px] items-center relative w-full px-[20px] md:px-[60px] lg:px-[120px]">
-          
           <div className="flex flex-col items-center relative w-full max-w-[1440px] mx-auto">
             <p className="font-['Instrument_Serif',serif] leading-[1.1] text-[#1e1e1e] text-center tracking-[-0.02em] w-full" style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}>
               Process Built for Clarity,<br />
               <span className="text-[#6d6d6d]">Speed and Smooth Delivery</span>
             </p>
           </div>
-
           <div ref={sectionRef} className="relative w-full max-w-[1440px] mx-auto">
             <div className="absolute left-[8px] md:left-[20px] top-[40px] bottom-[40px] w-[3px] z-10 hidden sm:block">
               <div 
@@ -543,7 +515,6 @@ function ProcessSection() {
                 }}
               />
             </div>
-
             <div className="w-full pl-[0px] sm:pl-[40px] md:pl-[60px] flex flex-col">
               {processSteps.map((step, index) => (
                 <ProcessCard
@@ -555,16 +526,14 @@ function ProcessSection() {
                 />
               ))}
             </div>
-
           </div>
-
         </div>
       </div>
     </AnimatedSection>
   );
 }
 
-// Contact Footer
+// --- Contact & Footer Section ---
 function LiveTime() {
   const [time, setTime] = useState("");
   useEffect(() => {
@@ -580,7 +549,6 @@ function LiveTime() {
   );
 }
 
-// Contact Footer Section
 function ContactFooter() {
   return (
     <AnimatedSection delay={0.1} id="contact">
@@ -591,7 +559,6 @@ function ContactFooter() {
               <p className="leading-[1.1] text-[#fdfdfd]/50">Ready to Build Something</p>
               <p className="leading-[1.1]">
                 <span className="text-[#fdfdfd]/50">Modern and Impactful? </span>
-                {/* Updated Let's talk! link to cal.com */}
                 <a href="https://cal.com/maheshikabandara/15min" target="_blank" rel="noopener noreferrer" className="text-[#fdfdfd] hover:text-[#1296cc] cursor-pointer transition-colors duration-300">
                   Let's talk!
                 </a>
@@ -611,7 +578,6 @@ function ContactFooter() {
                     <path d={svgPaths.p33ee37f2} className="fill-[#FDFDFD] group-hover:fill-[#1296cc] transition-colors" />
                   </svg>
                 </a>
-                {/* Added Book a Call link below WhatsApp */}
                 <a href="https://cal.com/maheshikabandara/15min" target="_blank" rel="noopener noreferrer" className="flex gap-[16px] items-center cursor-pointer group mt-[8px]">
                   <p className="font-['Instrument_Serif',serif] leading-[1.2] text-[#fdfdfd] group-hover:text-[#1296cc] transition-colors" style={{ fontSize: 'clamp(24px, 3vw, 48px)' }}>Book a Call</p>
                   <svg className="w-[0.8em] h-[0.8em]" fill="none" viewBox="0 0 18 18">
@@ -633,13 +599,12 @@ function ContactFooter() {
             </p>
           </a>
         </div>
-
       </div>
     </AnimatedSection>
   );
 }
 
-// --- Component: Individual Project Detail Page ---
+// --- Project Details Subpage ---
 function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => void }) {
   useEffect(() => {
     window.scrollTo(0, 0); 
@@ -654,7 +619,6 @@ function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => v
     >
       <div className="w-full flex flex-col items-center pt-[60px] md:pt-[100px] pb-[80px] md:pb-[120px]">
         
-        {/* Back Button */}
         <div className="w-full flex justify-start mb-[40px] md:mb-[60px] px-[20px] md:px-[60px] lg:px-[120px] max-w-[1440px] mx-auto">
           <div
             onClick={onBack}
@@ -668,14 +632,12 @@ function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => v
           </div>
         </div>
 
-        {/* Title, Category & Description */}
         <div className="flex flex-col items-center gap-[12px] mb-[60px] md:mb-[80px] px-[20px] md:px-[60px] lg:px-[120px] max-w-[1200px] mx-auto text-center">
           <h1 className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.28px]" style={{ fontSize: 'clamp(48px, 6vw, 90px)' }}>{project.title}</h1>
           <p className="font-['Albert_Sans',sans-serif] font-medium text-[#1296cc]" style={{ fontSize: 'clamp(18px, 2vw, 24px)' }}>{project.category}</p>
           <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] mt-[16px] leading-[1.6]" style={{ fontSize: 'clamp(16px, 1.5vw, 20px)' }}>{project.description}</p>
         </div>
 
-        {/* Full Project Image */}
         <div className="w-full px-[20px] md:px-[60px] lg:px-[120px] max-w-[1440px] mx-auto">
             <div className="w-full rounded-[16px] md:rounded-[24px] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.08)] bg-[#f5f5f5]">
               <img src={project.fullImg} alt={project.title} className="w-full h-auto object-cover" />
@@ -690,6 +652,18 @@ function ProjectDetailsPage({ project, onBack }: { project: any, onBack: () => v
 export default function AnimatedPortfolio() {
   const [currentView, setCurrentView] = useState<'home' | 'project'>('home');
   const [activeProject, setActiveProject] = useState<any>(null);
+
+  // Initial load hash detection to auto-scroll when visiting direct links
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace('#', '');
+      // Slight delay to ensure elements are rendered before scrolling
+      setTimeout(() => {
+        scrollToSection(id);
+      }, 500); 
+    }
+  }, []);
 
   const handleProjectClick = (projectData: any) => {
     setActiveProject(projectData);
