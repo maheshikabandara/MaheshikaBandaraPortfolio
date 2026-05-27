@@ -275,9 +275,21 @@ function MyWorks({ onProjectClick }: { onProjectClick: (data: any) => void }) {
 // --- Pricing Section ---
 function PricingSection() {
   const plans = [
-    { name: "Foundation", price: "From $1,250", desc: "Fast, conversion-optimized website for service businesses ready to establish a real online presence." },
-    { name: "Growth", price: "From $2,800", desc: "Website + SEO + CRM wired together for businesses ready to grow their inbound pipeline." },
-    { name: "Authority", price: "From $5,500", desc: "Full-stack growth system — custom build, SEO, social, and CRM automation running in sync." }
+    { 
+      title: "Starter Package", 
+      price: "USD 500 - 1100", 
+      features: "4 - 6 pages • Custom design • Basic SEO • Responsive design • Modern clean layout • 3 revision rounds • Timeline: 1 to 2 weeks" 
+    },
+    { 
+      title: "Premium Package", 
+      price: "USD 1200 - 1700", 
+      features: "7 - 11 pages • Custom design • Basic SEO • Responsive design • Modern clean layout • 3 revision rounds • Timeline: 2 to 3 weeks" 
+    },
+    { 
+      title: "Growth Package", 
+      price: "USD 1800+", 
+      features: "Up to 12 pages • Fully custom design • Basic SEO • Responsive design • Modern clean layout • 4 revision rounds • Timeline: 4 to 5 weeks" 
+    }
   ];
 
   return (
@@ -288,8 +300,8 @@ function PricingSection() {
           {plans.map((plan, idx) => (
             <div key={idx} className="border-b border-[#e5e5e5] py-[32px] flex flex-col md:flex-row justify-between items-start md:items-center gap-[16px] group">
               <div className="flex flex-col gap-[8px]">
-                <p className="font-['Instrument_Serif',serif] text-[28px]">{plan.name}</p>
-                <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] max-w-[500px]">{plan.desc}</p>
+                <p className="font-['Instrument_Serif',serif] text-[28px]">{plan.title}</p>
+                <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] max-w-[600px] text-[15px]">{plan.features}</p>
               </div>
               <div className="flex items-center gap-[24px]">
                 <p className="font-['Albert_Sans',sans-serif] font-bold text-[18px]">{plan.price}</p>
@@ -307,7 +319,6 @@ function PricingSection() {
     </AnimatedSection>
   );
 }
-
 // --- Process Section ---
 interface ProcessCardProps {
   index: number;
