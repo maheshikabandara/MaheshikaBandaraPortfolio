@@ -228,6 +228,12 @@ function AboutMe() {
             <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.15em]" style={{ fontSize: 'clamp(14px, 1vw, 16px)' }}>Kandy, Sri Lanka</p>
           </div>
         </div>
+        {/* Social Links & Contact */}
+        <div className="flex gap-[32px] justify-center items-center">
+          <a href="mailto:hello@maheux.me" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors"><p style={{ fontFamily: FONT_SANS }} className="font-bold">Email</p></a>
+          <a href="https://dribbble.com/maheshikabandara" target="_blank" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors"><p style={{ fontFamily: FONT_SANS }} className="font-bold">Dribbble</p></a>
+          <a href="https://wa.me/94707170906" target="_blank" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors"><p style={{ fontFamily: FONT_SANS }} className="font-bold">WhatsApp</p></a>
+        </div>
       </div>
     </AnimatedSection>
   );
