@@ -2,6 +2,12 @@ import { motion, useInView, useScroll, useTransform } from "motion/react";
 import { useRef, useState, useEffect } from "react";
 import { formatInTimeZone } from "date-fns-tz";
 
+import {
+  EnvelopeSimple,
+  DribbbleLogo,
+  WhatsappLogo
+} from "@phosphor-icons/react";
+
 // Original Contact & Hero Imports
 import svgPaths from "../../imports/ContactFooter/svg-f4p2vld91i";
 import imgHero from "../../imports/Portfolio-1/9b06e550a03f9722c147c637abe54e4634f08454.png";
@@ -226,16 +232,27 @@ function AboutMe() {
           <h2 className="font-['Instrument_Serif',serif] text-[#1e1e1e] leading-[1.1] tracking-[-0.02em]" style={{ fontSize: 'clamp(40px, 5vw, 80px)' }}>Meet Maheshika</h2>
           <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.2em] opacity-80" style={{ fontSize: 'clamp(12px, 1vw, 14px)' }}>UI/UX Designer • Framer Developer</p>
           <p className="font-['Albert_Sans',sans-serif] text-[#6d6d6d] leading-[1.6] w-full max-w-[800px]" style={{ fontSize: 'clamp(16px, 1.2vw, 20px)' }}>I'm Maheshika, a UI/UX designer and Framer developer specializing in clean, high-conversion websites that captivate users. With a First Class Honours BSc in Information Technology and expertise in modern web design, I create seamless, animated experiences tailored to your brand. Let's transform your digital presence with unique, lightning-fast designs.</p>
+          {/* Social Links & Contact */}
+        <div className="flex gap-[24px] justify-center items-center">
+
+          <a href="mailto:hello@maheux.me" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors">
+            <EnvelopeSimple size={28} weight="fill" />
+          </a>
+        
+          <a href="https://dribbble.com/maheshikabandara" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors">
+            <DribbbleLogo size={28} weight="fill" />
+          </a>
+        
+          <a href="https://wa.me/94707170906" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors">
+            <WhatsappLogo size={28} weight="fill" />
+          </a>
+        
+        </div>
           <div className="flex flex-col items-center gap-[24px] mt-[24px]">
             <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.15em]" style={{ fontSize: 'clamp(14px, 1vw, 16px)' }}>Kandy, Sri Lanka</p>
           </div>
         </div>
-        {/* Social Links & Contact */}
-        <div className="flex gap-[32px] justify-center items-center">
-          <a href="mailto:hello@maheux.me" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors"><p style={{ fontFamily: FONT_SANS }} className="font-bold">Email</p></a>
-          <a href="https://dribbble.com/maheshikabandara" target="_blank" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors"><p style={{ fontFamily: FONT_SANS }} className="font-bold">Dribbble</p></a>
-          <a href="https://wa.me/94707170906" target="_blank" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors"><p style={{ fontFamily: FONT_SANS }} className="font-bold">WhatsApp</p></a>
-        </div>
+        
       </div>
     </AnimatedSection>
   );
