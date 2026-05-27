@@ -3,10 +3,10 @@ import { useRef, useState, useEffect } from "react";
 import { formatInTimeZone } from "date-fns-tz";
 
 import {
-  EnvelopeSimple, 
-  DribbbleLogo,
-  WhatsappLogo
-} from "@phosphor-icons/react";
+  Mail,
+  Dribbble,
+  MessageCircle,
+} from "lucide-react";
 
 // Original Contact & Hero Imports
 import svgPaths from "../../imports/ContactFooter/svg-f4p2vld91i";
@@ -235,19 +235,32 @@ function AboutMe() {
           {/* Social Links & Contact */}
         <div className="flex gap-[24px] justify-center items-center">
 
-          <a href="mailto:hello@maheux.me" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors">
-            <EnvelopeSimple size={28} weight="fill" />
-          </a>
-        
-          <a href="https://dribbble.com/maheshikabandara" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors">
-            <DribbbleLogo size={28} weight="fill" />
-          </a>
-        
-          <a href="https://wa.me/94707170906" target="_blank" rel="noopener noreferrer" className="text-[#1e1e1e] hover:text-[#1296cc] transition-colors">
-            <WhatsappLogo size={28} weight="fill" />
-          </a>
-        
-        </div>
+  <a
+    href="mailto:hello@maheux.me"
+    className="text-[#1e1e1e] hover:text-[#1296cc] hover:scale-110 transition-all duration-300"
+  >
+    <Mail size={28} strokeWidth={2} />
+  </a>
+
+  <a
+    href="https://dribbble.com/maheshikabandara"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#1e1e1e] hover:text-[#1296cc] hover:scale-110 transition-all duration-300"
+  >
+    <Dribbble size={28} strokeWidth={2} />
+  </a>
+
+  <a
+    href="https://wa.me/94707170906"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#1e1e1e] hover:text-[#1296cc] hover:scale-110 transition-all duration-300"
+  >
+    <MessageCircle size={28} strokeWidth={2} />
+  </a>
+
+</div>
           <div className="flex flex-col items-center gap-[24px] mt-[24px]">
             <p className="font-['Albert_Sans',sans-serif] font-bold text-[#1e1e1e] uppercase tracking-[0.15em]" style={{ fontSize: 'clamp(14px, 1vw, 16px)' }}>Kandy, Sri Lanka</p>
           </div>
