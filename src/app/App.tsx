@@ -200,7 +200,7 @@ function TheProblem() {
   ];
 
   return (
-    <section className="bg-white py-20 px-6 md:px-20">
+    <section className="bg-white px-[80px] py-[100px]">
       <div className="max-w-[1280px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 items-end mb-[116px]">
           <div className="lg:w-[629px] shrink-0">
@@ -259,7 +259,7 @@ function MyApproach() {
   ];
 
   return (
-    <section className="bg-white py-20 px-6 md:px-20">
+    <section className="bg-white px-[80px] py-[100px]">
       <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-20 lg:gap-[116px] items-start">
         <div className="lg:w-[593px] shrink-0 flex flex-col gap-12 justify-end">
           <div className="flex flex-col gap-3">
@@ -291,7 +291,7 @@ function MyApproach() {
 
 function TheSolution() {
   return (
-    <section className="bg-[#303030] py-20 px-6 md:px-20">
+    <section className="bg-[#303030] px-[80px] py-[100px]">
       <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-12 items-center">
         <div className="lg:w-[628px] shrink-0 flex flex-col gap-12 justify-end">
           <div className="flex flex-col gap-3">
@@ -325,7 +325,7 @@ function TheSolution() {
 
 function SelectedWork() {
   return (
-    <section id="work" className="bg-white py-20 overflow-hidden">
+    <section id="work" className="bg-white overflow-hidden px-[80px] py-[100px]">
       <style>{MARQUEE_CSS}</style>
 
       <div className="max-w-[1280px] mx-auto px-6 md:px-20 mb-12">
@@ -363,7 +363,7 @@ function SelectedWork() {
 
 function WhatIDo() {
   return (
-    <section id="what-i-do" className="bg-white py-20 px-6 md:px-20">
+    <section id="what-i-do" className="bg-white px-[80px] py-[100px]">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
         <div className="flex flex-col lg:flex-row gap-12 items-end">
           <div className="lg:w-[471px] shrink-0 flex flex-col gap-3">
@@ -398,7 +398,7 @@ function WhatIDo() {
 
 function Reviews() {
   return (
-    <section id="testimonials" className="bg-[#f2f2f2] py-20 px-6 md:px-20 flex justify-center">
+    <section id="testimonials" className="bg-[#f2f2f2] flex justify-center px-[80px] py-[100px]">
       <div className="bg-white rounded-[20px] px-8 md:px-16 py-12 max-w-3xl w-full flex flex-col gap-6">
         <div className="w-12 h-12 shrink-0 flex items-center justify-center">
           <svg width="39" height="29" viewBox="0 0 39 28.5" fill="none">
@@ -426,7 +426,7 @@ function Reviews() {
 
 function BehindTheScreens() {
   return (
-    <section id="about" className="bg-white py-20 px-6 md:px-20">
+    <section id="about" className="bg-white px-[80px] py-[100px]">
       <div className="max-w-[1280px] mx-auto">
         <div className="bg-[#303030] rounded-[20px] flex flex-col lg:flex-row gap-12 items-center px-8 md:px-16 py-12">
           <div className="lg:w-[628px] shrink-0 flex flex-col gap-12 justify-end">
@@ -476,7 +476,7 @@ function FooterCTA() {
   }, []);
 
   return (
-    <section className="bg-[#303030] py-20 px-6 md:px-20 flex flex-col items-center gap-12 text-center">
+    <section className="bg-[#303030] flex flex-col items-center gap-12 text-center px-[80px] py-[100px]">
       <div className="max-w-[1280px] w-full mx-auto flex flex-col items-center gap-12">
         <div className="flex flex-col items-center gap-8 w-full">
           <span className="font-bold text-[32px] leading-none">
